@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Enemydamage : MonoBehaviour
 {
-    [SerializeField] int hp = 5;
+    [SerializeField] int startingHp = 5;
     [SerializeField] int currenthp = 0;
 
     Enemy enemy;
+    Objectpool objectpool;
     void OnParticleCollision(GameObject other)
     {
         currenthp--;
@@ -17,9 +18,14 @@ public class Enemydamage : MonoBehaviour
     void Start()
     {
         enemy = GetComponent<Enemy>();
-        currenthp = hp;
-    }
+        currenthp = currenthp + startingHp;
+        roundhp(0);
 
+    }
+    public void roundhp(int round)
+    {
+        currenthp = currenthp + round - 1;
+    }
     // Update is called once per frame
     void Update()
     {
