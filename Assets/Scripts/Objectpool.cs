@@ -18,7 +18,7 @@ public class Objectpool : MonoBehaviour
     void Start()
     {
         StartCoroutine(spwanenemy());
-        enemydamage = gameObject.GetComponent<Enemydamage>();
+        
     }
     IEnumerator spwanenemy()
     {
@@ -33,10 +33,13 @@ public class Objectpool : MonoBehaviour
     }
         void Update()
         {
-            if (enemystospawwn <= -1)
+
+
+        if (enemystospawwn <= -1)
             {
                 if (roundTransition == false)
                 {
+
                     roundTransition = true;
                     Invoke("Repeat", 5);
                 }
@@ -45,7 +48,6 @@ public class Objectpool : MonoBehaviour
         }
         void Repeat()
         {
-           
             round++;
             roundTransition = false;
             enemystospawwn = roundenemies;

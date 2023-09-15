@@ -20698,6 +20698,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09137f1d0b912e447b94a3c4ef6eeec4, type: 3}
+--- !u!1 &1040210495 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2290226805941507224, guid: 09137f1d0b912e447b94a3c4ef6eeec4, type: 3}
+  m_PrefabInstance: {fileID: 1232697592}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1040633092
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33489,6 +33494,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Batista (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7713313732662588831, guid: 97863b11e7e0d12478a1ef864d07b92e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97863b11e7e0d12478a1ef864d07b92e, type: 3}
 --- !u!4 &1732485811 stripped
@@ -36395,6 +36404,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2290226805941507225, guid: 09137f1d0b912e447b94a3c4ef6eeec4, type: 3}
   m_PrefabInstance: {fileID: 1232697592}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1873112565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1040210495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff77bbef20b908d45bc51e81e55fddc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHp: 5
+  currenthp: 0
 --- !u!1001 &1873436755
 PrefabInstance:
   m_ObjectHideFlags: 0
