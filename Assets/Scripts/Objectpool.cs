@@ -45,7 +45,7 @@ public class Objectpool : MonoBehaviour
         }
         void Repeat()
         {
-            enemydamage.roundhp(round);
+           
             round++;
             roundTransition = false;
             enemystospawwn = roundenemies;
