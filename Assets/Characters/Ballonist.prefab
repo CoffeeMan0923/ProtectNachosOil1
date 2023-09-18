@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5153525135743741869}
   - component: {fileID: 950898939296771669}
   - component: {fileID: 8542934691544887469}
+  - component: {fileID: 5191799515483406806}
   m_Layer: 0
   m_Name: Particle System
   m_TagString: Untagged
@@ -3612,7 +3613,7 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 1
+    enabled: 0
     serializedVersion: 4
     type: 1
     collisionMode: 0
@@ -3795,12 +3796,12 @@ ParticleSystem:
   TriggerModule:
     enabled: 0
     serializedVersion: 2
-    inside: 1
+    inside: 0
     outside: 0
-    enter: 0
+    enter: 2
     exit: 0
-    colliderQueryMode: 0
-    radiusScale: 1
+    colliderQueryMode: 2
+    radiusScale: 0.5
     primitives: []
   SubModule:
     serializedVersion: 2
@@ -4812,6 +4813,19 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!65 &5191799515483406806
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1890632129126221816}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.7443943, y: 7.1047473, z: 18.236805}
+  m_Center: {x: -0.00000054208743, y: 0, z: 12.989464}
 --- !u!1 &5203304494415553978
 GameObject:
   m_ObjectHideFlags: 0
@@ -4860,6 +4874,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 30
   weapon: {fileID: 4425896800570788448}
+  particale: {fileID: 1890632129126221816}
   projectileParticles: {fileID: 950898939296771669}
 --- !u!114 &5366430260883143149
 MonoBehaviour:

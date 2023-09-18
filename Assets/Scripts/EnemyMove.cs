@@ -7,19 +7,35 @@ public class EnemyMove : MonoBehaviour
 {
     [SerializeField] List<Waypoint> path = new List<Waypoint>();
     [SerializeField] [Range(0,7)] float  speed = 1f;
+    [SerializeField] int reward = 25;
+    float originalspeed;
     // Start is called before the first frame update
     Enemy enemy;
     void Start()
     {
+        originalspeed = speed;
         FindPath();
         StartCoroutine( printwatpoint());
         enemy = GetComponent<Enemy>();
     }
 
     // Update is called once per frame
+    private void OnTriggerEnter(Collider other)
+    {
+        speed = speed - 0.01f;
+    }
+    void OnTriggerStay(Collider other)
+    {
+        speed = speed - 0.001f;
+    }
+
     void Update()
     {
-        
+        if (speed <= 0)
+        {
+            enemy.OilReward();
+            Destroy(gameObject);
+        }
     }
     void FindPath()
     {

@@ -6,6 +6,7 @@ public class Lookatenemy : MonoBehaviour
 {
     [SerializeField] float range = 15f;
     [SerializeField] Transform weapon;
+    [SerializeField] GameObject particale;
     Transform target;
     [SerializeField] ParticleSystem projectileParticles;
     
@@ -49,6 +50,7 @@ public class Lookatenemy : MonoBehaviour
         else
         {
             Attack(false);
+            particale.gameObject.GetComponent<Collider>().enabled = true;
         }
 
     }
