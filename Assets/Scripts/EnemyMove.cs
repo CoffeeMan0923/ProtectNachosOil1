@@ -9,7 +9,7 @@ public class EnemyMove : MonoBehaviour
     [SerializeField] [Range(0,7)] float  speed = 1f;
     [SerializeField] int reward = 25;
     float originalspeed;
-    bool isballoned;
+    int isballoned;
     // Start is called before the first frame update
     Enemy enemy;
     void Start()
@@ -23,19 +23,18 @@ public class EnemyMove : MonoBehaviour
     // Update is called once per frame
     void OnTriggerEnter(Collider other)
     {
-        isballoned = true;
+        isballoned++;
         speed = speed - 0.001f;
     }
     void OnTriggerStay(Collider other)
     {
-        isballoned = true;
         speed = speed - 0.001f;
     }
 
     void OnTriggerExit(Collider other)
     {
-        isballoned=false;
-        if (!isballoned)
+        isballoned--;
+        if (isballoned == 0)
         {
             speed = originalspeed;
         }

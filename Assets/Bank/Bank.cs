@@ -6,8 +6,8 @@ using TMPro;
 public class Bank : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI oildisplay;
-    [SerializeField] int goldreward = 25;
-    [SerializeField] int goldpenalty = 25;
+    [SerializeField] int oilreward = 25;
+    [SerializeField] int oilpenalty = 25;
     [SerializeField] int startingBalance = 150;
     [SerializeField]int currentBalance;
     public int CurrenBalance {get {return currentBalance;} }
