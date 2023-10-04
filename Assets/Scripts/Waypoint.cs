@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Waypoint : MonoBehaviour
 {
-    [SerializeField] bool isoiler;
-    [SerializeField] bool isballonist;
+    bool isoiler;
+    bool isballonist;
     Oiler theprefab ;
     [SerializeField] Oiler oilerPrefab;
     [SerializeField] Oiler ballonistPrefab;
@@ -15,7 +15,7 @@ public class Waypoint : MonoBehaviour
 
     void Start()
     {
-        theprefab = oilerPrefab;
+       theprefab = ballonistPrefab;
     }
     public void Oilboy(bool iswhat)
     {
