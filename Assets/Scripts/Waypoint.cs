@@ -17,11 +17,17 @@ public class Waypoint : MonoBehaviour
     {
        theprefab = ballonistPrefab;
     }
+
+    void secureOil()
+    {
+
+    }
     public void Oilboy(bool iswhat)
     {
         isoiler = iswhat;
         if (isoiler == true)
         {
+            isballonist = false;
             isoilboyselected = true;
             isballonedselected = false;
             theprefab = oilerPrefab;
@@ -32,15 +38,18 @@ public class Waypoint : MonoBehaviour
         isballonist = issomething;
         if (isballonist == true)
         {
+            isoiler = false;
             isoilboyselected = false;
             isballonedselected = true;
             theprefab = ballonistPrefab;
         }
     }
+
     void Update()
     {
         
     }
+
     void OnMouseDown()
     {
         if (isplacable == true)

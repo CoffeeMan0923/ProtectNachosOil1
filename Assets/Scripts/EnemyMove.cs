@@ -24,11 +24,11 @@ public class EnemyMove : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         isballoned++;
-        speed = speed - 0.001f;
+        speed = speed - 0.005f;
     }
     void OnTriggerStay(Collider other)
     {
-        speed = speed - 0.001f;
+        speed = speed - 0.005f;
     }
 
     void OnTriggerExit(Collider other)

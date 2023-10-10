@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Lookatenemy : MonoBehaviour
 {
+    [SerializeField] Animator attack;
     [SerializeField] float range = 15f;
     [SerializeField] Transform weapon;
     [SerializeField] GameObject particale;
@@ -39,6 +40,7 @@ public class Lookatenemy : MonoBehaviour
         }
         target = closestTarget;
     }
+    
     void Aimweapom()
     {
         float targetDistance = Vector3.Distance(transform.position, target.position);
@@ -46,16 +48,25 @@ public class Lookatenemy : MonoBehaviour
         if(targetDistance < range)
         {
             Attack(true);
+            particale.gameObject.GetComponent<Collider>().enabled = true;
         }
         else
         {
             Attack(false);
-            particale.gameObject.GetComponent<Collider>().enabled = true;
+            particale.gameObject.GetComponent<Collider>().enabled = false;
         }
 
     }
     void Attack(bool isActive)
     {
+        if (isActive)
+        {
+            attack.Play("ballons", 0, 0.0f);
+        }
+        else
+        {
+            attack.Play("breathingidle", 0, .0f);
+        }
         var emissionModule = projectileParticles.emission;
         emissionModule.enabled = isActive;
         
