@@ -4873,6 +4873,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4c308193e6df8447884d31999b5275b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sounds:
+  - {fileID: 8300000, guid: d4c11061d38a5e14dab0a0765e134ce9, type: 3}
+  - {fileID: 8300000, guid: 7a9b6d7f952dd0547a6520e27aec28d8, type: 3}
+  - {fileID: 8300000, guid: 4a45d56850f44d54ca21062c3f5f4277, type: 3}
   attack: {fileID: 4242752371602787617}
   range: 30
   weapon: {fileID: 4425896800570788448}
@@ -4901,7 +4905,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d4c11061d38a5e14dab0a0765e134ce9, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

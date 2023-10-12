@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Lookatenemy : MonoBehaviour
 {
+    public AudioClip[] sounds;
+    AudioSource source;
     [SerializeField] Animator attack;
     [SerializeField] float range = 15f;
     [SerializeField] Transform weapon;
@@ -14,7 +16,9 @@ public class Lookatenemy : MonoBehaviour
 
     void Start()
     {
-       
+        source = GetComponent<AudioSource>();
+        source.clip = sounds[Random.Range(0, sounds.Length)];
+        source.Play();
     }
 
     void Update()
@@ -47,11 +51,13 @@ public class Lookatenemy : MonoBehaviour
         weapon.LookAt(target);
         if(targetDistance < range)
         {
+            attack.Play("attacks", 0, 0.0f);
             Attack(true);
             particale.gameObject.GetComponent<Collider>().enabled = true;
         }
         else
         {
+            attack.Play("idle", 0, 0.0f);
             Attack(false);
             particale.gameObject.GetComponent<Collider>().enabled = false;
         }
@@ -59,14 +65,6 @@ public class Lookatenemy : MonoBehaviour
     }
     void Attack(bool isActive)
     {
-        if (isActive)
-        {
-            attack.Play("ballons", 0, 0.0f);
-        }
-        else
-        {
-            attack.Play("breathingidle", 0, .0f);
-        }
         var emissionModule = projectileParticles.emission;
         emissionModule.enabled = isActive;
         

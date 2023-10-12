@@ -15,7 +15,7 @@ public class Waypoint : MonoBehaviour
 
     void Start()
     {
-       theprefab = ballonistPrefab;
+       theprefab = oilerPrefab;
     }
 
     void secureOil()
