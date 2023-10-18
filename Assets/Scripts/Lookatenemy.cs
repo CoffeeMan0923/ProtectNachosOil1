@@ -57,7 +57,7 @@ public class Lookatenemy : MonoBehaviour
         }
         else
         {
-            attack.Play("idle", 0, 0.0f);
+            attack.Play("idel", 0, 0.0f);
             Attack(false);
             particale.gameObject.GetComponent<Collider>().enabled = false;
         }
