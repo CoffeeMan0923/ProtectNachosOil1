@@ -3,28 +3,42 @@ using System.Collections.Generic;
 using UnityEngine;
  public class TissieSelect : MonoBehaviour
 {
-    [SerializeField] bool isMrOil;
-    [SerializeField] bool isMrBallons;
-    bool isballonedselected;
-    bool isoilboyselected;
-    Waypoint waypoint;
-    // Start is called before the first frame update
+    public GameObject Oilist;
+    public GameObject Ballonist;
+    public GameObject Tissy;
+    bool istissy;
+    bool isballonist;
+    public void SelectedTissy()
+    {
+        istissy = true;
+    }
+
+    public void SelectedBallonist()
+    {
+        isballonist = true;
+    }
+    public void NotTissy()
+    {
+        istissy = false;
+    }
+    public void NotBallonist()
+    {
+        isballonist = false;
+    }
     void Start()
     {
-        waypoint = FindObjectOfType<Waypoint>();
+        Tissy = Oilist;
     }
-
-    // Update is called once per frame
     void Update()
     {
-        
-    }
-    void OnMouseDown()
-    {
-        waypoint.Oilboy(isMrOil);
+        if (istissy)
+        {
+            Tissy = Oilist;
+        }
+        else if (isballonist)
+        {
+            Tissy = Ballonist;
+        }
 
-        waypoint.Ballonists(isMrBallons);
-
-       
     }
 }

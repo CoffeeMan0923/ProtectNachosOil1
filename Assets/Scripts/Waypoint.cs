@@ -4,57 +4,51 @@ using UnityEngine;
 
 public class Waypoint : MonoBehaviour
 {
-    bool isoiler;
+    public Oiler Oilist;
+    public Oiler Ballonist;
+    Oiler Tissy;
+    bool istissy;
     bool isballonist;
-    Oiler theprefab ;
-    [SerializeField] Oiler oilerPrefab;
-    [SerializeField] Oiler ballonistPrefab;
-    bool isballonedselected;
-    bool isoilboyselected;
     public bool isplacable = true;
 
+    public void SelectedTissy()
+    {
+        istissy = true;
+    }
+
+    public void SelectedBallonist()
+    {
+        isballonist = true;
+    }
+    public void NotTissy()
+    {
+        istissy = false;
+    }
+    public void NotBallonist()
+    {
+        isballonist = false;
+    }
     void Start()
     {
-       theprefab = oilerPrefab;
+        Tissy = Oilist;
     }
-
-    void secureOil()
-    {
-
-    }
-    public void Oilboy(bool iswhat)
-    {
-        isoiler = iswhat;
-        if (isoiler == true)
-        {
-            isballonist = false;
-            isoilboyselected = true;
-            isballonedselected = false;
-            theprefab = oilerPrefab;
-        }
-    }
-    public void Ballonists(bool issomething)
-    {
-        isballonist = issomething;
-        if (isballonist == true)
-        {
-            isoiler = false;
-            isoilboyselected = false;
-            isballonedselected = true;
-            theprefab = ballonistPrefab;
-        }
-    }
-
     void Update()
     {
-        
-    }
+        if (istissy)
+        {
+            Tissy = Oilist;
+        }
+        else if (isballonist)
+        {
+            Tissy = Ballonist;
+        }
 
+    }
     void OnMouseDown()
     {
         if (isplacable == true)
         {
-             bool isPlaced=oilerPrefab.CreateOiler(theprefab, transform.position);
+             bool isPlaced=Tissy.CreateOiler(Tissy, transform.position);
             isplacable = !isPlaced;
         }
     }
