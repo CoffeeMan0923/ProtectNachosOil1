@@ -4,51 +4,51 @@ using UnityEngine;
 
 public class Waypoint : MonoBehaviour
 {
-    public Oiler Oilist;
-    public Oiler Ballonist;
-    Oiler Tissy;
-    bool istissy;
-    bool isballonist;
+    [SerializeField] int cost = 75;
+    public bool CreateOiler(Oiler tower, Vector3 position)
+    {
+        Bank bank = FindObjectOfType<Bank>();
+
+        if (bank == null)
+        {
+            return false;
+        }
+        if (bank.CurrenBalance >= cost)
+        {
+            Instantiate(tower.gameObject, position, Quaternion.identity);
+            bank.Whithdraw(cost);
+            return true;
+        }
+
+        return false;
+
+    }
+    //if error replace prefabs Oilist,Ballonist from serializable to public
+    [SerializeField] Oiler[] tissyList;
+    Oiler selectedTissy;
+    TissieSelect tissyselect;
     public bool isplacable = true;
-
-    public void SelectedTissy()
+    int selctedCharacterNum = 0;
+    
+    public void SelectedCharacter(int CharacterNum)
     {
-        istissy = true;
-    }
-
-    public void SelectedBallonist()
-    {
-        isballonist = true;
-    }
-    public void NotTissy()
-    {
-        istissy = false;
-    }
-    public void NotBallonist()
-    {
-        isballonist = false;
+        int selctedCharacterNum = CharacterNum ;
     }
     void Start()
     {
-        Tissy = Oilist;
+        selectedTissy = tissyList[selctedCharacterNum];
     }
     void Update()
     {
-        if (istissy)
-        {
-            Tissy = Oilist;
-        }
-        else if (isballonist)
-        {
-            Tissy = Ballonist;
-        }
-
+        selectedTissy = tissyList[selctedCharacterNum];
     }
+    
+
     void OnMouseDown()
     {
         if (isplacable == true)
         {
-             bool isPlaced=Tissy.CreateOiler(Tissy, transform.position);
+             bool isPlaced=selectedTissy.CreateOiler(selectedTissy, transform.position);
             isplacable = !isPlaced;
         }
     }

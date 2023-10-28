@@ -6612,7 +6612,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 47c7f947d026ae64682a85209e2898e3, type: 2}
     - target: {fileID: 919132149155446097, guid: 974b8bf69cc32044595faefa6de311ee, type: 3}
       propertyPath: m_Name
-      value: Tavern
+      value: NachosCabin
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 974b8bf69cc32044595faefa6de311ee, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 974b8bf69cc32044595faefa6de311ee, type: 3}
@@ -6717,6 +6721,14 @@ PrefabInstance:
       propertyPath: m_fontColor32.rgba
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 2290226805941507206, guid: 09137f1d0b912e447b94a3c4ef6eeec4, type: 3}
+      propertyPath: tissyList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2290226805941507206, guid: 09137f1d0b912e447b94a3c4ef6eeec4, type: 3}
+      propertyPath: tissyList.Array.data[0]
+      value: 
+      objectReference: {fileID: 5366430260883143149, guid: 0bffdc3874f6e124eb1a8ca3ecc3a069, type: 3}
     - target: {fileID: 2290226805941507224, guid: 09137f1d0b912e447b94a3c4ef6eeec4, type: 3}
       propertyPath: m_Name
       value: (4, -3)
@@ -19681,31 +19693,7 @@ MonoBehaviour:
   - eventID: 3
     callback:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1978094756}
-          m_TargetAssemblyTypeName: Waypoint, Assembly-CSharp
-          m_MethodName: SelectedBallonist
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 1978094756}
-          m_TargetAssemblyTypeName: Waypoint, Assembly-CSharp
-          m_MethodName: NotBallonist
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
 --- !u!114 &966005873
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19749,7 +19737,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 966005874}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1565104422}
+        m_TargetAssemblyTypeName: TissieSelect, Assembly-CSharp
+        m_MethodName: SelectedBallonist
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &966005874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31318,6 +31318,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &1565104422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1565104416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d9ef7c84a0a0b445a6db2fbf6f428dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1567242519
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38777,17 +38789,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2290226805941507225, guid: 09137f1d0b912e447b94a3c4ef6eeec4, type: 3}
   m_PrefabInstance: {fileID: 549171927}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1978094756 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2290226805941507206, guid: 09137f1d0b912e447b94a3c4ef6eeec4, type: 3}
-  m_PrefabInstance: {fileID: 221117983}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe7d9a8a797f08946872cae6f91caf42, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1979942507 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2290226805941507225, guid: 09137f1d0b912e447b94a3c4ef6eeec4, type: 3}
@@ -40595,7 +40596,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2069227205}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1565104422}
+        m_TargetAssemblyTypeName: TissieSelect, Assembly-CSharp
+        m_MethodName: SelectedOilboy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2069227205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40650,31 +40663,7 @@ MonoBehaviour:
   - eventID: 3
     callback:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1978094756}
-          m_TargetAssemblyTypeName: Waypoint, Assembly-CSharp
-          m_MethodName: SelectedTissy
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 1978094756}
-          m_TargetAssemblyTypeName: Waypoint, Assembly-CSharp
-          m_MethodName: NotTissy
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
 --- !u!4 &2071367058 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4990206744999672810, guid: 7f7ab251192cf3c4daa485590b0da789, type: 3}

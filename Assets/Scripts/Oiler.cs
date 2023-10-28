@@ -9,19 +9,18 @@ public class Oiler : MonoBehaviour
     {
         Bank bank = FindObjectOfType<Bank>();
 
-        if (bank == null) 
+        if (bank == null)
         {
             return false;
         }
-        if(bank.CurrenBalance >= cost)
+        if (bank.CurrenBalance >= cost)
         {
-            Instantiate(tower.gameObject,position, Quaternion.identity);
+            Instantiate(tower.gameObject, position, Quaternion.identity);
             bank.Whithdraw(cost);
             return true;
         }
 
         return false;
-        
-    }
 
+    }
 }

@@ -1,44 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
  public class TissieSelect : MonoBehaviour
 {
-    public GameObject Oilist;
-    public GameObject Ballonist;
-    public GameObject Tissy;
     bool istissy;
     bool isballonist;
-    public void SelectedTissy()
+    int Character;
+    Waypoint waypoint;
+
+    public void SelectedOilboy()
     {
-        istissy = true;
+        Character = 0;
     }
 
     public void SelectedBallonist()
     {
-        isballonist = true;
+        Character = 1;
     }
-    public void NotTissy()
-    {
-        istissy = false;
-    }
-    public void NotBallonist()
-    {
-        isballonist = false;
-    }
-    void Start()
-    {
-        Tissy = Oilist;
-    }
+    
     void Update()
     {
-        if (istissy)
-        {
-            Tissy = Oilist;
-        }
-        else if (isballonist)
-        {
-            Tissy = Ballonist;
-        }
-
+        waypoint.SelectedCharacter(Character);
     }
 }
