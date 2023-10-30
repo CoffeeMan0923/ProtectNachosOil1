@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
- public class TissieSelect : MonoBehaviour
+ public class Tissieselect : MonoBehaviour
 {
+    public Oiler[] tissyList;
+    public Oiler selectedTissy;
     bool istissy;
     bool isballonist;
     int Character;
@@ -11,16 +13,21 @@ using UnityEngine;
 
     public void SelectedOilboy()
     {
-        Character = 0;
+        selectedTissy = tissyList[0];
     }
 
     public void SelectedBallonist()
     {
-        Character = 1;
+        selectedTissy = tissyList[1];
     }
     
+    public void summonTissy(int cordinatesx,int cordinatesz)
+    {
+        bool isPlaced = selectedTissy.CreateOiler(selectedTissy,new Vector3(cordinatesx,0,cordinatesz));
+        waypoint.isPlacable(isPlaced);
+    }
     void Update()
     {
-        waypoint.SelectedCharacter(Character);
+        
     }
 }

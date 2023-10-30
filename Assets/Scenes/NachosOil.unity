@@ -5549,6 +5549,10 @@ PrefabInstance:
       propertyPath: isplacable
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2290226805941507206, guid: 09137f1d0b912e447b94a3c4ef6eeec4, type: 3}
+      propertyPath: selectedTissy
+      value: 
+      objectReference: {fileID: 7902577307684327583, guid: ed7cb7b35eb278a41904a9ae43482fd3, type: 3}
     - target: {fileID: 2290226805941507224, guid: 09137f1d0b912e447b94a3c4ef6eeec4, type: 3}
       propertyPath: m_Name
       value: (1, -6)
@@ -6705,30 +6709,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 46076626}
     m_Modifications:
-    - target: {fileID: 2290226804824211157, guid: 09137f1d0b912e447b94a3c4ef6eeec4, type: 3}
-      propertyPath: m_text
-      value: 4,-3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2290226804824211157, guid: 09137f1d0b912e447b94a3c4ef6eeec4, type: 3}
-      propertyPath: m_fontColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2290226804824211157, guid: 09137f1d0b912e447b94a3c4ef6eeec4, type: 3}
-      propertyPath: m_fontColor.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2290226804824211157, guid: 09137f1d0b912e447b94a3c4ef6eeec4, type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 2290226805941507206, guid: 09137f1d0b912e447b94a3c4ef6eeec4, type: 3}
-      propertyPath: tissyList.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2290226805941507206, guid: 09137f1d0b912e447b94a3c4ef6eeec4, type: 3}
-      propertyPath: tissyList.Array.data[0]
-      value: 
-      objectReference: {fileID: 5366430260883143149, guid: 0bffdc3874f6e124eb1a8ca3ecc3a069, type: 3}
     - target: {fileID: 2290226805941507224, guid: 09137f1d0b912e447b94a3c4ef6eeec4, type: 3}
       propertyPath: m_Name
       value: (4, -3)
