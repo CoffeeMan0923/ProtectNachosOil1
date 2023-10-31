@@ -4,30 +4,54 @@ using Unity.VisualScripting;
 using UnityEngine;
  public class Tissieselect : MonoBehaviour
 {
-    public Oiler[] tissyList;
-    public Oiler selectedTissy;
-    bool istissy;
-    bool isballonist;
-    int Character;
+    public Oiler Oilboy;
+    public Oiler Ballonist;
     Waypoint waypoint;
+    bool isballonist;
+    bool isoiler;
+    bool isPlaced = true;
+    bool isPlaced2 = true;
 
     public void SelectedOilboy()
     {
-        selectedTissy = tissyList[0];
+        isoiler=true;
+    }
+    public void NotSelectedOilboy()
+    {
+        isoiler = false;
     }
 
     public void SelectedBallonist()
     {
-        selectedTissy = tissyList[1];
+        isballonist=true;
     }
-    
-    public void summonTissy(int cordinatesx,int cordinatesz)
+    public void NotSelectedBallonist()
     {
-        bool isPlaced = selectedTissy.CreateOiler(selectedTissy,new Vector3(cordinatesx,0,cordinatesz));
-        waypoint.isPlacable(isPlaced);
+        isballonist = false;
     }
+
     void Update()
     {
-        
+        if (!isPlaced && isPlaced2)
+        {
+            isPlaced2 = false;
+        }
+        if (!isPlaced2 && isPlaced)
+        {
+            isPlaced = false;
+        }
+    }
+    public void summonTissy(int cordinatesx,int cordinatesz)
+    {
+        if (isoiler)
+        {
+            isPlaced = Ballonist.CreateOiler(Ballonist, new Vector3(cordinatesx,0,cordinatesz));
+            waypoint.isPlacable(isPlaced);
+        }
+        if (isballonist)
+        {
+            isPlaced2 = Oilboy.CreateOiler(Oilboy, new Vector3(cordinatesx, 0, cordinatesz));
+            waypoint.isPlacable(isPlaced);
+        }
     }
 }

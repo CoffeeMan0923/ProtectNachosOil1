@@ -1117,6 +1117,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 46076626}
+  - component: {fileID: 46076627}
   m_Layer: 0
   m_Name: Tiles
   m_TagString: Untagged
@@ -1576,6 +1577,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &46076627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 46076625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d9ef7c84a0a0b445a6db2fbf6f428dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Oilboy: {fileID: 7902577307684327583, guid: ed7cb7b35eb278a41904a9ae43482fd3, type: 3}
+  Ballonist: {fileID: 5366430260883143149, guid: 0bffdc3874f6e124eb1a8ca3ecc3a069, type: 3}
 --- !u!1001 &46679846
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19718,9 +19733,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1565104422}
-        m_TargetAssemblyTypeName: TissieSelect, Assembly-CSharp
+      - m_Target: {fileID: 46076627}
+        m_TargetAssemblyTypeName: Tissieselect, Assembly-CSharp
         m_MethodName: SelectedBallonist
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 46076627}
+        m_TargetAssemblyTypeName: Tissieselect, Assembly-CSharp
+        m_MethodName: NotSelectedBallonist
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -31298,18 +31325,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!114 &1565104422
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1565104416}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d9ef7c84a0a0b445a6db2fbf6f428dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1567242519
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40577,9 +40592,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1565104422}
-        m_TargetAssemblyTypeName: TissieSelect, Assembly-CSharp
+      - m_Target: {fileID: 46076627}
+        m_TargetAssemblyTypeName: Tissieselect, Assembly-CSharp
         m_MethodName: SelectedOilboy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 46076627}
+        m_TargetAssemblyTypeName: Tissieselect, Assembly-CSharp
+        m_MethodName: NotSelectedBallonist
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

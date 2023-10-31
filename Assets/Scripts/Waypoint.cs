@@ -8,12 +8,13 @@ public class Waypoint : MonoBehaviour
     Vector2 cordinates = new Vector2Int();
     Tissieselect tissyselect;
     public bool isplacable = true;
+    public bool isplacable2 = true;
 
-    
+
 
     void Start()
     {
-        tissyselect = transform.parent.GetComponent<Tissieselect>();
+        tissyselect = FindObjectOfType<Tissieselect>();
     }
     void Update()
     {
