@@ -12,6 +12,10 @@ using UnityEngine;
     bool isPlaced = true;
     bool isPlaced2 = true;
 
+    private void Start()
+    {
+        waypoint = FindObjectOfType<Waypoint>();
+    }
     public void SelectedOilboy()
     {
         isoiler=true;
@@ -41,7 +45,7 @@ using UnityEngine;
             isPlaced = false;
         }
     }
-    public void summonTissy(int cordinatesx,int cordinatesz)
+    public void summonTissy(float cordinatesx,float cordinatesz)
     {
         if (isoiler)
         {
@@ -50,7 +54,7 @@ using UnityEngine;
         }
         if (isballonist)
         {
-            isPlaced2 = Oilboy.CreateOiler(Oilboy, new Vector3(cordinatesx, 0, cordinatesz));
+            isPlaced2 = Oilboy.CreateOiler(Oilboy, new Vector3(cordinatesx, 1, cordinatesz));
             waypoint.isPlacable(isPlaced);
         }
     }

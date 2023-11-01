@@ -34,7 +34,7 @@ public class Waypoint : MonoBehaviour
     {
         if (isplacable == true)
         {
-            tissyselect.summonTissy((int)cordinates.x,(int)cordinates.y);  
+            tissyselect.summonTissy(cordinates.x,cordinates.y);  
         }
     }
 }

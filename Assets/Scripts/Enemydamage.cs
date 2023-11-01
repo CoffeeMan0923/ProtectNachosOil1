@@ -5,8 +5,9 @@ using UnityEngine;
 public class Enemydamage : MonoBehaviour
 {
     Objectpool objectpool;
-    [SerializeField] int startingHp = 5;
-    [SerializeField] int currenthp = 0;
+    [SerializeField] float startingHp = 5;
+    [SerializeField] float currenthp = 0;
+    [SerializeField] float roundHealth;
     
     Enemy enemy;
    
@@ -37,7 +38,11 @@ public class Enemydamage : MonoBehaviour
     {
         Destroyenemy();
     }
-
+    public void HealtIncrease(float round)
+    {
+        roundHealth = roundHealth * round;
+        startingHp = startingHp + roundHealth;
+    }
     void Destroyenemy()
     {
         if (currenthp <= 0)
