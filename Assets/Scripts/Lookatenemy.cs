@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Lookatenemy : MonoBehaviour
 {
-    public AudioClip[] sounds;
-    AudioSource source;
     [SerializeField] Animator attack;
     [SerializeField] float range = 15f;
     [SerializeField] Transform weapon;
@@ -16,9 +14,7 @@ public class Lookatenemy : MonoBehaviour
 
     void Start()
     {
-        source = GetComponent<AudioSource>();
-        source.clip = sounds[Random.Range(0, sounds.Length)];
-        source.Play();
+
     }
 
     void Update()

@@ -14,12 +14,9 @@ public class Objectpool : MonoBehaviour
     [SerializeField] GameObject enemyprefab;
     [SerializeField] float sapwntimer = 1f;
     // Start is called before the first frame update
-    Enemydamage enemydamage;
-    Enemydamage[] waypoint;
 
     void Start()
     {
-        waypoint = FindObjectsOfType<Enemydamage>();
         StartCoroutine(spwanenemy());
         
     }
@@ -52,7 +49,7 @@ public class Objectpool : MonoBehaviour
         
         void Repeat()
         {
-            waypoint.
+           
             round++;
             roundTransition = false;
             enemystospawwn = roundenemies;
