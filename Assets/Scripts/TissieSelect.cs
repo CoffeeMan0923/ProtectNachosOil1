@@ -4,58 +4,42 @@ using Unity.VisualScripting;
 using UnityEngine;
  public class Tissieselect : MonoBehaviour
 {
-    public Oiler Oilboy;
-    public Oiler Ballonist;
-    Waypoint waypoint;
-    bool isballonist;
-    bool isoiler;
-    bool isPlaced = true;
-    bool isPlaced2 = true;
-
-    private void Start()
+    bool Oilboy;
+    bool Ballonist;
+    void Start()
     {
-        waypoint = FindObjectOfType<Waypoint>();
+        parent = GameObject.FindGameObjectWithTag("Parentpath");
+        Oilboy = true;
     }
-    public void SelectedOilboy()
+    public void OilboySelected()
     {
-        isoiler=true;
-    }
-    public void NotSelectedOilboy()
-    {
-        isoiler = false;
+        Oilboy = true;
+        Ballonist = false;
     }
 
-    public void SelectedBallonist()
+    public void BallonistSelected()
     {
-        isballonist=true;
+        Ballonist=true;
+        Oilboy=false;
     }
-    public void NotSelectedBallonist()
+    List<Transform> GetAllChilds(Transform _t)
     {
-        isballonist = false;
+        List<Transform> ts = new List<Transform>();
+
+        foreach (Transform t in _t)
+        {
+            ts.Add(t);
+            if (t.childCount > 0)
+                ts.AddRange(GetAllChilds(t));
+        }
+
+        return ts;
     }
 
     void Update()
     {
-        if (!isPlaced && isPlaced2)
-        {
-            isPlaced2 = false;
-        }
-        if (!isPlaced2 && isPlaced)
-        {
-            isPlaced = false;
-        }
+        
     }
-    public void summonTissy(float cordinatesx,float cordinatesz)
-    {
-        if (isoiler)
-        {
-            isPlaced = Ballonist.CreateOiler(Ballonist, new Vector3(cordinatesx,0,cordinatesz));
-            waypoint.isPlacable(isPlaced);
-        }
-        if (isballonist)
-        {
-            isPlaced2 = Oilboy.CreateOiler(Oilboy, new Vector3(cordinatesx, 1, cordinatesz));
-            waypoint.isPlacable(isPlaced);
-        }
-    }
+
+
 }
