@@ -235,10 +235,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe7d9a8a797f08946872cae6f91caf42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tissyList:
-  - {fileID: 7902577307684327583, guid: ed7cb7b35eb278a41904a9ae43482fd3, type: 3}
-  - {fileID: 5366430260883143149, guid: 0bffdc3874f6e124eb1a8ca3ecc3a069, type: 3}
   isplacable: 1
+  isplacable2: 1
+  Oilboy: {fileID: 7902577307684327583, guid: ed7cb7b35eb278a41904a9ae43482fd3, type: 3}
+  Ballonist: {fileID: 5366430260883143149, guid: 0bffdc3874f6e124eb1a8ca3ecc3a069, type: 3}
+  isballonist: 0
+  isoiler: 0
 --- !u!65 &6036077210959871066
 BoxCollider:
   m_ObjectHideFlags: 0

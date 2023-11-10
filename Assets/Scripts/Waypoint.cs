@@ -12,13 +12,12 @@ public class Waypoint : MonoBehaviour
     public Oiler Oilboy;
     public Oiler Ballonist;
     Waypoint waypoint;
-    bool isballonist;
-    bool isoiler;
-    bool isPlaced = true;
-    bool isPlaced2 = true;
-
+    public bool isballonist;
+    public bool isoiler;
+    public bool isPlaced;
     void Start()
     {
+        isoiler = true;
         tissyselect = FindObjectOfType<Tissieselect>();
     }
     void Update()
@@ -27,31 +26,29 @@ public class Waypoint : MonoBehaviour
     }
     public void isPlacable(bool isPlaced)
     {
-        isplacable = !isPlaced;
+    
     }
     
-    void Cordinates()
-    {
-        cordinates.x = Mathf.RoundToInt(transform.parent.position.x / UnityEditor.EditorSnapSettings.move.x);
-        cordinates.y = Mathf.RoundToInt(transform.parent.position.z / UnityEditor.EditorSnapSettings.move.z);
-    }
     public void summonTissy()
     {
         if (isoiler)
         {
-            isPlaced = Ballonist.CreateOiler(Ballonist, gameObject.transform.position);
+            isPlaced = Oilboy.CreateOiler(Oilboy, gameObject.transform.position);
             waypoint.isPlacable(isPlaced);
+            
         }
         if (isballonist)
         {
-            isPlaced2 = Oilboy.CreateOiler(Oilboy,gameObject.transform.position);
+            isPlaced = Ballonist.CreateOiler(Ballonist,gameObject.transform.position);
             waypoint.isPlacable(isPlaced);
         }
     }
     void OnMouseDown()
     {
-        if (isplacable == true)
+        if (isPlaced==false)
         {
+
+            isPlaced=true;
             summonTissy();  
         }
     }

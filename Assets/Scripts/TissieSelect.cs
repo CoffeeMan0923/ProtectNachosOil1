@@ -6,34 +6,46 @@ using UnityEngine;
 {
     bool Oilboy;
     bool Ballonist;
+    [SerializeField] GameObject parent;
     void Start()
     {
-        parent = GameObject.FindGameObjectWithTag("Parentpath");
         Oilboy = true;
     }
     public void OilboySelected()
     {
         Oilboy = true;
         Ballonist = false;
+        Oilboyloop();
     }
 
     public void BallonistSelected()
     {
         Ballonist=true;
         Oilboy=false;
-    }
-    List<Transform> GetAllChilds(Transform _t)
-    {
-        List<Transform> ts = new List<Transform>();
+        Ballonistloop();
 
-        foreach (Transform t in _t)
+    }
+    void Oilboyloop()
+    {
+        foreach (Transform child in parent.transform)
         {
-            ts.Add(t);
-            if (t.childCount > 0)
-                ts.AddRange(GetAllChilds(t));
+            print("Foreach loop: " + child);
+            child.GetComponent<Waypoint>().isoiler = true;
+            child.GetComponent<Waypoint>().isballonist = false;
+        }
+            
+       
+    }
+    void Ballonistloop()
+    {
+        foreach (Transform child in parent.transform)
+        {
+            print("Foreach loop: " + child);
+            child.GetComponent<Waypoint>().isballonist = true;
+            child.GetComponent<Waypoint>().isoiler = false;
         }
 
-        return ts;
+
     }
 
     void Update()
