@@ -2,25 +2,35 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class EnemyMove : MonoBehaviour
 {
     [SerializeField] List<Waypoint> path = new List<Waypoint>();
     [SerializeField] [Range(0,7)] float  speed = 1f;
     [SerializeField] int reward = 25;
+    [SerializeField] float minSpeedRan = 0.5f;
+    [SerializeField] bool moveRandom;
     float originalspeed;
+    float ranspeed;
     int isballoned;
-    // Start is called before the first frame update
     Enemy enemy;
     void Start()
     {
-        originalspeed = speed;
+        if (moveRandom)
+        {
+            originalspeed = Random.Range(minSpeedRan, speed);
+            speed = originalspeed;
+        }
+        else if (!moveRandom)
+        {
+            originalspeed = speed;
+        }
         FindPath();
         StartCoroutine( printwatpoint());
         enemy = GetComponent<Enemy>();
     }
 
-    // Update is called once per frame
     void OnTriggerEnter(Collider other)
     {
         isballoned++;

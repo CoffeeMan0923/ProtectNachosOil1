@@ -24,7 +24,7 @@ public class Objectpool : MonoBehaviour
     {
         while (enemystospawwn >= 0)
         {
-            int e = Random.Range(0, 3);
+            int e = Random.Range(0, enemys.Length);
             enemystospawwn--;
             Instantiate(enemys[e], transform);
             yield return new WaitForSeconds(sapwntimer);

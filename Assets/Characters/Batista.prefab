@@ -76,6 +76,8 @@ MonoBehaviour:
   - {fileID: 0}
   speed: 1
   reward: 25
+  minSpeedRan: 0.5
+  moveRandom: 1
 --- !u!114 &3480166672177894810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -90,6 +92,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHp: 5
   currenthp: 0
+  roundHealth: 0
 --- !u!65 &8883098128511818724
 BoxCollider:
   m_ObjectHideFlags: 0

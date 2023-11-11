@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Enemydamage : MonoBehaviour
 {
+    int round;
     Objectpool objectpool;
     public float startingHp = 5;
     [SerializeField] float currenthp = 0;
