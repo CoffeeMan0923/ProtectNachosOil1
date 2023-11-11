@@ -8,6 +8,8 @@ TagManager:
   - Path
   - Batista
   - Penguin
+  - Oils
+  - Ballons
   layers:
   - Default
   - TransparentFX

@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class Enemydamage : MonoBehaviour
 {
-    int round;
+
+    Enemy enemy;
     Objectpool objectpool;
-    public float startingHp = 5;
     [SerializeField] float currenthp = 0;
     [SerializeField] float roundHealth;
-    
-    Enemy enemy;
-   
+    [SerializeField] float oildamage = 1;
+    public float startingHp = 5;   
+    int round;
     void OnParticleCollision(GameObject other)
     {
-        currenthp--;
+        currenthp = currenthp - oildamage;
 
         if(other.tag == "ballons")
         {

@@ -93,6 +93,7 @@ MonoBehaviour:
   startingHp: 5
   currenthp: 0
   roundHealth: 0
+  oildamage: 1
 --- !u!65 &8883098128511818724
 BoxCollider:
   m_ObjectHideFlags: 0

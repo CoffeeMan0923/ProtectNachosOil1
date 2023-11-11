@@ -47,10 +47,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4c308193e6df8447884d31999b5275b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds:
-  - {fileID: 8300000, guid: d4c11061d38a5e14dab0a0765e134ce9, type: 3}
-  - {fileID: 8300000, guid: 7a9b6d7f952dd0547a6520e27aec28d8, type: 3}
-  - {fileID: 8300000, guid: 4a45d56850f44d54ca21062c3f5f4277, type: 3}
   attack: {fileID: 7911140787121905750}
   range: 20
   weapon: {fileID: 8212913400214914716}
@@ -179,7 +175,7 @@ GameObject:
   - component: {fileID: 7796048627647192162}
   m_Layer: 0
   m_Name: Particle System
-  m_TagString: Untagged
+  m_TagString: Oils
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
