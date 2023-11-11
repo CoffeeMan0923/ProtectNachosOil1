@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemydamage : MonoBehaviour
 {
     Objectpool objectpool;
-    [SerializeField] float startingHp = 5;
+    public float startingHp = 5;
     [SerializeField] float currenthp = 0;
     [SerializeField] float roundHealth;
     
@@ -26,6 +26,7 @@ public class Enemydamage : MonoBehaviour
     {
         enemy = GetComponent<Enemy>();
         currenthp = currenthp + startingHp;
+        currenthp--;
         roundhp(0);
 
     }

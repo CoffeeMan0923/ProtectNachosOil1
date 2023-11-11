@@ -43,12 +43,13 @@ public class Waypoint : MonoBehaviour
             waypoint.isPlacable(isPlaced);
         }
     }
+    public bool Placed;
     void OnMouseDown()
     {
-        if (isPlaced==false)
+        if (Placed==false)
         {
 
-            isPlaced=true;
+            Placed=true;
             summonTissy();  
         }
     }

@@ -39,7 +39,7 @@ public class Cordinates : MonoBehaviour
     }
     void Colorcordinates()
     {
-        if(waypoint.isPlaced == false)
+        if(waypoint.Placed == false)
         {
             label.color = deaultColor;
         }
