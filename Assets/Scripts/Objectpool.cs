@@ -13,6 +13,7 @@ public class Objectpool : MonoBehaviour
     [SerializeField] GameObject[] enemys;
     [SerializeField] GameObject enemyprefab;
     [SerializeField] float sapwntimer = 1f;
+    Enemydamage enemydamage;
     // Start is called before the first frame update
 
     void Start()
@@ -49,7 +50,7 @@ public class Objectpool : MonoBehaviour
         
         void Repeat()
         {
-           
+          
             round++;
             roundTransition = false;
             enemystospawwn = roundenemies;

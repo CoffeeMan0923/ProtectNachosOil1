@@ -28,7 +28,6 @@ public class Enemydamage : MonoBehaviour
         enemy = GetComponent<Enemy>();
         currenthp = currenthp + startingHp;
         currenthp--;
-        roundhp(0);
 
     }
     public void roundhp(int rounds)

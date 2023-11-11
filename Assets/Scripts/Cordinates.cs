@@ -13,19 +13,22 @@ public class Cordinates : MonoBehaviour
     Waypoint waypoint;
     void Awake()
     {
+        
         waypoint = GetComponentInParent<Waypoint>();
         label = GetComponent<TextMeshPro>();
         DisplayCordinates();
         InvokeRepeating("DisplayCordinates",0, 1);
     }
-
+    void Start()
+    {
+        label.enabled = false;
+    }
     void Update()
     {
         if (!Application.isPlaying)
         {
             updatename();
             DisplayCordinates();
-            
         }
         Colorcordinates();
         Togglelabel();
