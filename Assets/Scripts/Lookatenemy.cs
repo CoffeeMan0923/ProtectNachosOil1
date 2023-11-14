@@ -45,15 +45,15 @@ public class Lookatenemy : MonoBehaviour
     {
         float targetDistance = Vector3.Distance(transform.position, target.position);
         weapon.LookAt(target);
-        if(targetDistance < range)
+        if (targetDistance < range)
         {
-            attack.Play("attacks", 0, 0.0f);
+
             Attack(true);
             particale.gameObject.GetComponent<Collider>().enabled = true;
         }
         else
         {
-            attack.Play("idel", 0, 0.0f);
+
             Attack(false);
             particale.gameObject.GetComponent<Collider>().enabled = false;
         }

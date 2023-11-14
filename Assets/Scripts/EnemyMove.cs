@@ -11,6 +11,7 @@ public class EnemyMove : MonoBehaviour
     [SerializeField] int reward = 25;
     [SerializeField] float minSpeedRan = 0.5f;
     [SerializeField] bool moveRandom;
+    [SerializeField] bool inballonable; 
     float originalspeed;
     float ranspeed;
     int isballoned;
@@ -33,12 +34,19 @@ public class EnemyMove : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        isballoned++;
-        speed = speed - 0.005f;
+        if (!inballonable)
+        {
+            isballoned++;
+            speed = speed - 0.005f;
+        }
+        
     }
     void OnTriggerStay(Collider other)
     {
-        speed = speed - 0.005f;
+        if (!inballonable)
+        {
+            speed = speed - 0.005f;
+        }
     }
 
     void OnTriggerExit(Collider other)
