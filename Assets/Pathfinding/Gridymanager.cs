@@ -10,6 +10,14 @@ public class Gridymanager : MonoBehaviour
     {
         CreateGridy();
     }
+    public Nodeclass GetNode(Vector2Int Coordinates)
+    {
+        if (grid.ContainsKey(Coordinates))
+        {
+             return grid[Coordinates];
+        }
+        return null;
+    }
     void CreateGridy()
     {
         for(int x = 0; x < gridySize.x; x++)
