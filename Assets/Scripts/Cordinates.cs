@@ -7,14 +7,16 @@ using TMPro;
 public class Cordinates : MonoBehaviour
 {
     [SerializeField] Color deaultColor= Color.white;
-    [SerializeField] Color Color = Color.gray;
+    [SerializeField] Color blokedColor = Color.gray;
+    [SerializeField] Color ExploredColor = Color.yellow;
+    [SerializeField] Color PathColor = new Color(1f, 0.5f, 0f );
     Vector2Int cordinates = new Vector2Int();
     TextMeshPro label;
-    Waypoint waypoint;
+    Gridymanager gridymanager;
     void Awake()
     {
         
-        waypoint = GetComponentInParent<Waypoint>();
+        gridymanager = FindObjectOfType<Gridymanager>();
         label = GetComponent<TextMeshPro>();
         DisplayCordinates();
         InvokeRepeating("DisplayCordinates",0, 1);
@@ -42,14 +44,32 @@ public class Cordinates : MonoBehaviour
     }
     void Colorcordinates()
     {
-        if(waypoint.Placed == false)
+        if(gridymanager == null)
         {
-            label.color = deaultColor;
+            return;
+        }
+        Nodeclass nodeclass = gridymanager.GetNode(cordinates);
+        if (nodeclass == null)
+        {
+            return;
+        }
+        if (!nodeclass.isWalkable)
+        {
+            label.color = blokedColor;
+        }
+        else if (nodeclass.isPath)
+        {
+            label.color= PathColor;
+        }
+        else if (nodeclass.isexplored)
+        {
+            label.color = ExploredColor;
         }
         else
         {
-            label.color = Color;
+            label.color=deaultColor;
         }
+        
     }
 
     void DisplayCordinates()
