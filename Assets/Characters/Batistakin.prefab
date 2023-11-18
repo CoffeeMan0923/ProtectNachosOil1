@@ -397,10 +397,10 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  speed: 1.5
+  speed: 1
   reward: 1000
   minSpeedRan: 1
-  moveRandom: 1
+  moveRandom: 0
   inballonable: 1
 --- !u!114 &2023852929589662875
 MonoBehaviour:
@@ -417,7 +417,7 @@ MonoBehaviour:
   currenthp: 0
   roundHealth: 0
   oildamage: 1
-  startingHp: 20
+  startingHp: 15
 --- !u!65 &6277235083730492133
 BoxCollider:
   m_ObjectHideFlags: 0

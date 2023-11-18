@@ -4838,6 +4838,7 @@ GameObject:
   - component: {fileID: 7380548575072286801}
   - component: {fileID: 5366430260883143149}
   - component: {fileID: -3644443542761989802}
+  - component: {fileID: -4933733965028575821}
   m_Layer: 0
   m_Name: Ballonist
   m_TagString: Untagged
@@ -4987,6 +4988,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-4933733965028575821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5203304494415553978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f50e45236ea5374aa388418654c6eee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - {fileID: 8300000, guid: 7a9b6d7f952dd0547a6520e27aec28d8, type: 3}
+  - {fileID: 8300000, guid: d4c11061d38a5e14dab0a0765e134ce9, type: 3}
+  - {fileID: 8300000, guid: 4a45d56850f44d54ca21062c3f5f4277, type: 3}
+  instant: 1
+  seconds: 0
 --- !u!1001 &4242752372154183051
 PrefabInstance:
   m_ObjectHideFlags: 0

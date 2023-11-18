@@ -14,6 +14,8 @@ public class Objectpool : MonoBehaviour
     [SerializeField] GameObject enemyprefab;
     [SerializeField] float sapwntimer = 1f;
     Enemydamage enemydamage;
+    bool istime;
+    int Batistakin;
     // Start is called before the first frame update
 
     void Start()
@@ -25,7 +27,7 @@ public class Objectpool : MonoBehaviour
     {
         while (enemystospawwn >= 0)
         {
-            int e = Random.Range(0, enemys.Length);
+            int e = Random.Range(0, enemys.Length-1+Batistakin);
             enemystospawwn--;
             Instantiate(enemys[e], transform);
             yield return new WaitForSeconds(sapwntimer);
@@ -35,7 +37,11 @@ public class Objectpool : MonoBehaviour
         void Update()
         {
 
-
+        if (!istime && round == 6)
+        {
+            istime = true;
+            Batistakin = 1;
+        }
         if (enemystospawwn <= -1)
             {
                 if (roundTransition == false)
