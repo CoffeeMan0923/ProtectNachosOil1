@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: -6384959758946458101}
   - component: {fileID: 7902577307684327583}
   - component: {fileID: 8533039389165704967}
-  - component: {fileID: 2681681763768182195}
   m_Layer: 0
   m_Name: Oilboy
   m_TagString: Untagged
@@ -66,6 +65,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cost: 75
+  isBallonist: 0
+  isOilboy: 1
 --- !u!82 &8533039389165704967
 AudioSource:
   m_ObjectHideFlags: 0
@@ -162,24 +163,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &2681681763768182195
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1129831694947003359}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f50e45236ea5374aa388418654c6eee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sounds:
-  - {fileID: 8300000, guid: 4a45d56850f44d54ca21062c3f5f4277, type: 3}
-  - {fileID: 8300000, guid: d4c11061d38a5e14dab0a0765e134ce9, type: 3}
-  - {fileID: 8300000, guid: 7a9b6d7f952dd0547a6520e27aec28d8, type: 3}
-  instant: 1
-  seconds: 0
 --- !u!1 &8473253030833918853
 GameObject:
   m_ObjectHideFlags: 0

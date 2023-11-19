@@ -26,8 +26,11 @@ public class Bank : MonoBehaviour
 
     public void Whithdraw(int amount)
     {
-        UpdateOil();
-        currentBalance -= Mathf.Abs(amount);
+        if (currentBalance > 0)
+        {
+            UpdateOil();
+            currentBalance -= Mathf.Abs(amount);
+        }
     }
     void UpdateOil()
     {
@@ -39,5 +42,9 @@ public class Bank : MonoBehaviour
     void Update()
     {
         UpdateOil();
+        if (currentBalance <= 0)
+        {
+            currentBalance = 0;
+        }
     }
 }

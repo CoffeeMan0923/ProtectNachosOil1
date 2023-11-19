@@ -6,15 +6,48 @@ public class Enemydamage : MonoBehaviour
 {
 
     Enemy enemy;
-    Objectpool objectpool;
+    SoundManager soundManager;
     [SerializeField] float currenthp = 0;
     [SerializeField] float roundHealth;
     [SerializeField] float oildamage = 1;
-    public float startingHp = 5;   
-    int round;
+    [SerializeField] bool ispenguin;
+    [SerializeField] bool isbatista;
+    public float startingHp = 5;
+    void Start()
+    {
+        soundManager = FindObjectOfType<SoundManager>();
+        enemy = GetComponent<Enemy>();
+        currenthp = currenthp + startingHp;
+        Spawnsounds();
+        //currenthp--;
+
+    }
+    void Spawnsounds()
+    {
+        if (ispenguin)
+        {
+            soundManager.PenguinSpawn();
+        }
+        if (isbatista)
+        {
+            soundManager.BatistaSpawn();
+        }
+    }
+    void PlayDamageSound()
+    {
+        if (ispenguin)
+        {
+            soundManager.PlayPenguinsound();
+        }
+        if (isbatista)
+        {
+            soundManager.PlayBatistasound();
+        }
+    }
     void OnParticleCollision(GameObject other)
     {
         currenthp = currenthp - oildamage;
+        PlayDamageSound();
 
         if(other.tag == "ballons")
         {
@@ -23,18 +56,6 @@ public class Enemydamage : MonoBehaviour
     }
 
 
-    void Start()
-    {
-        enemy = GetComponent<Enemy>();
-        currenthp = currenthp + startingHp;
-        currenthp--;
-
-    }
-    public void roundhp(int rounds)
-    {
-        currenthp = currenthp + rounds - 1;
-    }
-    // Update is called once per frame
     void Update()
     {
         Destroyenemy();
@@ -44,6 +65,7 @@ public class Enemydamage : MonoBehaviour
         roundHealth = roundHealth * round;
         startingHp = startingHp + roundHealth;
     }
+
     void Destroyenemy()
     {
         if (currenthp <= 0)
