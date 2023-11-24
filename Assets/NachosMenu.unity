@@ -23031,14 +23031,8 @@ MonoBehaviour:
   ballonistSpawnSounds:
   - {fileID: 8300000, guid: 4a45d56850f44d54ca21062c3f5f4277, type: 3}
   - {fileID: 8300000, guid: bfa91dbd8d84bb447a7763f1a123fe87, type: 3}
-  penguinDamageSounds:
-  - {fileID: 8300000, guid: 4a45d56850f44d54ca21062c3f5f4277, type: 3}
-  - {fileID: 8300000, guid: 7a9b6d7f952dd0547a6520e27aec28d8, type: 3}
-  - {fileID: 8300000, guid: 4a45d56850f44d54ca21062c3f5f4277, type: 3}
-  batistaDamageSounds:
-  - {fileID: 8300000, guid: 7150ad24d5a08184cb7a13954896c715, type: 3}
-  - {fileID: 8300000, guid: d4c11061d38a5e14dab0a0765e134ce9, type: 3}
-  - {fileID: 8300000, guid: bfa91dbd8d84bb447a7763f1a123fe87, type: 3}
+  penguinDamageSounds: []
+  batistaDamageSounds: []
   oilboySpawnSounds:
   - {fileID: 8300000, guid: 7a9b6d7f952dd0547a6520e27aec28d8, type: 3}
   - {fileID: 8300000, guid: d4c11061d38a5e14dab0a0765e134ce9, type: 3}
@@ -23053,7 +23047,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1032081632}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 30.617216, y: -5.554789, z: 113.1798}
+  m_LocalPosition: {x: 35, y: 8.59, z: 24.71}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

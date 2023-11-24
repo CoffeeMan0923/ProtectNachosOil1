@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class Startgame : MonoBehaviour
 {
     [SerializeField] string Levelname;
+    [SerializeField] float TimeBeforeStart = 2.5f;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +18,11 @@ public class Startgame : MonoBehaviour
     {
         
     }
-    public void Loadlevel()
+    public void StartGame()
+    {
+        Invoke("Loadlevel", TimeBeforeStart);
+    }
+    void Loadlevel()
     {
         SceneManager.LoadScene(Levelname);
     }
