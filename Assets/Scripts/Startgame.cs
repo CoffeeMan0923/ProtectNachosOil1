@@ -7,10 +7,11 @@ public class Startgame : MonoBehaviour
 {
     [SerializeField] string Levelname;
     [SerializeField] float TimeBeforeStart = 2.5f;
+    SoundManager soundManager;
     // Start is called before the first frame update
     void Start()
     {
-        
+        soundManager = FindObjectOfType<SoundManager>();
     }
 
     // Update is called once per frame
@@ -24,6 +25,7 @@ public class Startgame : MonoBehaviour
     }
     void Loadlevel()
     {
+        soundManager.RickSound();
         SceneManager.LoadScene(Levelname);
     }
 }

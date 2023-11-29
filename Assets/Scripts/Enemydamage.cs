@@ -43,6 +43,7 @@ public class Enemydamage : MonoBehaviour
         {
             soundManager.PlayBatistasound();
         }
+        soundManager.ImpactSound();
     }
     void OnParticleCollision(GameObject other)
     {

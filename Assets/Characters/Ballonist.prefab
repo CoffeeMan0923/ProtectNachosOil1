@@ -4877,6 +4877,8 @@ MonoBehaviour:
   range: 30
   weapon: {fileID: 4425896800570788448}
   particale: {fileID: 1890632129126221816}
+  isoilboy: 0
+  isballonist: 1
   projectileParticles: {fileID: 950898939296771669}
 --- !u!114 &5366430260883143149
 MonoBehaviour:

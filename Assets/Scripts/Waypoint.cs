@@ -11,6 +11,7 @@ public class Waypoint : MonoBehaviour
     public bool isplacable2 = true;
     public Oiler Oilboy;
     public Oiler Ballonist;
+    SoundManager soundmanager;
     Waypoint waypoint;
     public bool isballonist;
     public bool isoiler;
@@ -19,6 +20,7 @@ public class Waypoint : MonoBehaviour
     {
         isoiler = true;
         tissyselect = FindObjectOfType<Tissieselect>();
+        soundmanager = FindObjectOfType<SoundManager>();
     }
     void Update()
     {
@@ -46,11 +48,9 @@ public class Waypoint : MonoBehaviour
     public bool Placed;
     void OnMouseDown()
     {
-        if (Placed==false)
+        if (isPlaced==false)
         {
-
-            Placed=true;
-            summonTissy();  
+            summonTissy();
         }
     }
 }

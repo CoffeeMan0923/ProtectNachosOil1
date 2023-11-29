@@ -36,6 +36,6 @@ public class Nachoshealth : MonoBehaviour
     }
     void Reload()
     {
-        SceneManager.LoadScene("Nachosoil");
+        SceneManager.LoadScene("NachosMenu");
     }
 }

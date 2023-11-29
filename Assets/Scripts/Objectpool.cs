@@ -15,7 +15,7 @@ public class Objectpool : MonoBehaviour
     [SerializeField] float sapwntimer = 1f;
     Enemydamage enemydamage;
     bool istime;
-    int Batistakin;
+    int Batistakin = 0;
     // Start is called before the first frame update
 
     void Start()

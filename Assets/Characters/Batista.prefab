@@ -49,6 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ae78d999e804a14fbf6ca864c356967, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particales: {fileID: 4187077732517844606, guid: 36b4f4ea121166441b04fed5fcc8835f, type: 3}
   path:
   - {fileID: 0}
   - {fileID: 0}
@@ -79,6 +80,8 @@ MonoBehaviour:
   minSpeedRan: 0.5
   moveRandom: 1
   inballonable: 0
+  ispenguin: 0
+  isbatista: 1
 --- !u!114 &3480166672177894810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,7 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reward: 25
-  takeoil: 50
+  takeoil: 0
 --- !u!54 &6321649374991568761
 Rigidbody:
   m_ObjectHideFlags: 0

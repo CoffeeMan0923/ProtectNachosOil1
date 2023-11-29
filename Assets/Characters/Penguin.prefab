@@ -56,6 +56,8 @@ MonoBehaviour:
   minSpeedRan: 2.5
   moveRandom: 0
   inballonable: 0
+  ispenguin: 1
+  isbatista: 0
 --- !u!114 &1038920774037958188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100,7 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reward: 25
-  takeoil: 25
+  takeoil: 0
 --- !u!65 &6175506393137249669
 BoxCollider:
   m_ObjectHideFlags: 0

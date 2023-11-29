@@ -4,22 +4,27 @@ using UnityEngine;
 
 public class Lookatenemy : MonoBehaviour
 {
-    [SerializeField] Animator attack;
+    [SerializeField] Animator oilboy;
+    [SerializeField] Animator ballonist;
     [SerializeField] float range = 15f;
     [SerializeField] Transform weapon;
     [SerializeField] GameObject particale;
     Transform target;
+    bool attackLimiter = true;
+    [SerializeField] bool isoilboy;
+    [SerializeField] bool isballonist;
     [SerializeField] ParticleSystem projectileParticles;
+    SoundManager soundManager;
+    [SerializeField] float AttackSoundPerSecond = 2;
     
 
     void Start()
     {
-
+        soundManager = FindObjectOfType<SoundManager>();
     }
 
     void Update()
     {
-        
         FindClosestTarget();
         Aimweapom();
     }
@@ -40,7 +45,21 @@ public class Lookatenemy : MonoBehaviour
         }
         target = closestTarget;
     }
-    
+    void PlayAttackSound()
+    {
+        if (isballonist)
+        {
+            soundManager.BallonistAttack();
+        }
+        if (isoilboy)
+        {
+            soundManager.OilboyAttack();
+        }
+    }
+    void AttackLimiter()
+    {
+        attackLimiter = true;
+    }
     void Aimweapom()
     {
         float targetDistance = Vector3.Distance(transform.position, target.position);
@@ -50,10 +69,26 @@ public class Lookatenemy : MonoBehaviour
 
             Attack(true);
             particale.gameObject.GetComponent<Collider>().enabled = true;
+            oilboy.Play("attacks");
+            if (attackLimiter && !isballonist)
+            {
+                attackLimiter = false;
+                PlayAttackSound();
+                Invoke("AttackLimiter", AttackSoundPerSecond);
+
+            }
+            else if (attackLimiter && isballonist)
+            {
+                attackLimiter = false;
+                PlayAttackSound();
+                Invoke("AttackLimiter", 0.1f);
+
+            }
+
         }
         else
         {
-
+            oilboy.Play("idle");
             Attack(false);
             particale.gameObject.GetComponent<Collider>().enabled = false;
         }
@@ -61,6 +96,7 @@ public class Lookatenemy : MonoBehaviour
     }
     void Attack(bool isActive)
     {
+        
         var emissionModule = projectileParticles.emission;
         emissionModule.enabled = isActive;
         

@@ -47,11 +47,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4c308193e6df8447884d31999b5275b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack: {fileID: 7911140787121905750}
+  oilboy: {fileID: 7911140787121905750}
+  ballonist: {fileID: 0}
   range: 20
   weapon: {fileID: 8212913400214914716}
   particale: {fileID: 8473253030833918853}
+  isoilboy: 1
+  isballonist: 0
   projectileParticles: {fileID: 8508182507983392789}
+  AttackSoundPerSecond: 1
 --- !u!114 &7902577307684327583
 MonoBehaviour:
   m_ObjectHideFlags: 0

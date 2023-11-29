@@ -11,7 +11,8 @@ public class Oiler : MonoBehaviour
     void Start()
     {
         soundManager = FindObjectOfType<SoundManager>();
-        Spawnsounds();
+        Invoke("Spawnsounds", 0.7f);
+        moneyspenssound();
     }
     void Spawnsounds()
     {
@@ -23,6 +24,10 @@ public class Oiler : MonoBehaviour
         {
             soundManager.OilboySpawn();
         }
+    }
+    void moneyspenssound()
+    {
+        soundManager.PlayMoneySpendSound();
     }
     public bool CreateOiler(Oiler tower, Vector3 position)
     {

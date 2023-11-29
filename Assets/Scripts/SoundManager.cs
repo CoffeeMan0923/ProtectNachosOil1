@@ -9,10 +9,20 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private AudioClip[] ballonistSpawnSounds;
     [SerializeField] private AudioClip[] penguinDamageSounds;
     [SerializeField] private AudioClip[] batistaDamageSounds;
-    [SerializeField] private AudioClip[] oilboySpawnSounds;
+    [SerializeField] private AudioClip[] oilboySpawnSounds;    
+    [SerializeField] private AudioClip[] oilboyAttackSounds;
+    [SerializeField] private AudioClip[] ballonistAttackSounds;
+    [SerializeField] private AudioClip[] cabinDamaged;
+    [SerializeField] private AudioClip[] songs;
     [SerializeField] private AudioClip penguinSpawnSound;
     [SerializeField] private AudioClip batistaSpawnSound;
+    [SerializeField] private AudioClip batistacabinSound;
+    [SerializeField] private AudioClip penguincabinSound;
+    [SerializeField] private AudioClip bloodImpactSound;
     [SerializeField] private AudioClip moneySpendSound;
+    [SerializeField] private AudioClip Rickroll;
+    private int currentSongIndex = 0;
+    private AudioClip Sound;
     public static SoundManager Instance;
     AudioSource source;
 
@@ -28,35 +38,96 @@ public class SoundManager : MonoBehaviour
             Destroy(gameObject);
         }
         source = GetComponent<AudioSource>();
-    } 
+    }
+    void Update()
+    {
+        if (!source.isPlaying)
+        {
+            // Play the next song
+            PlayNextSong();
+        }
+    }
     public void PlayPenguinsound()
     {
-        source.clip = penguinDamageSounds[Random.Range(0, penguinDamageSounds.Length)];
-        source.Play();
+        Sound = penguinDamageSounds[Random.Range(0, penguinDamageSounds.Length)];
+        source.PlayOneShot(Sound);
     }
     public void PlayBatistasound()
     {
-        source.clip = batistaDamageSounds[Random.Range(0, batistaDamageSounds.Length)];
-        source.Play();
+        Sound = batistaDamageSounds[Random.Range(0, batistaDamageSounds.Length)];
+        source.PlayOneShot(Sound);
     }
     public void OilboySpawn()
     {
-        source.clip = oilboySpawnSounds[Random.Range(0, oilboySpawnSounds.Length)];
-        source.Play();
+            Sound = oilboySpawnSounds[Random.Range(0, oilboySpawnSounds.Length)];
+        source.PlayOneShot(Sound);
     }
     public void BallonistSpawn()
     {
-        source.clip = ballonistSpawnSounds[Random.Range(0, ballonistSpawnSounds.Length)];
-        source.Play();
+        Sound = ballonistSpawnSounds[Random.Range(0, ballonistSpawnSounds.Length)];
+        source.PlayOneShot(Sound);
     }
     public void BatistaSpawn()
     {
-        source.clip = batistaSpawnSound;
-        source.Play();
+        source.PlayOneShot(batistaSpawnSound);
     }
     public void PenguinSpawn()
     {
-        source.clip = penguinSpawnSound;
-        source.Play();
+        source.PlayOneShot(penguinSpawnSound);
+    }
+    public void PlayMoneySpendSound()
+    {
+        source.PlayOneShot(moneySpendSound);
+    }
+    public void CabinDamaged()
+    {
+        Sound = cabinDamaged[Random.Range(0, cabinDamaged.Length)];
+        source.PlayOneShot(Sound);
+    }
+    public void PenguinCabinEnter()
+    {
+        source.PlayOneShot(penguincabinSound);
+    }
+    public void BatistaCabinEnter()
+    {
+        source.PlayOneShot(batistacabinSound);
+    }
+    public void ImpactSound()
+    {
+        source.PlayOneShot(bloodImpactSound);
+    }
+    public void RickSound()
+    {
+        float increasedVolume = 2.0f;
+        float originalVolume = source.volume;
+        source.volume = originalVolume * increasedVolume;
+        source.PlayOneShot(Rickroll);
+        source.volume = originalVolume;
+    }
+    public void OilboyAttack()
+    {
+        Sound = oilboyAttackSounds[Random.Range(0, oilboyAttackSounds.Length)];
+        source.PlayOneShot(Sound);
+    }
+    public void BallonistAttack()
+    {
+        Sound = ballonistAttackSounds[Random.Range(0, ballonistAttackSounds.Length)];
+        source.PlayOneShot(Sound);
+    }
+    void PlayNextSong()
+    {
+
+        if (currentSongIndex < songs.Length)
+        {
+            source.clip = songs[currentSongIndex];
+            currentSongIndex++;
+            source.Play();
+
+        }
+        else
+        {
+            currentSongIndex = 0;
+        }
     }
 }
+

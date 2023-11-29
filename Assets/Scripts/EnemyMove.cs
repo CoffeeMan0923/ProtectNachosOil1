@@ -2,22 +2,28 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 using Random = UnityEngine.Random;
 
 public class EnemyMove : MonoBehaviour
 {
+    SoundManager soundManager;
+    [SerializeField] GameObject particales;
     [SerializeField] List<Waypoint> path = new List<Waypoint>();
     [SerializeField] [Range(0,7)] float  speed = 1f;
     [SerializeField] int reward = 25;
     [SerializeField] float minSpeedRan = 0.5f;
     [SerializeField] bool moveRandom;
-    [SerializeField] bool inballonable; 
+    [SerializeField] bool inballonable;
+    [SerializeField] bool ispenguin;
+    [SerializeField] bool isbatista;
     float originalspeed;
     float ranspeed;
     int isballoned;
     Enemy enemy;
     void Start()
     {
+        soundManager = FindObjectOfType<SoundManager>();
         if (moveRandom)
         {
             originalspeed = Random.Range(minSpeedRan, speed);
@@ -77,6 +83,18 @@ public class EnemyMove : MonoBehaviour
             path.Add(waypoint.GetComponent<Waypoint>());
         }
     }
+    void CabinEntersounds()
+    {
+        if (ispenguin)
+        {
+            soundManager.PenguinCabinEnter();
+        }
+        if (isbatista)
+        {
+            soundManager.BatistaCabinEnter();
+        }
+        soundManager.CabinDamaged();
+    }
     IEnumerator printwatpoint()
     {
         foreach (Waypoint waypoint in path)
@@ -95,7 +113,10 @@ public class EnemyMove : MonoBehaviour
             
             
         }
+        CabinEntersounds();
         enemy.StealOil();
+        Instantiate(particales, transform.position, Quaternion.identity);
+       // Instantiate(particales,gameObject.transform);
         Destroy(gameObject);
     }
 
