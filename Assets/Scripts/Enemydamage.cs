@@ -7,6 +7,8 @@ public class Enemydamage : MonoBehaviour
 
     Enemy enemy;
     SoundManager soundManager;
+    [SerializeField] GameObject particalexplo;
+    [SerializeField] GameObject pos;
     [SerializeField] float currenthp = 0;
     [SerializeField] float roundHealth;
     [SerializeField] float oildamage = 1;
@@ -71,6 +73,7 @@ public class Enemydamage : MonoBehaviour
     {
         if (currenthp <= 0)
         {
+            Instantiate(particalexplo, pos.transform.position,Quaternion.identity);
             Destroy(gameObject);
             enemy.OilReward();
         }

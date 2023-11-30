@@ -8,6 +8,7 @@ public class Nachoshealth : MonoBehaviour
 {
     float damage;
     [SerializeField] TextMeshProUGUI HealthDisplay;
+    [SerializeField] GameObject Cabin;
     [SerializeField] float penguinDamage = 1;
     [SerializeField] float batistaDamage = 20;
     [SerializeField] float cabinHealth = 20;
@@ -22,6 +23,7 @@ public class Nachoshealth : MonoBehaviour
         {
             damage = penguinDamage;
         }
+        Cabin.transform.Rotate(0, 0, 3, Space.Self);
         cabinHealth = cabinHealth - damage;
     }
 

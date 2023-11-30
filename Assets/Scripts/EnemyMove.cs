@@ -8,7 +8,6 @@ using Random = UnityEngine.Random;
 public class EnemyMove : MonoBehaviour
 {
     SoundManager soundManager;
-    [SerializeField] GameObject particales;
     [SerializeField] List<Waypoint> path = new List<Waypoint>();
     [SerializeField] [Range(0,7)] float  speed = 1f;
     [SerializeField] int reward = 25;
@@ -115,7 +114,6 @@ public class EnemyMove : MonoBehaviour
         }
         CabinEntersounds();
         enemy.StealOil();
-        Instantiate(particales, transform.position, Quaternion.identity);
        // Instantiate(particales,gameObject.transform);
         Destroy(gameObject);
     }

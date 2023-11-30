@@ -20534,6 +20534,7 @@ GameObject:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
+  - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -20599,14 +20600,34 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.6185153, y: -0, z: -0, w: 0.7857728}
+  m_LocalRotation: {x: 0.6185153, y: 0, z: 0, w: 0.7857728}
   m_LocalPosition: {x: 2, y: 88.8, z: -21.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 76.416, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 359.3415, y: 0, z: 0}
+--- !u!95 &963194229
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &966005870
 GameObject:
   m_ObjectHideFlags: 0
@@ -33102,6 +33123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HealthDisplay: {fileID: 638352975}
+  Cabin: {fileID: 1565104416}
   penguinDamage: 1
   batistaDamage: 2
   cabinHealth: 20
@@ -33121,6 +33143,25 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!320 &1565104421
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1565104416}
+  m_Enabled: 0
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: 28ec45129cc435a43ad5c886cf22d6be, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: 6913357450334003759, guid: 28ec45129cc435a43ad5c886cf22d6be, type: 2}
+    value: {fileID: 963194229}
+  m_ExposedReferences:
+    m_References: []
 --- !u!1001 &1567242519
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39121,6 +39162,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff77bbef20b908d45bc51e81e55fddc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particalexplo: {fileID: 0}
+  pos: {fileID: 0}
   currenthp: 0
   roundHealth: 0
   oildamage: 0

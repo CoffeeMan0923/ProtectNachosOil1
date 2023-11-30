@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Lookatenemy : MonoBehaviour
 {
-    [SerializeField] Animator oilboy;
-    [SerializeField] Animator ballonist;
     [SerializeField] float range = 15f;
     [SerializeField] Transform weapon;
     [SerializeField] GameObject particale;
@@ -69,7 +67,6 @@ public class Lookatenemy : MonoBehaviour
 
             Attack(true);
             particale.gameObject.GetComponent<Collider>().enabled = true;
-            oilboy.Play("attacks");
             if (attackLimiter && !isballonist)
             {
                 attackLimiter = false;
@@ -88,7 +85,6 @@ public class Lookatenemy : MonoBehaviour
         }
         else
         {
-            oilboy.Play("idle");
             Attack(false);
             particale.gameObject.GetComponent<Collider>().enabled = false;
         }

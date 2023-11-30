@@ -70,6 +70,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff77bbef20b908d45bc51e81e55fddc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particalexplo: {fileID: 8460064027121919758, guid: a84130babb62f1a4c946e8aad4adde29, type: 3}
+  pos: {fileID: 5167521276191046328}
   currenthp: 0
   roundHealth: 0
   oildamage: 1
@@ -517,5 +519,10 @@ Animator:
 --- !u!4 &711645216307229691 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2e7095eb2ef23fa47a1d4cc359966a43, type: 3}
+  m_PrefabInstance: {fileID: 1038920774916002832}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5167521276191046328 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5322205586786856616, guid: 2e7095eb2ef23fa47a1d4cc359966a43, type: 3}
   m_PrefabInstance: {fileID: 1038920774916002832}
   m_PrefabAsset: {fileID: 0}

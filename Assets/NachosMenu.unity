@@ -34829,6 +34829,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HealthDisplay: {fileID: 638352975}
+  Cabin: {fileID: 1565104416}
   penguinDamage: 1
   batistaDamage: 2
   cabinHealth: 20
@@ -41428,6 +41429,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff77bbef20b908d45bc51e81e55fddc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particalexplo: {fileID: 0}
+  pos: {fileID: 0}
   currenthp: 0
   roundHealth: 0
   oildamage: 0

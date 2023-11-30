@@ -94,6 +94,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff77bbef20b908d45bc51e81e55fddc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particalexplo: {fileID: 8460064027121919758, guid: a84130babb62f1a4c946e8aad4adde29, type: 3}
+  pos: {fileID: 7209754366065547314}
   currenthp: 0
   roundHealth: 0
   oildamage: 1
@@ -580,6 +582,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1410fe0d086518d4d8be56f81bb2886b, type: 3}
+--- !u!1 &7209754366065547314 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1082271958561512970, guid: 1410fe0d086518d4d8be56f81bb2886b, type: 3}
+  m_PrefabInstance: {fileID: 7713313732776183352}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &7478887064307071849 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1410fe0d086518d4d8be56f81bb2886b, type: 3}
