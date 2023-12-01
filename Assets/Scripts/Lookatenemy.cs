@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Lookatenemy : MonoBehaviour
 {
-    [SerializeField] Animator animator;
     [SerializeField] float range = 15f;
     [SerializeField] Transform weapon;
     [SerializeField] GameObject particale;
@@ -20,10 +19,6 @@ public class Lookatenemy : MonoBehaviour
     void Start()
     {
         soundManager = FindObjectOfType<SoundManager>();
-        if (isoilboy)
-        {
-            animator.Play("idle");
-        }
     }
 
     void Update()
