@@ -402,6 +402,8 @@ MonoBehaviour:
   minSpeedRan: 1
   moveRandom: 0
   inballonable: 1
+  ispenguin: 0
+  isbatista: 0
 --- !u!114 &2023852929589662875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -414,9 +416,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff77bbef20b908d45bc51e81e55fddc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particalexplo: {fileID: 0}
+  pos: {fileID: 0}
   currenthp: 0
   roundHealth: 0
   oildamage: 1
+  ispenguin: 0
+  isbatista: 0
   startingHp: 15
 --- !u!65 &6277235083730492133
 BoxCollider:
@@ -923,7 +929,7 @@ Animator:
   m_GameObject: {fileID: 5444986686654855784}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0ae94d03cf2db0a4c9a378475b6e2ff3, type: 2}
+  m_Controller: {fileID: 9100000, guid: afaf82499a8c5a34a9402d763d13ea4e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
