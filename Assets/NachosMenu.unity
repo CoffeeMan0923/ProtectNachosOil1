@@ -7077,7 +7077,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 974b8bf69cc32044595faefa6de311ee, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 30.306
+      value: 30.306007
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 974b8bf69cc32044595faefa6de311ee, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7085,7 +7085,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 974b8bf69cc32044595faefa6de311ee, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 51.8
+      value: 51.800003
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 974b8bf69cc32044595faefa6de311ee, type: 3}
       propertyPath: m_LocalRotation.w
@@ -34828,8 +34828,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0be187135783248809f32b1b4430e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cabinExplosionSFX: {fileID: 0}
   HealthDisplay: {fileID: 638352975}
   Cabin: {fileID: 1565104416}
+  Director: {fileID: 0}
   penguinDamage: 1
   batistaDamage: 2
   cabinHealth: 20
