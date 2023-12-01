@@ -4873,6 +4873,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4c308193e6df8447884d31999b5275b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 4242752371602787617}
   range: 30
   weapon: {fileID: 4425896800570788448}
   particale: {fileID: 1890632129126221816}
