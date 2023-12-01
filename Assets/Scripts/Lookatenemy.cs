@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Lookatenemy : MonoBehaviour
 {
+    [SerializeField] Animator animator;
     [SerializeField] float range = 15f;
     [SerializeField] Transform weapon;
     [SerializeField] GameObject particale;
@@ -54,6 +55,28 @@ public class Lookatenemy : MonoBehaviour
             soundManager.OilboyAttack();
         }
     }
+    void PlayAnimationAttack()
+    {
+        if (isballonist)
+        {
+            animator.Play("Flex");
+        }
+        if (isoilboy)
+        {
+            animator.Play("ThrowOil");
+        }
+    }
+    void PlayAnimationIdle()
+    {
+        if (isballonist)
+        {
+            animator.Play("RegularIdle");
+        }
+        if (isoilboy)
+        {
+            animator.Play("DwarfIdle");
+        }
+    }
     void AttackLimiter()
     {
         attackLimiter = true;
@@ -67,6 +90,7 @@ public class Lookatenemy : MonoBehaviour
 
             Attack(true);
             particale.gameObject.GetComponent<Collider>().enabled = true;
+            PlayAnimationAttack();
             if (attackLimiter && !isballonist)
             {
                 attackLimiter = false;
@@ -85,6 +109,7 @@ public class Lookatenemy : MonoBehaviour
         }
         else
         {
+            PlayAnimationIdle();
             Attack(false);
             particale.gameObject.GetComponent<Collider>().enabled = false;
         }

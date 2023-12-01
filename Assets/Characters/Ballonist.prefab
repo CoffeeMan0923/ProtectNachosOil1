@@ -4873,13 +4873,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4c308193e6df8447884d31999b5275b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack: {fileID: 4242752371602787617}
   range: 30
   weapon: {fileID: 4425896800570788448}
   particale: {fileID: 1890632129126221816}
   isoilboy: 0
   isballonist: 1
   projectileParticles: {fileID: 950898939296771669}
+  AttackSoundPerSecond: 2
 --- !u!114 &5366430260883143149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5075,7 +5075,7 @@ Animator:
   m_GameObject: {fileID: 3900153682657743066}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d796837ae21f27445a4e5e78868aef08, type: 2}
+  m_Controller: {fileID: 9100000, guid: 38b012573ffb7bc4daac23368ddcae7a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
