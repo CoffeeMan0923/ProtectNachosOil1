@@ -10,6 +10,7 @@ public class Nachoshealth : MonoBehaviour
     float damage;
     [SerializeField] ParticleSystem cabinExplosionSFX;
     [SerializeField] TextMeshProUGUI HealthDisplay;
+    [SerializeField] GameObject YouLost;
     [SerializeField] GameObject Cabin;
     [SerializeField] GameObject Director;
     [SerializeField] float penguinDamage = 1;
@@ -46,7 +47,8 @@ public class Nachoshealth : MonoBehaviour
             Director.GetComponent<PlayableDirector>().enabled = true;
             Invoke("CabinExplosion", 2);
             Invoke("cabinDown", 2);
-            Invoke("Reload", 8f);
+            Invoke("Reload", 10f);
+            Invoke("Loser", 8f);
             CabinShakeMultiple();
         }
     }
@@ -57,6 +59,10 @@ public class Nachoshealth : MonoBehaviour
             hasExploded = true;
             cabinExplosionSFX.Play();
         }
+    }
+    void Loser()
+    {
+        YouLost.gameObject.GetComponent<TextMeshProUGUI>().enabled = true;
     }
     void CabinShakeMultiple()
     {

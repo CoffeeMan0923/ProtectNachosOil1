@@ -5080,6 +5080,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2290226805941507225, guid: 09137f1d0b912e447b94a3c4ef6eeec4, type: 3}
   m_PrefabInstance: {fileID: 481066173}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &231623174 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4778826416949750421, guid: bd4e0508a585c474ebe880a87c0738ef, type: 3}
+  m_PrefabInstance: {fileID: 955854448}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &232605593 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2290226805941507225, guid: 09137f1d0b912e447b94a3c4ef6eeec4, type: 3}
@@ -11487,6 +11492,7 @@ RectTransform:
   - {fileID: 2069227203}
   - {fileID: 638352973}
   - {fileID: 966005871}
+  - {fileID: 955854449}
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -18791,6 +18797,116 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 2290226805941507225, guid: 09137f1d0b912e447b94a3c4ef6eeec4, type: 3}
   m_PrefabInstance: {fileID: 1746156008}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &955854448
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 538914525}
+    m_Modifications:
+    - target: {fileID: 1533204452318116463, guid: bd4e0508a585c474ebe880a87c0738ef, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1533204452318116463, guid: bd4e0508a585c474ebe880a87c0738ef, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1533204452318116463, guid: bd4e0508a585c474ebe880a87c0738ef, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1533204452318116463, guid: bd4e0508a585c474ebe880a87c0738ef, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1533204452318116463, guid: bd4e0508a585c474ebe880a87c0738ef, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1533204452318116463, guid: bd4e0508a585c474ebe880a87c0738ef, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1533204452318116463, guid: bd4e0508a585c474ebe880a87c0738ef, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1533204452318116463, guid: bd4e0508a585c474ebe880a87c0738ef, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 1533204452318116463, guid: bd4e0508a585c474ebe880a87c0738ef, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1533204452318116463, guid: bd4e0508a585c474ebe880a87c0738ef, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1533204452318116463, guid: bd4e0508a585c474ebe880a87c0738ef, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1533204452318116463, guid: bd4e0508a585c474ebe880a87c0738ef, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1533204452318116463, guid: bd4e0508a585c474ebe880a87c0738ef, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1533204452318116463, guid: bd4e0508a585c474ebe880a87c0738ef, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1533204452318116463, guid: bd4e0508a585c474ebe880a87c0738ef, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1533204452318116463, guid: bd4e0508a585c474ebe880a87c0738ef, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1533204452318116463, guid: bd4e0508a585c474ebe880a87c0738ef, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -23
+      objectReference: {fileID: 0}
+    - target: {fileID: 1533204452318116463, guid: bd4e0508a585c474ebe880a87c0738ef, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1533204452318116463, guid: bd4e0508a585c474ebe880a87c0738ef, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1533204452318116463, guid: bd4e0508a585c474ebe880a87c0738ef, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1533204452318116463, guid: bd4e0508a585c474ebe880a87c0738ef, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4778826416949750421, guid: bd4e0508a585c474ebe880a87c0738ef, type: 3}
+      propertyPath: m_Name
+      value: YouLost
+      objectReference: {fileID: 0}
+    - target: {fileID: 4778826416949750421, guid: bd4e0508a585c474ebe880a87c0738ef, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6573122146113902158, guid: bd4e0508a585c474ebe880a87c0738ef, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bd4e0508a585c474ebe880a87c0738ef, type: 3}
+--- !u!224 &955854449 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1533204452318116463, guid: bd4e0508a585c474ebe880a87c0738ef, type: 3}
+  m_PrefabInstance: {fileID: 955854448}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &956486198 stripped
 Transform:
@@ -30603,6 +30719,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cabinExplosionSFX: {fileID: 1578142088}
   HealthDisplay: {fileID: 638352975}
+  YouLost: {fileID: 231623174}
   Cabin: {fileID: 1565104416}
   Director: {fileID: 1565104416}
   penguinDamage: 1
