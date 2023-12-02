@@ -74,17 +74,17 @@ public class Nachoshealth : MonoBehaviour
     }
     void CabinShake()
     {
-        Cabin.transform.Rotate(0, 0, 3, Space.Self);
+        Cabin.transform.Rotate(0, 0, 7, Space.Self);
         Invoke("cabinright", 0.2f);
-        Invoke("cabinright2", 0.4f);
+        Invoke("cabinright2", 0.3f);
     }
     void cabinright()
     {
-        Cabin.transform.Rotate(0, 0, -6, Space.Self);
+        Cabin.transform.Rotate(0, 0, -14, Space.Self);
     }
     void cabinright2()
     {
-        Cabin.transform.Rotate(0, 0, 3, Space.Self);
+        Cabin.transform.Rotate(0, 0, 7, Space.Self);
     }
     void cabinDown()
     {
