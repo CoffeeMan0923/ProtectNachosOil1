@@ -8,6 +8,7 @@ using Random = UnityEngine.Random;
 public class EnemyMove : MonoBehaviour
 {
     SoundManager soundManager;
+    [SerializeField] ParticleSystem Aura;
     [SerializeField] List<Waypoint> path = new List<Waypoint>();
     [SerializeField] [Range(0,7)] float  speed = 1f;
     [SerializeField] int reward = 25;
@@ -16,6 +17,7 @@ public class EnemyMove : MonoBehaviour
     [SerializeField] bool inballonable;
     [SerializeField] bool ispenguin;
     [SerializeField] bool isbatista;
+    bool StopAuraSFX;
     float originalspeed;
     float ranspeed;
     int isballoned;
@@ -41,6 +43,12 @@ public class EnemyMove : MonoBehaviour
     {
         if (!inballonable)
         {
+            if (!Aura.isPlaying)
+            {
+                StopAuraSFX = false;
+                Aura.Play();
+
+            }
             isballoned++;
             speed = speed - 0.005f;
         }
@@ -50,6 +58,12 @@ public class EnemyMove : MonoBehaviour
     {
         if (!inballonable)
         {
+            StopAuraSFX = false;
+            if (!Aura.isPlaying)
+            {
+                Aura.Play();
+
+            }
             speed = speed - 0.005f;
         }
     }
@@ -59,12 +73,17 @@ public class EnemyMove : MonoBehaviour
         isballoned--;
         if (isballoned == 0)
         {
+            StopAuraSFX = true;
             speed = originalspeed;
         }
     }
 
     void Update()
     {
+        if (StopAuraSFX)
+        {
+            Aura.Stop();
+        }
         if (speed <= 0)
         {
             enemy.OilReward();

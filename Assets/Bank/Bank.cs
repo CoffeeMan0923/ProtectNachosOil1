@@ -13,13 +13,17 @@ public class Bank : MonoBehaviour
     public int CurrenBalance {get {return currentBalance;} }
 
     // Start is called before the first frame update
-    private void Start()
+    public GameObject Minus75;
+    public GameObject Minus150;
+    public GameObject Plus25;
+    void Start()
     {
         currentBalance = startingBalance;
         UpdateOil();
     }
     public void Deposit(int amount)
     {
+        Instantiate(Plus25);
         UpdateOil();
         currentBalance += Mathf.Abs(amount);
     }
@@ -28,6 +32,14 @@ public class Bank : MonoBehaviour
     {
         if (currentBalance > 0)
         {
+            if(amount == 75)
+            {
+                Instantiate(Minus75);
+            }
+            else if(amount == 150)
+            {
+                Instantiate(Minus150);
+            }
             UpdateOil();
             currentBalance -= Mathf.Abs(amount);
         }

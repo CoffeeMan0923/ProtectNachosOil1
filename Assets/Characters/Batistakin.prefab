@@ -450,7 +450,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reward: 25
-  takeoil: 1000
+  takeoil: 0
 --- !u!54 &8926451390867508856
 Rigidbody:
   m_ObjectHideFlags: 0
