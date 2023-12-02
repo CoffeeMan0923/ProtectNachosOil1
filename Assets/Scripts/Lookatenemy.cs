@@ -59,7 +59,7 @@ public class Lookatenemy : MonoBehaviour
     {
         if (isballonist)
         {
-            animator.Play("Flex");
+            animator.Play("");
         }
         if (isoilboy)
         {
@@ -70,7 +70,7 @@ public class Lookatenemy : MonoBehaviour
     {
         if (isballonist)
         {
-            animator.Play("RegularIdle");
+            animator.Play("");
         }
         if (isoilboy)
         {
