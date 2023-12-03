@@ -8,6 +8,8 @@ using UnityEngine.SceneManagement;
 public class Nachoshealth : MonoBehaviour
 {
     float damage;
+    [SerializeField] ParticleSystem SmokeSFX;
+    [SerializeField] GameObject RestartButton;
     [SerializeField] ParticleSystem cabinExplosionSFX;
     [SerializeField] TextMeshProUGUI HealthDisplay;
     [SerializeField] GameObject YouLost;
@@ -16,22 +18,26 @@ public class Nachoshealth : MonoBehaviour
     [SerializeField] float penguinDamage = 1;
     [SerializeField] float batistaDamage = 20;
     [SerializeField] float cabinHealth = 20;
+    bool TissyClack;
+    SoundManager soundManager;
     bool hasExploded = false;
     bool Shake = true;
     // Start is called before the first frame update
     void Start()
     {
-        
+        soundManager = FindObjectOfType<SoundManager>();
     }
     void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.tag == "Batista")
         {
+            SmokeSFX.Play();
             damage = batistaDamage;
             CabinShake();
         }
         else if(other.gameObject.tag == "Penguin")
         {
+            SmokeSFX.Play();
             damage = penguinDamage;
             CabinShake();
         }
@@ -45,10 +51,11 @@ public class Nachoshealth : MonoBehaviour
         if (cabinHealth <= 0)
         {
             Director.GetComponent<PlayableDirector>().enabled = true;
-            Invoke("CabinExplosion", 2);
-            Invoke("cabinDown", 2);
-            Invoke("Reload", 10f);
+            Invoke("CabinExplosion", 2.5f);
+            Invoke("cabinDown", 1);
+            Invoke("BackToMenuButton", 10f);
             Invoke("Loser", 8f);
+            Invoke("CabinTissys", 0f);
             CabinShakeMultiple();
         }
     }
@@ -58,7 +65,21 @@ public class Nachoshealth : MonoBehaviour
         {
             hasExploded = true;
             cabinExplosionSFX.Play();
+            soundManager.cabinExplode();
         }
+    }
+    void CabinTissys()
+    {
+        if (!TissyClack)
+        {
+            TissyClack = true;
+            soundManager.cabinTissy();
+
+        }
+    }
+    void BackToMenuButton()
+    {
+        RestartButton.SetActive(true);
     }
     void Loser()
     {
@@ -94,9 +115,9 @@ public class Nachoshealth : MonoBehaviour
     }
     void cabinDown()
     {
-        Cabin.transform.Translate(0, -0.2f, 0); 
+        Cabin.transform.Translate(0, -0.3f, 0); 
     }
-    void Reload()
+     public void Reload()
     {
         SceneManager.LoadScene("NachosMenu");
     }

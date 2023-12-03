@@ -43,6 +43,7 @@ public class EnemyMove : MonoBehaviour
     {
         if (!inballonable)
         {
+            Aura.loop = true;
             if (!Aura.isPlaying)
             {
                 StopAuraSFX = false;
@@ -58,6 +59,7 @@ public class EnemyMove : MonoBehaviour
     {
         if (!inballonable)
         {
+            Aura.loop = true;
             StopAuraSFX = false;
             if (!Aura.isPlaying)
             {
@@ -82,7 +84,7 @@ public class EnemyMove : MonoBehaviour
     {
         if (StopAuraSFX)
         {
-            Aura.Stop();
+            Aura.loop = false;
         }
         if (speed <= 0)
         {

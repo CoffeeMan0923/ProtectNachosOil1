@@ -15,6 +15,8 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private AudioClip[] cabinDamaged;
     [SerializeField] private AudioClip[] songs;
     [SerializeField] private AudioClip penguinSpawnSound;
+    [SerializeField] private AudioClip CabinExplode;
+    [SerializeField] private AudioClip CabinTissysDestroyed;
     [SerializeField] private AudioClip batistaSpawnSound;
     [SerializeField] private AudioClip batistacabinSound;
     [SerializeField] private AudioClip penguincabinSound;
@@ -113,6 +115,14 @@ public class SoundManager : MonoBehaviour
     {
         Sound = ballonistAttackSounds[Random.Range(0, ballonistAttackSounds.Length)];
         source.PlayOneShot(Sound);
+    }
+    public void cabinExplode()
+    {
+        source.PlayOneShot(CabinExplode);
+    }
+    public void cabinTissy()
+    {
+        source.PlayOneShot(CabinTissysDestroyed);
     }
     void PlayNextSong()
     {
