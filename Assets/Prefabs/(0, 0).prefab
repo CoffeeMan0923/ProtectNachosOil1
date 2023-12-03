@@ -17,7 +17,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &2290226804824211159
 RectTransform:
@@ -186,7 +186,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deaultColor: {r: 1, g: 1, b: 1, a: 1}
-  Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  blokedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  ExploredColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  PathColor: {r: 1, g: 0.5, b: 0, a: 1}
 --- !u!1 &2290226805941507224
 GameObject:
   m_ObjectHideFlags: 0
@@ -203,7 +205,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2290226805941507225
 Transform:
@@ -241,6 +243,8 @@ MonoBehaviour:
   Ballonist: {fileID: 5366430260883143149, guid: 0bffdc3874f6e124eb1a8ca3ecc3a069, type: 3}
   isballonist: 0
   isoiler: 0
+  isPlaced: 0
+  Placed: 0
 --- !u!65 &6036077210959871066
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -270,7 +274,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2290226806531340652
 Transform:
@@ -391,6 +395,14 @@ PrefabInstance:
     - target: {fileID: 2239219462717278196, guid: 8268644ef66d0e148bce09f9dea8a666, type: 3}
       propertyPath: m_Name
       value: Grass
+      objectReference: {fileID: 0}
+    - target: {fileID: 2239219462717278196, guid: 8268644ef66d0e148bce09f9dea8a666, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7106264444132720429, guid: 8268644ef66d0e148bce09f9dea8a666, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8268644ef66d0e148bce09f9dea8a666, type: 3}
