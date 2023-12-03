@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UIElements;
 using Random = UnityEngine.Random;
@@ -19,13 +20,17 @@ public class EnemyMove : MonoBehaviour
     [SerializeField] bool inballonable;
     [SerializeField] bool ispenguin;
     [SerializeField] bool isbatista;
+    [SerializeField] float BallonistSlowRate = 0.005f;
     bool StopAuraSFX;
     float originalspeed;
     float ranspeed;
     int isballoned;
     Enemy enemy;
+    Vector3 originalPos;
+    float movePercent;
     void Start()
     {
+        originalPos = transform.position;
         soundManager = FindObjectOfType<SoundManager>();
         if (moveRandom)
         {
@@ -53,7 +58,7 @@ public class EnemyMove : MonoBehaviour
 
             }
             isballoned++;
-            speed = speed - 0.005f;
+            speed = speed - BallonistSlowRate;
         }
         
     }
@@ -68,7 +73,7 @@ public class EnemyMove : MonoBehaviour
                 Aura.Play();
 
             }
-            speed = speed - 0.005f;
+            speed = speed - BallonistSlowRate;
         }
     }
 
@@ -94,6 +99,9 @@ public class EnemyMove : MonoBehaviour
             enemy.OilReward();
             Destroy(gameObject);
         }
+
+        //transform.position = Vector3.Lerp(originalPos, path[path.Count - 1].transform.position, movePercent);
+        //movePercent += Time.deltaTime * speed;
     }
     void FindPath()
     {
@@ -105,7 +113,17 @@ public class EnemyMove : MonoBehaviour
         {
             path.Add(waypoint.GetComponent<Waypoint>());
         }
+
+        for (int i = 0; i < path.Count - 1; i++)
+            for (int j = 0; j < path.Count - i - 1; j++)
+                if ((Int32.Parse(path[j].gameObject.name) > Int32.Parse(path[j + 1].gameObject.name)))
+                {
+                    var tempVar = path[j];
+                    path[j] = path[j + 1];
+                    path[j + 1] = tempVar;
+                }
     }
+    
     void CabinEntersounds()
     {
         if (ispenguin)
@@ -122,6 +140,7 @@ public class EnemyMove : MonoBehaviour
     {
         foreach (Waypoint waypoint in path)
         {
+            Debug.Log(gameObject.name + " pos: " + waypoint.gameObject.name);
             Vector3 startposition = transform.position;
             Vector3 endposition = waypoint.transform.position;
             float movepercent = 0f;
@@ -133,8 +152,7 @@ public class EnemyMove : MonoBehaviour
                 yield return new WaitForEndOfFrame();
             }
              
-            
-            
+                    
         }
         CabinEntersounds();
         enemy.StealOil();

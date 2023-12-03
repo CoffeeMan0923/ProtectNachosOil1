@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
-using UnityEditor; 
 using TMPro;
 [ExecuteAlways]
 public class Cordinates : MonoBehaviour
@@ -18,7 +16,7 @@ public class Cordinates : MonoBehaviour
         
         gridymanager = FindObjectOfType<Gridymanager>();
         label = GetComponent<TextMeshPro>();
-        DisplayCordinates();
+        //DisplayCordinates();
         InvokeRepeating("DisplayCordinates",0, 1);
     }
     void Start()
@@ -29,8 +27,8 @@ public class Cordinates : MonoBehaviour
     {
         if (!Application.isPlaying)
         {
-            updatename();
-            DisplayCordinates();
+            //updatename();
+           // DisplayCordinates();
         }
         Colorcordinates();
         Togglelabel();
@@ -72,15 +70,15 @@ public class Cordinates : MonoBehaviour
         
     }
 
-    void DisplayCordinates()
-    {
-        cordinates.x = Mathf.RoundToInt(transform.parent.position.x / UnityEditor.EditorSnapSettings.move.x);
-        cordinates.y = Mathf.RoundToInt(transform.parent.position.z / UnityEditor.EditorSnapSettings.move.z);
-        label.text = $"{cordinates.x},{cordinates.y}";
-    }
+    //void DisplayCordinates()
+    //{
+    //    cordinates.x = Mathf.RoundToInt(transform.parent.position.x / 0.25f);
+    //    cordinates.y = Mathf.RoundToInt(transform.parent.position.z / 0.25f);
+    //    label.text = $"{cordinates.x},{cordinates.y}";
+    //}
 
-    void updatename()
-    {
-        transform.parent.name=cordinates.ToString();
-    }
+    //void updatename()
+    //{
+    //    transform.parent.name=cordinates.ToString();
+    //}
 }

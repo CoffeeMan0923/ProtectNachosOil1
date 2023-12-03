@@ -61,6 +61,7 @@ MonoBehaviour:
   inballonable: 0
   ispenguin: 1
   isbatista: 0
+  BallonistSlowRate: 0.015
 --- !u!114 &1038920774037958188
 MonoBehaviour:
   m_ObjectHideFlags: 0
