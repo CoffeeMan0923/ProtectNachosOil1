@@ -89,7 +89,6 @@ public class Nachoshealth : MonoBehaviour
     {
         if (Shake)
         {
-            gameObject.GetComponent<Collider>().enabled = false;
             Shake = false;
             Invoke("CabinShake", 0.401f);
             Invoke("TrueDelay", 0.401f);
@@ -117,8 +116,12 @@ public class Nachoshealth : MonoBehaviour
     {
         Cabin.transform.Translate(0, -0.3f, 0); 
     }
-     public void Reload()
+    public void Reload()
     {
         SceneManager.LoadScene("NachosMenu");
+    }
+    public void QuitButton()
+    {
+        Application.Quit();
     }
 }

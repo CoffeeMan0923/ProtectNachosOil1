@@ -51,6 +51,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Aura: {fileID: 907268329840326990}
+  particalexplo: {fileID: 8460064027121919758, guid: a84130babb62f1a4c946e8aad4adde29, type: 3}
+  pos: {fileID: 5167521276191046328}
   path: []
   speed: 3
   reward: 25

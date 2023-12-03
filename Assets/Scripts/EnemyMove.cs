@@ -9,6 +9,8 @@ public class EnemyMove : MonoBehaviour
 {
     SoundManager soundManager;
     [SerializeField] ParticleSystem Aura;
+    [SerializeField] GameObject particalexplo;
+    [SerializeField] GameObject pos;
     [SerializeField] List<Waypoint> path = new List<Waypoint>();
     [SerializeField] [Range(0,7)] float  speed = 1f;
     [SerializeField] int reward = 25;
@@ -88,6 +90,7 @@ public class EnemyMove : MonoBehaviour
         }
         if (speed <= 0)
         {
+            Instantiate(particalexplo, pos.transform.position, Quaternion.identity);
             enemy.OilReward();
             Destroy(gameObject);
         }
@@ -135,7 +138,6 @@ public class EnemyMove : MonoBehaviour
         }
         CabinEntersounds();
         enemy.StealOil();
-       // Instantiate(particales,gameObject.transform);
         Destroy(gameObject);
     }
 

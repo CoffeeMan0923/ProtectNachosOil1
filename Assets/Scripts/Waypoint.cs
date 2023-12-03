@@ -18,7 +18,6 @@ public class Waypoint : MonoBehaviour
     public bool isPlaced;
     void Start()
     {
-        isoiler = true;
         tissyselect = FindObjectOfType<Tissieselect>();
         soundmanager = FindObjectOfType<SoundManager>();
     }

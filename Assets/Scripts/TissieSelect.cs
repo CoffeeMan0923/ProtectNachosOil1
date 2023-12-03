@@ -10,6 +10,7 @@ using UnityEngine;
     void Start()
     {
         Oilboy = true;
+        Ballonist = true;
     }
     public void OilboySelected()
     {

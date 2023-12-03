@@ -21,7 +21,6 @@ public class Enemydamage : MonoBehaviour
         enemy = GetComponent<Enemy>();
         currenthp = currenthp + startingHp;
         Spawnsounds();
-        //currenthp--;
 
     }
     void Spawnsounds()
