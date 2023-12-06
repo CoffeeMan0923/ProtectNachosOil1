@@ -11,6 +11,7 @@ public class Cordinates : MonoBehaviour
     Vector2Int cordinates = new Vector2Int();
     TextMeshPro label;
     Gridymanager gridymanager;
+    [SerializeField] bool ispath;
     void Awake()
     {
         
@@ -25,10 +26,10 @@ public class Cordinates : MonoBehaviour
     }
     void Update()
     {
-        if (!Application.isPlaying)
+        if (!Application.isPlaying && !ispath)
         {
-            //updatename();
-           // DisplayCordinates();
+            updatename();
+            DisplayCordinates();
         }
         Colorcordinates();
         Togglelabel();
@@ -70,15 +71,15 @@ public class Cordinates : MonoBehaviour
         
     }
 
-    //void DisplayCordinates()
-    //{
-    //    cordinates.x = Mathf.RoundToInt(transform.parent.position.x / 0.25f);
-    //    cordinates.y = Mathf.RoundToInt(transform.parent.position.z / 0.25f);
-    //    label.text = $"{cordinates.x},{cordinates.y}";
-    //}
+    void DisplayCordinates()
+    {
+        cordinates.x = Mathf.RoundToInt(transform.parent.position.x / 0.25f);
+        cordinates.y = Mathf.RoundToInt(transform.parent.position.z / 0.25f);
+        label.text = $"{cordinates.x},{cordinates.y}";
+    }
 
-    //void updatename()
-    //{
-    //    transform.parent.name=cordinates.ToString();
-    //}
+    void updatename()
+    {
+        transform.parent.name=cordinates.ToString();
+    }
 }

@@ -91,7 +91,7 @@ public class Lookatenemy : MonoBehaviour
             Attack(true);
             particale.gameObject.GetComponent<Collider>().enabled = true;
             PlayAnimationAttack();
-            if (attackLimiter && !isballonist)
+            if (attackLimiter && isoilboy)
             {
                 attackLimiter = false;
                 PlayAttackSound();

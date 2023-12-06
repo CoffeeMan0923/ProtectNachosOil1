@@ -17,7 +17,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!224 &2290226804824211159
 RectTransform:
@@ -189,6 +189,7 @@ MonoBehaviour:
   blokedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   ExploredColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   PathColor: {r: 1, g: 0.5, b: 0, a: 1}
+  ispath: 0
 --- !u!1 &2290226805941507224
 GameObject:
   m_ObjectHideFlags: 0
@@ -205,7 +206,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &2290226805941507225
 Transform:
@@ -241,6 +242,8 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 7902577307684327583, guid: ed7cb7b35eb278a41904a9ae43482fd3, type: 3}
   Ballonist: {fileID: 5366430260883143149, guid: 0bffdc3874f6e124eb1a8ca3ecc3a069, type: 3}
+  OilboyGhost: {fileID: 7902577307684327583, guid: 06c41d27959bf984485d54a2934dafe0, type: 3}
+  BallonistGhost: {fileID: 5366430260883143149, guid: 99ea4d8aa7f48f64f923af68aa17031e, type: 3}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
@@ -274,7 +277,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &2290226806531340652
 Transform:
@@ -398,11 +401,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2239219462717278196, guid: 8268644ef66d0e148bce09f9dea8a666, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7106264444132720429, guid: 8268644ef66d0e148bce09f9dea8a666, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8268644ef66d0e148bce09f9dea8a666, type: 3}

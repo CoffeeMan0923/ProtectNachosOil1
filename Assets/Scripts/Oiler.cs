@@ -7,12 +7,16 @@ public class Oiler : MonoBehaviour
     [SerializeField] int cost = 75;
     [SerializeField] bool isBallonist;
     [SerializeField] bool isOilboy;
+    [SerializeField] bool MakeSpawnSounds = true;
     SoundManager soundManager;
     void Start()
     {
         soundManager = FindObjectOfType<SoundManager>();
-        Invoke("Spawnsounds", 0.7f);
-        moneyspenssound();
+        if (MakeSpawnSounds)
+        {
+            Invoke("Spawnsounds", 0.7f);
+            moneyspenssound();
+        }
     }
     void Spawnsounds()
     {

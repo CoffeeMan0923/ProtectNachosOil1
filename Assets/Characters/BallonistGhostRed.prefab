@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5153525135743741869
 Transform:
   m_ObjectHideFlags: 0
@@ -4838,8 +4838,9 @@ GameObject:
   - component: {fileID: 7380548575072286801}
   - component: {fileID: 5366430260883143149}
   - component: {fileID: -3644443542761989802}
+  - component: {fileID: 5611441022257066853}
   m_Layer: 0
-  m_Name: Ballonist
+  m_Name: BallonistGhostRed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4878,7 +4879,7 @@ MonoBehaviour:
   weapon: {fileID: 4425896800570788448}
   particale: {fileID: 1890632129126221816}
   isoilboy: 0
-  isballonist: 1
+  isballonist: 0
   projectileParticles: {fileID: 950898939296771669}
   AttackSoundPerSecond: 2
 --- !u!114 &5366430260883143149
@@ -4893,10 +4894,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d967aecfdf43d3d4b834e1ff26de3ba6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 150
-  isBallonist: 1
+  cost: 0
+  isBallonist: 0
   isOilboy: 0
-  MakeSpawnSounds: 1
+  MakeSpawnSounds: 0
 --- !u!82 &-3644443542761989802
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4993,6 +4994,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5611441022257066853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5203304494415553978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dabb2585eb92f544b84e5618ebf077d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Timebeforedestroyed: 0.1
 --- !u!1001 &4242752372154183051
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5000,6 +5014,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1824629060139039530}
     m_Modifications:
+    - target: {fileID: -9208723614577387111, guid: 4dd7ec5d501cbed499c5367f22dc4189, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 08e30d028448e2241837ad35e8fc320d, type: 2}
     - target: {fileID: -8679921383154817045, guid: 4dd7ec5d501cbed499c5367f22dc4189, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -5056,10 +5074,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -2037884248300995540, guid: 4dd7ec5d501cbed499c5367f22dc4189, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 08e30d028448e2241837ad35e8fc320d, type: 2}
     - target: {fileID: 919132149155446097, guid: 4dd7ec5d501cbed499c5367f22dc4189, type: 3}
       propertyPath: m_Name
       value: mrballons
       objectReference: {fileID: 0}
+    - target: {fileID: 2342956203822869081, guid: 4dd7ec5d501cbed499c5367f22dc4189, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 08e30d028448e2241837ad35e8fc320d, type: 2}
+    - target: {fileID: 3964350945898810324, guid: 4dd7ec5d501cbed499c5367f22dc4189, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 08e30d028448e2241837ad35e8fc320d, type: 2}
+    - target: {fileID: 4998044866364479450, guid: 4dd7ec5d501cbed499c5367f22dc4189, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 08e30d028448e2241837ad35e8fc320d, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4dd7ec5d501cbed499c5367f22dc4189, type: 3}
 --- !u!1 &3900153682657743066 stripped
