@@ -33,21 +33,11 @@ public class Waypoint : MonoBehaviour
     }
     void Update()
     {
-        if (!timer && hovering && !isclick)
+        if (!timer && hovering)
         {
             isclick = isPlaced;
             timer = true;
             Invoke("SpawnGhost", 0.09f);
-        }
-        else if (!timer && hovering && isclick)
-        {
-            timer = true;
-            Invoke("SpawnGhostRed", 0.09f);
-        }
-        else if(!timer && hovering && moneymissing)
-        {
-            timer = true;
-            Invoke("SpawnGhostRed", 0.09f);
         }
         if (isPlaced == true)
         {
@@ -98,15 +88,25 @@ public class Waypoint : MonoBehaviour
         if (hovering)
         {
             timer = false;
-            if (isoiler && !nomoney1)
+            if (isoiler && !nomoney1 && !isclick)
             {
                 OilboyGhost.CreateOiler(OilboyGhost, gameObject.transform.position);
                 waypoint.isPlacable(isPlaced);
 
             }
-            if (isballonist && !nomoney2)
+            else if (isoiler)
+            {
+                OilboyGhostRed.CreateOiler(OilboyGhostRed, gameObject.transform.position);
+                waypoint.isPlacable(isPlaced);
+            }
+            if (isballonist && !nomoney2 && !isclick)
             {
                 BallonistGhost.CreateOiler(BallonistGhost, gameObject.transform.position);
+                waypoint.isPlacable(isPlaced);
+            }
+            else if (isballonist)
+            {
+                BallonistGhostRed.CreateOiler(BallonistGhostRed, gameObject.transform.position);
                 waypoint.isPlacable(isPlaced);
             }
         }
