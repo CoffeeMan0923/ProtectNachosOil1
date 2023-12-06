@@ -30,9 +30,12 @@ using UnityEngine;
     {
         foreach (Transform child in parent.transform)
         {
-            print("Foreach loop: " + child);
-            child.GetComponent<Waypoint>().isoiler = true;
-            child.GetComponent<Waypoint>().isballonist = false;
+            if(child.GetComponent<Waypoint>() != null)
+            {
+                print("Foreach loop: " + child);
+                child.GetComponent<Waypoint>().isoiler = true;
+                child.GetComponent<Waypoint>().isballonist = false;
+            }
         }
             
        
