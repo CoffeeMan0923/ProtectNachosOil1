@@ -23,6 +23,9 @@ public class Waypoint : MonoBehaviour
     bool hovering;
     bool timer;
     bool isclick;
+    public bool moneymissing;
+    public bool nomoney1;
+    public bool nomoney2;
     void Start()
     {
         tissyselect = FindObjectOfType<Tissieselect>();
@@ -38,7 +41,18 @@ public class Waypoint : MonoBehaviour
         }
         else if (!timer && hovering && isclick)
         {
+            timer = true;
             Invoke("SpawnGhostRed", 0.09f);
+        }
+        else if(!timer && hovering && moneymissing)
+        {
+            timer = true;
+            Invoke("SpawnGhostRed", 0.09f);
+        }
+        if (isPlaced == true)
+        {
+            nomoney1 = true;
+            nomoney2 = true;
         }
     }
     public void isPlacable(bool isPlaced)
@@ -84,13 +98,13 @@ public class Waypoint : MonoBehaviour
         if (hovering)
         {
             timer = false;
-            if (isoiler)
+            if (isoiler && !nomoney1)
             {
                 OilboyGhost.CreateOiler(OilboyGhost, gameObject.transform.position);
                 waypoint.isPlacable(isPlaced);
 
             }
-            if (isballonist)
+            if (isballonist && !nomoney2)
             {
                 BallonistGhost.CreateOiler(BallonistGhost, gameObject.transform.position);
                 waypoint.isPlacable(isPlaced);
@@ -103,13 +117,13 @@ public class Waypoint : MonoBehaviour
         if (hovering)
         {
             timer = false;
-            if (isoiler)
+            if (isoiler && nomoney1)
             {
                 OilboyGhostRed.CreateOiler(OilboyGhostRed, gameObject.transform.position);
                 waypoint.isPlacable(isPlaced);
 
             }
-            if (isballonist)
+            if (isballonist && nomoney2)
             {
                 BallonistGhostRed.CreateOiler(BallonistGhostRed, gameObject.transform.position);
                 waypoint.isPlacable(isPlaced);

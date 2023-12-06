@@ -5,6 +5,7 @@ using TMPro;
 
 public class Bank : MonoBehaviour
 {
+    [SerializeField] Tissieselect tissieselect;
     [SerializeField] TextMeshProUGUI oildisplay;
     [SerializeField] int oilreward = 25;
     [SerializeField] int oilpenalty = 25;
@@ -53,6 +54,7 @@ public class Bank : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        tissieselect.Cash(currentBalance);
         UpdateOil();
         if (currentBalance <= 0)
         {

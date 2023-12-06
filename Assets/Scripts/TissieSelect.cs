@@ -7,10 +7,61 @@ using UnityEngine;
     bool Oilboy;
     bool Ballonist;
     [SerializeField] GameObject parent;
+    int mon;
     void Start()
     {
         Oilboy = true;
         Ballonist = true;
+    }
+    public void Cash(int money)
+    {
+        mon = money;
+        if (money < 75)
+        {
+            foreach (Transform child in parent.transform)
+            {
+                if (child.GetComponent<Waypoint>() != null && child.GetComponent<Waypoint>().isPlaced == false)
+                {
+                    child.GetComponent<Waypoint>().nomoney1 = true;
+
+                }
+            }
+        }
+        else
+        {
+            foreach (Transform child in parent.transform)
+            {
+                if (child.GetComponent<Waypoint>() != null && child.GetComponent<Waypoint>().isPlaced == false)
+                {
+                    child.GetComponent<Waypoint>().nomoney1 = false;
+
+                }
+            }
+        }
+        if(money < 150)
+        {
+            foreach (Transform child in parent.transform)
+            {
+                if (child.GetComponent<Waypoint>() != null && child.GetComponent<Waypoint>().isPlaced == false)
+                {
+                    child.GetComponent<Waypoint>().moneymissing = true;
+                    child.GetComponent<Waypoint>().nomoney2 = true;
+
+                }
+            }
+        }
+        else
+        {
+            foreach (Transform child in parent.transform)
+            {
+                if (child.GetComponent<Waypoint>() != null && child.GetComponent<Waypoint>().isPlaced == false)
+                {
+                    child.GetComponent<Waypoint>().moneymissing = false;
+                    child.GetComponent<Waypoint>().nomoney2 = false;
+
+                }
+            }
+        }
     }
     public void OilboySelected()
     {
@@ -21,8 +72,8 @@ using UnityEngine;
 
     public void BallonistSelected()
     {
-        Ballonist=true;
-        Oilboy=false;
+        Ballonist = true;
+        Oilboy = false;
         Ballonistloop();
 
     }
@@ -44,9 +95,12 @@ using UnityEngine;
     {
         foreach (Transform child in parent.transform)
         {
-            print("Foreach loop: " + child);
-            child.GetComponent<Waypoint>().isballonist = true;
-            child.GetComponent<Waypoint>().isoiler = false;
+            if (child.GetComponent<Waypoint>() != null)
+            {
+                print("Foreach loop: " + child);
+                child.GetComponent<Waypoint>().isoiler = false;
+                child.GetComponent<Waypoint>().isballonist = true;
+            }
         }
 
 
@@ -54,7 +108,7 @@ using UnityEngine;
 
     void Update()
     {
-        
+        Cash(mon);
     }
 
 

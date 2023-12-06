@@ -3989,10 +3989,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 286914ba3a7eb9f499e2e7e4b4815399, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tissieselect: {fileID: 46076627}
   oildisplay: {fileID: 1983202904}
   oilreward: 25
   oilpenalty: 0
-  startingBalance: 2250
+  startingBalance: 225
   currentBalance: 0
   Minus75: {fileID: 5361682274978432422, guid: b19b5e9592eae7c42874934725c46790, type: 3}
   Minus150: {fileID: 5361682274978432422, guid: 151079cd0b64ae3498a0a661982949b0, type: 3}
