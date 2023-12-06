@@ -244,8 +244,6 @@ MonoBehaviour:
   Ballonist: {fileID: 5366430260883143149, guid: 0bffdc3874f6e124eb1a8ca3ecc3a069, type: 3}
   OilboyGhost: {fileID: 7902577307684327583, guid: 06c41d27959bf984485d54a2934dafe0, type: 3}
   BallonistGhost: {fileID: 5366430260883143149, guid: 99ea4d8aa7f48f64f923af68aa17031e, type: 3}
-  OilboyGhostRed: {fileID: 7902577307684327583, guid: 31cd8457550003344baef2973aa5cc1a, type: 3}
-  BallonistGhostRed: {fileID: 5366430260883143149, guid: ad7dcdf79dc21f340bf31578a18b90f1, type: 3}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
