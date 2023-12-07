@@ -49,7 +49,10 @@ public class Enemydamage : MonoBehaviour
     void OnParticleCollision(GameObject other)
     {
         currenthp = currenthp - oildamage;
-        PlayDamageSound();
+        
+        
+            PlayDamageSound();
+        
 
         if(other.tag == "ballons")
         {

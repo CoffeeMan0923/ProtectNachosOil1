@@ -5075,6 +5075,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 286914ba3a7eb9f499e2e7e4b4815399, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tissieselect: {fileID: 0}
   oildisplay: {fileID: 1983202904}
   oilreward: 25
   oilpenalty: 0
@@ -6841,9 +6842,14 @@ MonoBehaviour:
   Ballonist: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
+  moneymissing: 0
+  nomoney1: 0
+  nomoney2: 0
   Placed: 0
 --- !u!4 &216849496 stripped
 Transform:
@@ -13326,9 +13332,14 @@ MonoBehaviour:
   Ballonist: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
+  moneymissing: 0
+  nomoney1: 0
+  nomoney2: 0
   Placed: 0
 --- !u!1001 &469482031
 PrefabInstance:
@@ -15029,9 +15040,14 @@ MonoBehaviour:
   Ballonist: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
+  moneymissing: 0
+  nomoney1: 0
+  nomoney2: 0
   Placed: 0
 --- !u!1001 &513652705
 PrefabInstance:
@@ -17207,9 +17223,14 @@ MonoBehaviour:
   Ballonist: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
+  moneymissing: 0
+  nomoney1: 0
+  nomoney2: 0
   Placed: 0
 --- !u!1001 &584969706
 PrefabInstance:
@@ -23303,9 +23324,14 @@ MonoBehaviour:
   Ballonist: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
+  moneymissing: 0
+  nomoney1: 0
+  nomoney2: 0
   Placed: 0
 --- !u!1001 &815116696
 PrefabInstance:
@@ -24597,9 +24623,14 @@ MonoBehaviour:
   Ballonist: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
+  moneymissing: 0
+  nomoney1: 0
+  nomoney2: 0
   Placed: 0
 --- !u!1001 &888781299
 PrefabInstance:
@@ -26298,9 +26329,14 @@ MonoBehaviour:
   Ballonist: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
+  moneymissing: 0
+  nomoney1: 0
+  nomoney2: 0
   Placed: 0
 --- !u!4 &984918156 stripped
 Transform:
@@ -27011,9 +27047,14 @@ MonoBehaviour:
   Ballonist: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
+  moneymissing: 0
+  nomoney1: 0
+  nomoney2: 0
   Placed: 0
 --- !u!1001 &1013810383
 PrefabInstance:
@@ -27898,281 +27939,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2290226805941507225, guid: 09137f1d0b912e447b94a3c4ef6eeec4, type: 3}
   m_PrefabInstance: {fileID: 798639330}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1032081632
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1032081635}
-  - component: {fileID: 1032081634}
-  - component: {fileID: 1032081633}
-  - component: {fileID: 1032081636}
-  m_Layer: 0
-  m_Name: SoundManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 18
-  m_IsActive: 1
---- !u!82 &1032081633
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1032081632}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!114 &1032081634
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1032081632}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 725739bddb8fce542bca7dd48afa52d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ballonistSpawnSounds:
-  - {fileID: 8300000, guid: 4a45d56850f44d54ca21062c3f5f4277, type: 3}
-  - {fileID: 8300000, guid: bfa91dbd8d84bb447a7763f1a123fe87, type: 3}
-  penguinDamageSounds:
-  - {fileID: 8300000, guid: f03c42aff56e29344bea87884d24cf3f, type: 3}
-  - {fileID: 8300000, guid: 086e611664758604689e0c2e8277483d, type: 3}
-  - {fileID: 8300000, guid: 63a45dfaa4e7eb1438641571b5444e8d, type: 3}
-  batistaDamageSounds:
-  - {fileID: 8300000, guid: bddbc69447ddc8740a29f48d19fedbec, type: 3}
-  - {fileID: 8300000, guid: 3962c90cbcc5ecc4982d269d2db31465, type: 3}
-  - {fileID: 8300000, guid: 567d65106201f2943bd08ca3a64b393e, type: 3}
-  oilboySpawnSounds:
-  - {fileID: 8300000, guid: 7a9b6d7f952dd0547a6520e27aec28d8, type: 3}
-  - {fileID: 8300000, guid: d4c11061d38a5e14dab0a0765e134ce9, type: 3}
-  oilboyAttackSounds:
-  - {fileID: 8300000, guid: 57322fa0f6b313a42953d4dc50ca1980, type: 3}
-  - {fileID: 8300000, guid: 2c1ea3246f32c8040a49edffdbfd071d, type: 3}
-  - {fileID: 8300000, guid: dbb7736a22098784bb2b2b063fe48f90, type: 3}
-  ballonistAttackSounds:
-  - {fileID: 8300000, guid: d578db532b336fd419ab5e176136b975, type: 3}
-  cabinDamaged:
-  - {fileID: 8300000, guid: c5925c10975586244aff32bcf501c48b, type: 3}
-  - {fileID: 8300000, guid: 7088ac8f1f556f04ba10fa9f2b748f8a, type: 3}
-  - {fileID: 8300000, guid: f556fd3ae1ac0b34a89919bb8a5b2d87, type: 3}
-  songs:
-  - {fileID: 8300000, guid: 2160e79ea50a2064d8ddae3563742758, type: 3}
-  - {fileID: 8300000, guid: 3ca62686597417c47ba84498f0b8214f, type: 3}
-  - {fileID: 8300000, guid: 84512c79e28b06c48885afdac9dd9b8a, type: 3}
-  penguinSpawnSound: {fileID: 8300000, guid: 2c2b523ee111d914981f0db4da82b0bc, type: 3}
-  CabinExplode: {fileID: 8300000, guid: 0f2a395e9e7d9bd418ea3cbc5e4a5f98, type: 3}
-  CabinTissysDestroyed: {fileID: 8300000, guid: 521708685d6ef7d4d935ed2cd63b7b0e, type: 3}
-  batistaSpawnSound: {fileID: 8300000, guid: f2c48186be303674f821e9a2bfa8280d, type: 3}
-  batistacabinSound: {fileID: 8300000, guid: f26baa510687e3a44977a45fb04f58a5, type: 3}
-  penguincabinSound: {fileID: 8300000, guid: eebdcdca03f0c6148af9691b6d1aa936, type: 3}
-  bloodImpactSound: {fileID: 8300000, guid: 63bf105be1bdaad44a0b92c3efd1e3ca, type: 3}
-  moneySpendSound: {fileID: 8300000, guid: 32c2191f6bf9d4b4887573e9451c14dc, type: 3}
-  Rickroll: {fileID: 8300000, guid: a8337927a64821846a89f2c18b16ac47, type: 3}
---- !u!4 &1032081635
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1032081632}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 35, y: 8.59, z: 24.71}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &1032081636
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1032081632}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 1
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1001 &1036165427
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29095,9 +28861,14 @@ MonoBehaviour:
   Ballonist: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
+  moneymissing: 0
+  nomoney1: 0
+  nomoney2: 0
   Placed: 0
 --- !u!4 &1056723869 stripped
 Transform:
@@ -29122,9 +28893,14 @@ MonoBehaviour:
   Ballonist: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
+  moneymissing: 0
+  nomoney1: 0
+  nomoney2: 0
   Placed: 0
 --- !u!1001 &1056906589
 PrefabInstance:
@@ -29944,9 +29720,14 @@ MonoBehaviour:
   Ballonist: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
+  moneymissing: 0
+  nomoney1: 0
+  nomoney2: 0
   Placed: 0
 --- !u!4 &1085097118 stripped
 Transform:
@@ -29971,9 +29752,14 @@ MonoBehaviour:
   Ballonist: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
+  moneymissing: 0
+  nomoney1: 0
+  nomoney2: 0
   Placed: 0
 --- !u!1001 &1087492949
 PrefabInstance:
@@ -30197,9 +29983,14 @@ MonoBehaviour:
   Ballonist: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
+  moneymissing: 0
+  nomoney1: 0
+  nomoney2: 0
   Placed: 0
 --- !u!1001 &1088974079
 PrefabInstance:
@@ -31199,9 +30990,14 @@ MonoBehaviour:
   Ballonist: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
+  moneymissing: 0
+  nomoney1: 0
+  nomoney2: 0
   Placed: 0
 --- !u!1001 &1125563334
 PrefabInstance:
@@ -31732,9 +31528,14 @@ MonoBehaviour:
   Ballonist: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
+  moneymissing: 0
+  nomoney1: 0
+  nomoney2: 0
   Placed: 0
 --- !u!1001 &1144946790
 PrefabInstance:
@@ -32060,9 +31861,14 @@ MonoBehaviour:
   Ballonist: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
+  moneymissing: 0
+  nomoney1: 0
+  nomoney2: 0
   Placed: 0
 --- !u!4 &1154946586 stripped
 Transform:
@@ -33440,9 +33246,14 @@ MonoBehaviour:
   Ballonist: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
+  moneymissing: 0
+  nomoney1: 0
+  nomoney2: 0
   Placed: 0
 --- !u!1001 &1207053252
 PrefabInstance:
@@ -34653,9 +34464,14 @@ MonoBehaviour:
   Ballonist: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
+  moneymissing: 0
+  nomoney1: 0
+  nomoney2: 0
   Placed: 0
 --- !u!4 &1256887985 stripped
 Transform:
@@ -36046,9 +35862,14 @@ MonoBehaviour:
   Ballonist: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
+  moneymissing: 0
+  nomoney1: 0
+  nomoney2: 0
   Placed: 0
 --- !u!4 &1317501835 stripped
 Transform:
@@ -36073,9 +35894,14 @@ MonoBehaviour:
   Ballonist: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
+  moneymissing: 0
+  nomoney1: 0
+  nomoney2: 0
   Placed: 0
 --- !u!4 &1318585077 stripped
 Transform:
@@ -36587,9 +36413,14 @@ MonoBehaviour:
   Ballonist: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
+  moneymissing: 0
+  nomoney1: 0
+  nomoney2: 0
   Placed: 0
 --- !u!1001 &1359282517
 PrefabInstance:
@@ -36716,9 +36547,14 @@ MonoBehaviour:
   Ballonist: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
+  moneymissing: 0
+  nomoney1: 0
+  nomoney2: 0
   Placed: 0
 --- !u!4 &1360638422 stripped
 Transform:
@@ -37662,9 +37498,14 @@ MonoBehaviour:
   Ballonist: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
+  moneymissing: 0
+  nomoney1: 0
+  nomoney2: 0
   Placed: 0
 --- !u!1001 &1398077911
 PrefabInstance:
@@ -37806,9 +37647,14 @@ MonoBehaviour:
   Ballonist: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
+  moneymissing: 0
+  nomoney1: 0
+  nomoney2: 0
   Placed: 0
 --- !u!1001 &1411118119
 PrefabInstance:
@@ -38706,9 +38552,14 @@ MonoBehaviour:
   Ballonist: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
+  moneymissing: 0
+  nomoney1: 0
+  nomoney2: 0
   Placed: 0
 --- !u!1001 &1436560008
 PrefabInstance:
@@ -39152,9 +39003,14 @@ MonoBehaviour:
   Ballonist: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
+  moneymissing: 0
+  nomoney1: 0
+  nomoney2: 0
   Placed: 0
 --- !u!1 &1443160952
 GameObject:
@@ -39913,9 +39769,14 @@ MonoBehaviour:
   Ballonist: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
+  moneymissing: 0
+  nomoney1: 0
+  nomoney2: 0
   Placed: 0
 --- !u!1001 &1460205203
 PrefabInstance:
@@ -41460,9 +41321,14 @@ MonoBehaviour:
   Ballonist: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
+  moneymissing: 0
+  nomoney1: 0
+  nomoney2: 0
   Placed: 0
 --- !u!1001 &1525559767
 PrefabInstance:
@@ -42021,9 +41887,14 @@ MonoBehaviour:
   Ballonist: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
+  moneymissing: 0
+  nomoney1: 0
+  nomoney2: 0
   Placed: 0
 --- !u!4 &1554491000 stripped
 Transform:
@@ -42443,9 +42314,14 @@ MonoBehaviour:
   Ballonist: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
+  moneymissing: 0
+  nomoney1: 0
+  nomoney2: 0
   Placed: 0
 --- !u!4 &1576266467 stripped
 Transform:
@@ -42582,9 +42458,14 @@ MonoBehaviour:
   Ballonist: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
+  moneymissing: 0
+  nomoney1: 0
+  nomoney2: 0
   Placed: 0
 --- !u!1001 &1591987445
 PrefabInstance:
@@ -43544,9 +43425,14 @@ MonoBehaviour:
   Ballonist: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
+  moneymissing: 0
+  nomoney1: 0
+  nomoney2: 0
   Placed: 0
 --- !u!4 &1610519416 stripped
 Transform:
@@ -44850,9 +44736,14 @@ MonoBehaviour:
   Ballonist: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
+  moneymissing: 0
+  nomoney1: 0
+  nomoney2: 0
   Placed: 0
 --- !u!4 &1668215553 stripped
 Transform:
@@ -45427,9 +45318,14 @@ MonoBehaviour:
   Ballonist: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
+  moneymissing: 0
+  nomoney1: 0
+  nomoney2: 0
   Placed: 0
 --- !u!4 &1694572348 stripped
 Transform:
@@ -45789,9 +45685,14 @@ MonoBehaviour:
   Ballonist: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
+  moneymissing: 0
+  nomoney1: 0
+  nomoney2: 0
   Placed: 0
 --- !u!4 &1706954998 stripped
 Transform:
@@ -45821,9 +45722,14 @@ MonoBehaviour:
   Ballonist: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
+  moneymissing: 0
+  nomoney1: 0
+  nomoney2: 0
   Placed: 0
 --- !u!4 &1711182511 stripped
 Transform:
@@ -45853,9 +45759,14 @@ MonoBehaviour:
   Ballonist: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
+  moneymissing: 0
+  nomoney1: 0
+  nomoney2: 0
   Placed: 0
 --- !u!4 &1713966716 stripped
 Transform:
@@ -45880,9 +45791,14 @@ MonoBehaviour:
   Ballonist: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
+  moneymissing: 0
+  nomoney1: 0
+  nomoney2: 0
   Placed: 0
 --- !u!4 &1714631139 stripped
 Transform:
@@ -46318,9 +46234,14 @@ MonoBehaviour:
   Ballonist: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
+  moneymissing: 0
+  nomoney1: 0
+  nomoney2: 0
   Placed: 0
 --- !u!1001 &1734629607
 PrefabInstance:
@@ -46447,9 +46368,14 @@ MonoBehaviour:
   Ballonist: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
+  moneymissing: 0
+  nomoney1: 0
+  nomoney2: 0
   Placed: 0
 --- !u!4 &1737848797 stripped
 Transform:
@@ -46660,9 +46586,14 @@ MonoBehaviour:
   Ballonist: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
+  moneymissing: 0
+  nomoney1: 0
+  nomoney2: 0
   Placed: 0
 --- !u!1001 &1746156008
 PrefabInstance:
@@ -47388,9 +47319,14 @@ MonoBehaviour:
   Ballonist: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
+  moneymissing: 0
+  nomoney1: 0
+  nomoney2: 0
   Placed: 0
 --- !u!1001 &1761394126
 PrefabInstance:
@@ -47627,9 +47563,14 @@ MonoBehaviour:
   Ballonist: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
+  moneymissing: 0
+  nomoney1: 0
+  nomoney2: 0
   Placed: 0
 --- !u!1001 &1773857709
 PrefabInstance:
@@ -48470,9 +48411,14 @@ MonoBehaviour:
   Ballonist: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
+  moneymissing: 0
+  nomoney1: 0
+  nomoney2: 0
   Placed: 0
 --- !u!1001 &1793461686
 PrefabInstance:
@@ -48713,9 +48659,14 @@ MonoBehaviour:
   Ballonist: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
+  moneymissing: 0
+  nomoney1: 0
+  nomoney2: 0
   Placed: 0
 --- !u!1001 &1801160765
 PrefabInstance:
@@ -49091,9 +49042,14 @@ MonoBehaviour:
   Ballonist: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
+  moneymissing: 0
+  nomoney1: 0
+  nomoney2: 0
   Placed: 0
 --- !u!4 &1820893619 stripped
 Transform:
@@ -49290,9 +49246,14 @@ MonoBehaviour:
   Ballonist: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
+  moneymissing: 0
+  nomoney1: 0
+  nomoney2: 0
   Placed: 0
 --- !u!4 &1834453276 stripped
 Transform:
@@ -49871,9 +49832,14 @@ MonoBehaviour:
   Ballonist: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
+  moneymissing: 0
+  nomoney1: 0
+  nomoney2: 0
   Placed: 0
 --- !u!4 &1849019237 stripped
 Transform:
@@ -50015,9 +49981,14 @@ MonoBehaviour:
   Ballonist: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
+  moneymissing: 0
+  nomoney1: 0
+  nomoney2: 0
   Placed: 0
 --- !u!1001 &1862118023
 PrefabInstance:
@@ -50351,9 +50322,14 @@ MonoBehaviour:
   Ballonist: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
+  moneymissing: 0
+  nomoney1: 0
+  nomoney2: 0
   Placed: 0
 --- !u!1001 &1869768012
 PrefabInstance:
@@ -50606,9 +50582,14 @@ MonoBehaviour:
   Ballonist: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
+  moneymissing: 0
+  nomoney1: 0
+  nomoney2: 0
   Placed: 0
 --- !u!4 &1880515816 stripped
 Transform:
@@ -51470,9 +51451,14 @@ MonoBehaviour:
   Ballonist: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
+  moneymissing: 0
+  nomoney1: 0
+  nomoney2: 0
   Placed: 0
 --- !u!1001 &1904712931
 PrefabInstance:
@@ -51807,9 +51793,14 @@ MonoBehaviour:
   Ballonist: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
+  moneymissing: 0
+  nomoney1: 0
+  nomoney2: 0
   Placed: 0
 --- !u!1001 &1910962794
 PrefabInstance:
@@ -51936,9 +51927,14 @@ MonoBehaviour:
   Ballonist: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
+  moneymissing: 0
+  nomoney1: 0
+  nomoney2: 0
   Placed: 0
 --- !u!4 &1918820843 stripped
 Transform:
@@ -51968,9 +51964,14 @@ MonoBehaviour:
   Ballonist: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
+  moneymissing: 0
+  nomoney1: 0
+  nomoney2: 0
   Placed: 0
 --- !u!1001 &1922161050
 PrefabInstance:
@@ -52652,9 +52653,14 @@ MonoBehaviour:
   Ballonist: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
+  moneymissing: 0
+  nomoney1: 0
+  nomoney2: 0
   Placed: 0
 --- !u!1001 &1957023681
 PrefabInstance:
@@ -53433,9 +53439,14 @@ MonoBehaviour:
   Ballonist: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
+  moneymissing: 0
+  nomoney1: 0
+  nomoney2: 0
   Placed: 0
 --- !u!4 &1992753658 stripped
 Transform:
@@ -53572,9 +53583,14 @@ MonoBehaviour:
   Ballonist: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
+  moneymissing: 0
+  nomoney1: 0
+  nomoney2: 0
   Placed: 0
 --- !u!4 &1994671511 stripped
 Transform:
@@ -54032,9 +54048,14 @@ MonoBehaviour:
   Ballonist: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
+  moneymissing: 0
+  nomoney1: 0
+  nomoney2: 0
   Placed: 0
 --- !u!1001 &2029608464
 PrefabInstance:
@@ -54767,9 +54788,14 @@ MonoBehaviour:
   Ballonist: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
+  moneymissing: 0
+  nomoney1: 0
+  nomoney2: 0
   Placed: 0
 --- !u!1001 &2051776457
 PrefabInstance:
@@ -55206,9 +55232,14 @@ MonoBehaviour:
   Ballonist: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
+  moneymissing: 0
+  nomoney1: 0
+  nomoney2: 0
   Placed: 0
 --- !u!1001 &2066336846
 PrefabInstance:
@@ -55906,9 +55937,14 @@ MonoBehaviour:
   Ballonist: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
+  moneymissing: 0
+  nomoney1: 0
+  nomoney2: 0
   Placed: 0
 --- !u!4 &2085027656 stripped
 Transform:
@@ -56050,9 +56086,14 @@ MonoBehaviour:
   Ballonist: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
+  moneymissing: 0
+  nomoney1: 0
+  nomoney2: 0
   Placed: 0
 --- !u!4 &2090301857 stripped
 Transform:
@@ -56253,9 +56294,14 @@ MonoBehaviour:
   Ballonist: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
+  moneymissing: 0
+  nomoney1: 0
+  nomoney2: 0
   Placed: 0
 --- !u!1001 &2093403234
 PrefabInstance:
@@ -56479,9 +56525,14 @@ MonoBehaviour:
   Ballonist: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
+  moneymissing: 0
+  nomoney1: 0
+  nomoney2: 0
   Placed: 0
 --- !u!1001 &2101745252
 PrefabInstance:
@@ -57089,9 +57140,14 @@ MonoBehaviour:
   Ballonist: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
+  moneymissing: 0
+  nomoney1: 0
+  nomoney2: 0
   Placed: 0
 --- !u!1001 &2121216687
 PrefabInstance:
@@ -57218,9 +57274,14 @@ MonoBehaviour:
   Ballonist: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
+  moneymissing: 0
+  nomoney1: 0
+  nomoney2: 0
   Placed: 0
 --- !u!4 &2124897631 stripped
 Transform:
@@ -57352,9 +57413,14 @@ MonoBehaviour:
   Ballonist: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
+  moneymissing: 0
+  nomoney1: 0
+  nomoney2: 0
   Placed: 0
 --- !u!4 &2133563244 stripped
 Transform:
@@ -57491,9 +57557,14 @@ MonoBehaviour:
   Ballonist: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
   isPlaced: 0
+  moneymissing: 0
+  nomoney1: 0
+  nomoney2: 0
   Placed: 0
 --- !u!1001 &2137543603
 PrefabInstance:
@@ -57800,3 +57871,60 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9ae4ebed9fee6b45bf88b74f2b01f7b, type: 3}
+--- !u!1001 &7504093938459204260
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7504093937578117700, guid: 681f6b95eefddea4995be20266d09f19, type: 3}
+      propertyPath: m_Name
+      value: SoundManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 7504093937578117703, guid: 681f6b95eefddea4995be20266d09f19, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7504093937578117703, guid: 681f6b95eefddea4995be20266d09f19, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 7504093937578117703, guid: 681f6b95eefddea4995be20266d09f19, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 8.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 7504093937578117703, guid: 681f6b95eefddea4995be20266d09f19, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 24.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 7504093937578117703, guid: 681f6b95eefddea4995be20266d09f19, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7504093937578117703, guid: 681f6b95eefddea4995be20266d09f19, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7504093937578117703, guid: 681f6b95eefddea4995be20266d09f19, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7504093937578117703, guid: 681f6b95eefddea4995be20266d09f19, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7504093937578117703, guid: 681f6b95eefddea4995be20266d09f19, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7504093937578117703, guid: 681f6b95eefddea4995be20266d09f19, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7504093937578117703, guid: 681f6b95eefddea4995be20266d09f19, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 681f6b95eefddea4995be20266d09f19, type: 3}

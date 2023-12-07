@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -13,6 +14,7 @@ public class Objectpool : MonoBehaviour
     [SerializeField] GameObject[] enemys;
     [SerializeField] GameObject enemyprefab;
     [SerializeField] float sapwntimer = 1f;
+    [SerializeField] TextMeshProUGUI TextRound;
     Enemydamage enemydamage;
     bool istime;
     int Batistakin = 0;
@@ -58,6 +60,7 @@ public class Objectpool : MonoBehaviour
         {
           
             round++;
+            TextRound.text = "Round:" + round;
             roundTransition = false;
             enemystospawwn = roundenemies;
             roundenemies++;

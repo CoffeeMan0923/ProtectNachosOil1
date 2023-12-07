@@ -11,6 +11,7 @@ public class Bank : MonoBehaviour
     [SerializeField] int oilpenalty = 25;
     [SerializeField] int startingBalance = 150;
     [SerializeField]int currentBalance;
+    SoundManager soundManager;
     public int CurrenBalance {get {return currentBalance;} }
 
     // Start is called before the first frame update
@@ -19,11 +20,13 @@ public class Bank : MonoBehaviour
     public GameObject Plus25;
     void Start()
     {
+        soundManager = FindObjectOfType<SoundManager>();
         currentBalance = startingBalance;
         UpdateOil();
     }
     public void Deposit(int amount)
     {
+        soundManager.PlayMoneyGetSound();
         Instantiate(Plus25);
         UpdateOil();
         currentBalance += Mathf.Abs(amount);

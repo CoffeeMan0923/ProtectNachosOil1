@@ -7,9 +7,11 @@ using UnityEngine;
     bool Oilboy;
     bool Ballonist;
     [SerializeField] GameObject parent;
+    SoundManager soundManager;
     int mon;
     void Start()
     {
+        soundManager = FindObjectOfType<SoundManager>();
         Oilboy = true;
         Ballonist = true;
     }
@@ -65,6 +67,10 @@ using UnityEngine;
     }
     public void OilboySelected()
     {
+        if (soundManager != null)
+        {
+            soundManager.PlayCharacterButtonPresedSound();
+        }
         Oilboy = true;
         Ballonist = false;
         Oilboyloop();
@@ -72,6 +78,10 @@ using UnityEngine;
 
     public void BallonistSelected()
     {
+        if (soundManager != null)
+        {
+            soundManager.PlayCharacterButtonPresedSound();
+        }
         Ballonist = true;
         Oilboy = false;
         Ballonistloop();
