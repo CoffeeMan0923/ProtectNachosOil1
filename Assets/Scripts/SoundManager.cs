@@ -16,6 +16,9 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private AudioClip[] songs;
     [SerializeField] private AudioClip[] CharacterSelectSound;
     [SerializeField] private AudioClip[] moneyGetSound;
+    [SerializeField] private AudioClip[] TruckKnucklesSpawnSounds;
+    [SerializeField] private AudioClip[] PakageSound;
+    [SerializeField] private AudioClip TruckCall;
     [SerializeField] private AudioClip penguinSpawnSound;
     [SerializeField] private AudioClip CabinExplode;
     [SerializeField] private AudioClip CabinTissysDestroyed;
@@ -85,7 +88,7 @@ public class SoundManager : MonoBehaviour
     }
     public void PlayMoneyGetSound()
     {
-        Sound = moneyGetSound[Random.Range(0, moneyGetSound.Length)];
+        Sound = moneyGetSound[Random.Range(0, moneyGetSound .Length)];
         source.PlayOneShot(Sound);
     }
     public void CabinDamaged()
@@ -151,5 +154,20 @@ public class SoundManager : MonoBehaviour
             currentSongIndex = 0;
         }
     }
+    public void CallTruckKnuckles()
+    {
+        source.PlayOneShot(TruckCall);
+    }
+    public void PlayPakageSound()
+    {
+        Sound = PakageSound[Random.Range(0, PakageSound.Length)];
+        source.PlayOneShot(Sound);
+    }
+    public void TruckKnucklesSpawnLine()
+    {
+        Sound = TruckKnucklesSpawnSounds[Random.Range(0, TruckKnucklesSpawnSounds.Length)];
+        source.PlayOneShot(Sound);
+    }
+
 }
 

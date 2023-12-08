@@ -15,40 +15,89 @@ public class TruckPath : MonoBehaviour
     [SerializeField] bool ispenguin;
     [SerializeField] bool isbatista;
     [SerializeField] float BallonistSlowRate = 0.005f;
+    [SerializeField] float startingTruckHp;
+    [SerializeField] float currentTruckHp;
+    [SerializeField] Animator animator;
+    public int DudesinRange;
+    public bool isinrange;
     bool StopAuraSFX;
     float originalspeed;
-    float ranspeed;
+    float enemyhp;
     int isballoned;
     Enemy enemy;
     Vector3 originalPos;
+    public bool timer;
     float movePercent;
     void Start()
     {
+        currentTruckHp = startingTruckHp;
         originalPos = transform.position;
         soundManager = FindObjectOfType<SoundManager>();
-        if (moveRandom)
-        {
-            originalspeed = Random.Range(minSpeedRan, speed);
-            speed = originalspeed;
-        }
-        else if (!moveRandom)
-        {
-            originalspeed = speed;
-        }
+        originalspeed = speed;
+        
         FindPath();
         StartCoroutine(printwatpoint());
         enemy = GetComponent<Enemy>();
     }
-    void Update()
+    void OnCollisionEnter(Collision collision)
     {
-        if (speed <= 0)
+        if(collision.gameObject.GetComponent<Enemydamage>() != null && collision.gameObject.tag != "Penguin")
         {
-            enemy.OilReward();
-            Destroy(gameObject);
+            enemyhp = collision.gameObject.GetComponent<Enemydamage>().currenthp;
+            enemyhp = enemyhp / enemyhp;
+            currentTruckHp = currentTruckHp - enemyhp;
+        }
+        else if(collision.gameObject.GetComponent<Enemydamage>() != null)
+        {
+            currentTruckHp = currentTruckHp - currentTruckHp + 1;
         }
 
-        //transform.position = Vector3.Lerp(originalPos, path[path.Count - 1].transform.position, movePercent);
-        //movePercent += Time.deltaTime * speed;
+
+
+    }
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Batista" || other.tag == "Penguin")
+        {
+            isinrange = false;
+            animator.Play("Knuckles");
+            speed = speed - speed;
+            DudesinRange++;
+            Invoke("runanim", 1);
+            soundManager.PlayPakageSound();
+        }
+
+
+
+    }
+    void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Batista" || other.tag == "Penguin")
+        {
+            DudesinRange--;
+            
+        }
+    }
+    void runanim()
+    {
+        DudesinRange--;
+       // speed = originalspeed;
+      //  timer = false;
+      //  isinrange=false;
+        //animator.Play("Run");
+    }
+    void Update()
+    {
+        if(currentTruckHp < 1)
+        {
+            Destroy(gameObject);
+        }
+        if (DudesinRange <= 0)
+        {
+            speed = 2;
+           //timer = true;
+           //Invoke("runanim", 0.5f);
+        }
     }
     void FindPath()
     {
@@ -70,10 +119,7 @@ public class TruckPath : MonoBehaviour
                     path[j + 1] = tempVar;
                 }
     }
-    void OnCollisionEnter(Collision collision)
-    {
-        
-    }
+    
     void CabinEntersounds()
     {
         if (ispenguin)

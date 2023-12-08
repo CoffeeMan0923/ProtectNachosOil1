@@ -4,16 +4,13 @@ using Unity.VisualScripting;
 using UnityEngine;
  public class Tissieselect : MonoBehaviour
 {
-    bool Oilboy;
-    bool Ballonist;
+
     [SerializeField] GameObject parent;
     SoundManager soundManager;
     int mon;
     void Start()
     {
         soundManager = FindObjectOfType<SoundManager>();
-        Oilboy = true;
-        Ballonist = true;
     }
     public void Cash(int money)
     {
@@ -46,7 +43,6 @@ using UnityEngine;
             {
                 if (child.GetComponent<Waypoint>() != null && child.GetComponent<Waypoint>().isPlaced == false)
                 {
-                    child.GetComponent<Waypoint>().moneymissing = true;
                     child.GetComponent<Waypoint>().nomoney2 = true;
 
                 }
@@ -58,8 +54,31 @@ using UnityEngine;
             {
                 if (child.GetComponent<Waypoint>() != null && child.GetComponent<Waypoint>().isPlaced == false)
                 {
-                    child.GetComponent<Waypoint>().moneymissing = false;
                     child.GetComponent<Waypoint>().nomoney2 = false;
+
+                }
+            }
+        }
+        if (money < 500)
+        {
+            foreach (Transform child in parent.transform)
+            {
+                if (child.GetComponent<Waypoint>() != null && child.GetComponent<Waypoint>().isPlaced == false)
+                {
+                    child.GetComponent<Waypoint>().moneymissing = true;
+                    child.GetComponent<Waypoint>().nomoney3 = true;
+
+                }
+            }
+        }
+        else
+        {
+            foreach (Transform child in parent.transform)
+            {
+                if (child.GetComponent<Waypoint>() != null && child.GetComponent<Waypoint>().isPlaced == false)
+                {
+                    child.GetComponent<Waypoint>().moneymissing = false;
+                    child.GetComponent<Waypoint>().nomoney3 = false;
 
                 }
             }
@@ -71,8 +90,6 @@ using UnityEngine;
         {
             soundManager.PlayCharacterButtonPresedSound();
         }
-        Oilboy = true;
-        Ballonist = false;
         Oilboyloop();
     }
 
@@ -82,9 +99,16 @@ using UnityEngine;
         {
             soundManager.PlayCharacterButtonPresedSound();
         }
-        Ballonist = true;
-        Oilboy = false;
         Ballonistloop();
+
+    }
+    public void TruckCallerSelected()
+    {
+        if (soundManager != null)
+        {
+            soundManager.PlayCharacterButtonPresedSound();
+        }
+        TruckCallerLoop();
 
     }
     void Oilboyloop()
@@ -96,10 +120,26 @@ using UnityEngine;
                 print("Foreach loop: " + child);
                 child.GetComponent<Waypoint>().isoiler = true;
                 child.GetComponent<Waypoint>().isballonist = false;
+                child.GetComponent<Waypoint>().istruckcaller = false;
             }
         }
             
        
+    }
+    void TruckCallerLoop()
+    {
+        foreach (Transform child in parent.transform)
+        {
+            if (child.GetComponent<Waypoint>() != null)
+            {
+                print("Foreach loop: " + child);
+                child.GetComponent<Waypoint>().isoiler = false;
+                child.GetComponent<Waypoint>().isballonist = false;
+                child.GetComponent<Waypoint>().istruckcaller = true;
+            }
+        }
+
+
     }
     void Ballonistloop()
     {
@@ -110,6 +150,7 @@ using UnityEngine;
                 print("Foreach loop: " + child);
                 child.GetComponent<Waypoint>().isoiler = false;
                 child.GetComponent<Waypoint>().isballonist = true;
+                child.GetComponent<Waypoint>().istruckcaller = false;
             }
         }
 
@@ -120,6 +161,4 @@ using UnityEngine;
     {
         Cash(mon);
     }
-
-
 }

@@ -5056,7 +5056,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5083,6 +5083,7 @@ MonoBehaviour:
   currentBalance: 0
   Minus75: {fileID: 0}
   Minus150: {fileID: 0}
+  Minus500: {fileID: 0}
   Plus25: {fileID: 0}
 --- !u!1001 &159032780
 PrefabInstance:
@@ -6840,16 +6841,21 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 0}
   Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
   OilboyGhostRed: {fileID: 0}
   BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
+  istruckcaller: 0
   isPlaced: 0
   moneymissing: 0
   nomoney1: 0
   nomoney2: 0
+  nomoney3: 0
   Placed: 0
 --- !u!4 &216849496 stripped
 Transform:
@@ -9119,16 +9125,38 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2290226805941507225, guid: 09137f1d0b912e447b94a3c4ef6eeec4, type: 3}
   m_PrefabInstance: {fileID: 1567242519}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &319285369 stripped
+--- !u!1 &319285369
 GameObject:
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 01fb50e6d2f854b4aa12a7fcefb2113d, type: 3}
   m_PrefabInstance: {fileID: 4167203}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &319285370 stripped
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 319285372}
+  - component: {fileID: 319285371}
+  m_Layer: 0
+  m_Name: 
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &319285370
 Transform:
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 01fb50e6d2f854b4aa12a7fcefb2113d, type: 3}
-  m_PrefabInstance: {fileID: 4167203}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 339320291}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &319285371
 Animator:
   serializedVersion: 4
@@ -9149,6 +9177,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!4 &319285372
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 319285369}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 993834810}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &320004900 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2290226805941507225, guid: 09137f1d0b912e447b94a3c4ef6eeec4, type: 3}
@@ -9460,6 +9503,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4990206744999672810, guid: 7f7ab251192cf3c4daa485590b0da789, type: 3}
   m_PrefabInstance: {fileID: 2051776457}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &339320291
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 319285370}
+  m_Layer: 0
+  m_Name: 'Recovery GameObject for Transform (ID in file: 319285370)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1001 &339936510
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12772,7 +12831,7 @@ Transform:
   - {fileID: 146602422}
   - {fileID: 178065557}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &454699329
 PrefabInstance:
@@ -13330,16 +13389,21 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 0}
   Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
   OilboyGhostRed: {fileID: 0}
   BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
+  istruckcaller: 0
   isPlaced: 0
   moneymissing: 0
   nomoney1: 0
   nomoney2: 0
+  nomoney3: 0
   Placed: 0
 --- !u!1001 &469482031
 PrefabInstance:
@@ -15038,16 +15102,21 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 0}
   Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
   OilboyGhostRed: {fileID: 0}
   BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
+  istruckcaller: 0
   isPlaced: 0
   moneymissing: 0
   nomoney1: 0
   nomoney2: 0
+  nomoney3: 0
   Placed: 0
 --- !u!1001 &513652705
 PrefabInstance:
@@ -15769,7 +15838,7 @@ RectTransform:
   - {fileID: 65355012}
   - {fileID: 1907741265}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -17221,16 +17290,21 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 0}
   Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
   OilboyGhostRed: {fileID: 0}
   BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
+  istruckcaller: 0
   isPlaced: 0
   moneymissing: 0
   nomoney1: 0
   nomoney2: 0
+  nomoney3: 0
   Placed: 0
 --- !u!1001 &584969706
 PrefabInstance:
@@ -20298,7 +20372,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 37.91, y: 2.721, z: 1.315}
 --- !u!1001 &706237437
 PrefabInstance:
@@ -23322,16 +23396,21 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 0}
   Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
   OilboyGhostRed: {fileID: 0}
   BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
+  istruckcaller: 0
   isPlaced: 0
   moneymissing: 0
   nomoney1: 0
   nomoney2: 0
+  nomoney3: 0
   Placed: 0
 --- !u!1001 &815116696
 PrefabInstance:
@@ -24621,16 +24700,21 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 0}
   Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
   OilboyGhostRed: {fileID: 0}
   BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
+  istruckcaller: 0
   isPlaced: 0
   moneymissing: 0
   nomoney1: 0
   nomoney2: 0
+  nomoney3: 0
   Placed: 0
 --- !u!1001 &888781299
 PrefabInstance:
@@ -25877,7 +25961,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 6.552, y: -0.506, z: 0.28}
 --- !u!114 &963194229
 MonoBehaviour:
@@ -26327,16 +26411,21 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 0}
   Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
   OilboyGhostRed: {fileID: 0}
   BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
+  istruckcaller: 0
   isPlaced: 0
   moneymissing: 0
   nomoney1: 0
   nomoney2: 0
+  nomoney3: 0
   Placed: 0
 --- !u!4 &984918156 stripped
 Transform:
@@ -26579,9 +26668,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 319285370}
+  - {fileID: 319285372}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1002697408
 PrefabInstance:
@@ -27045,16 +27134,21 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 0}
   Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
   OilboyGhostRed: {fileID: 0}
   BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
+  istruckcaller: 0
   isPlaced: 0
   moneymissing: 0
   nomoney1: 0
   nomoney2: 0
+  nomoney3: 0
   Placed: 0
 --- !u!1001 &1013810383
 PrefabInstance:
@@ -28859,16 +28953,21 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 0}
   Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
   OilboyGhostRed: {fileID: 0}
   BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
+  istruckcaller: 0
   isPlaced: 0
   moneymissing: 0
   nomoney1: 0
   nomoney2: 0
+  nomoney3: 0
   Placed: 0
 --- !u!4 &1056723869 stripped
 Transform:
@@ -28891,16 +28990,21 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 0}
   Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
   OilboyGhostRed: {fileID: 0}
   BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
+  istruckcaller: 0
   isPlaced: 0
   moneymissing: 0
   nomoney1: 0
   nomoney2: 0
+  nomoney3: 0
   Placed: 0
 --- !u!1001 &1056906589
 PrefabInstance:
@@ -29718,16 +29822,21 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 0}
   Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
   OilboyGhostRed: {fileID: 0}
   BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
+  istruckcaller: 0
   isPlaced: 0
   moneymissing: 0
   nomoney1: 0
   nomoney2: 0
+  nomoney3: 0
   Placed: 0
 --- !u!4 &1085097118 stripped
 Transform:
@@ -29750,16 +29859,21 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 0}
   Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
   OilboyGhostRed: {fileID: 0}
   BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
+  istruckcaller: 0
   isPlaced: 0
   moneymissing: 0
   nomoney1: 0
   nomoney2: 0
+  nomoney3: 0
   Placed: 0
 --- !u!1001 &1087492949
 PrefabInstance:
@@ -29981,16 +30095,21 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 0}
   Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
   OilboyGhostRed: {fileID: 0}
   BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
+  istruckcaller: 0
   isPlaced: 0
   moneymissing: 0
   nomoney1: 0
   nomoney2: 0
+  nomoney3: 0
   Placed: 0
 --- !u!1001 &1088974079
 PrefabInstance:
@@ -30988,16 +31107,21 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 0}
   Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
   OilboyGhostRed: {fileID: 0}
   BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
+  istruckcaller: 0
   isPlaced: 0
   moneymissing: 0
   nomoney1: 0
   nomoney2: 0
+  nomoney3: 0
   Placed: 0
 --- !u!1001 &1125563334
 PrefabInstance:
@@ -31526,16 +31650,21 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 0}
   Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
   OilboyGhostRed: {fileID: 0}
   BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
+  istruckcaller: 0
   isPlaced: 0
   moneymissing: 0
   nomoney1: 0
   nomoney2: 0
+  nomoney3: 0
   Placed: 0
 --- !u!1001 &1144946790
 PrefabInstance:
@@ -31859,16 +31988,21 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 0}
   Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
   OilboyGhostRed: {fileID: 0}
   BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
+  istruckcaller: 0
   isPlaced: 0
   moneymissing: 0
   nomoney1: 0
   nomoney2: 0
+  nomoney3: 0
   Placed: 0
 --- !u!4 &1154946586 stripped
 Transform:
@@ -33244,16 +33378,21 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 0}
   Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
   OilboyGhostRed: {fileID: 0}
   BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
+  istruckcaller: 0
   isPlaced: 0
   moneymissing: 0
   nomoney1: 0
   nomoney2: 0
+  nomoney3: 0
   Placed: 0
 --- !u!1001 &1207053252
 PrefabInstance:
@@ -34462,16 +34601,21 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 0}
   Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
   OilboyGhostRed: {fileID: 0}
   BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
+  istruckcaller: 0
   isPlaced: 0
   moneymissing: 0
   nomoney1: 0
   nomoney2: 0
+  nomoney3: 0
   Placed: 0
 --- !u!4 &1256887985 stripped
 Transform:
@@ -35860,16 +36004,21 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 0}
   Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
   OilboyGhostRed: {fileID: 0}
   BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
+  istruckcaller: 0
   isPlaced: 0
   moneymissing: 0
   nomoney1: 0
   nomoney2: 0
+  nomoney3: 0
   Placed: 0
 --- !u!4 &1317501835 stripped
 Transform:
@@ -35892,16 +36041,21 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 0}
   Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
   OilboyGhostRed: {fileID: 0}
   BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
+  istruckcaller: 0
   isPlaced: 0
   moneymissing: 0
   nomoney1: 0
   nomoney2: 0
+  nomoney3: 0
   Placed: 0
 --- !u!4 &1318585077 stripped
 Transform:
@@ -36411,16 +36565,21 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 0}
   Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
   OilboyGhostRed: {fileID: 0}
   BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
+  istruckcaller: 0
   isPlaced: 0
   moneymissing: 0
   nomoney1: 0
   nomoney2: 0
+  nomoney3: 0
   Placed: 0
 --- !u!1001 &1359282517
 PrefabInstance:
@@ -36545,16 +36704,21 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 0}
   Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
   OilboyGhostRed: {fileID: 0}
   BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
+  istruckcaller: 0
   isPlaced: 0
   moneymissing: 0
   nomoney1: 0
   nomoney2: 0
+  nomoney3: 0
   Placed: 0
 --- !u!4 &1360638422 stripped
 Transform:
@@ -37496,16 +37660,21 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 0}
   Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
   OilboyGhostRed: {fileID: 0}
   BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
+  istruckcaller: 0
   isPlaced: 0
   moneymissing: 0
   nomoney1: 0
   nomoney2: 0
+  nomoney3: 0
   Placed: 0
 --- !u!1001 &1398077911
 PrefabInstance:
@@ -37645,16 +37814,21 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 0}
   Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
   OilboyGhostRed: {fileID: 0}
   BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
+  istruckcaller: 0
   isPlaced: 0
   moneymissing: 0
   nomoney1: 0
   nomoney2: 0
+  nomoney3: 0
   Placed: 0
 --- !u!1001 &1411118119
 PrefabInstance:
@@ -38550,16 +38724,21 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 0}
   Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
   OilboyGhostRed: {fileID: 0}
   BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
+  istruckcaller: 0
   isPlaced: 0
   moneymissing: 0
   nomoney1: 0
   nomoney2: 0
+  nomoney3: 0
   Placed: 0
 --- !u!1001 &1436560008
 PrefabInstance:
@@ -39001,16 +39180,21 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 0}
   Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
   OilboyGhostRed: {fileID: 0}
   BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
+  istruckcaller: 0
   isPlaced: 0
   moneymissing: 0
   nomoney1: 0
   nomoney2: 0
+  nomoney3: 0
   Placed: 0
 --- !u!1 &1443160952
 GameObject:
@@ -39067,6 +39251,7 @@ MonoBehaviour:
   - {fileID: 5138909931838944414, guid: fbc83a9279614ad4f80108e0f0f12910, type: 3}
   enemyprefab: {fileID: 7713313732662588831, guid: 97863b11e7e0d12478a1ef864d07b92e, type: 3}
   sapwntimer: 1
+  TextRound: {fileID: 0}
 --- !u!4 &1443160954
 Transform:
   m_ObjectHideFlags: 0
@@ -39080,7 +39265,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1443160955
 MonoBehaviour:
@@ -39767,16 +39952,21 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 0}
   Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
   OilboyGhostRed: {fileID: 0}
   BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
+  istruckcaller: 0
   isPlaced: 0
   moneymissing: 0
   nomoney1: 0
   nomoney2: 0
+  nomoney3: 0
   Placed: 0
 --- !u!1001 &1460205203
 PrefabInstance:
@@ -41319,16 +41509,21 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 0}
   Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
   OilboyGhostRed: {fileID: 0}
   BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
+  istruckcaller: 0
   isPlaced: 0
   moneymissing: 0
   nomoney1: 0
   nomoney2: 0
+  nomoney3: 0
   Placed: 0
 --- !u!1001 &1525559767
 PrefabInstance:
@@ -41885,16 +42080,21 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 0}
   Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
   OilboyGhostRed: {fileID: 0}
   BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
+  istruckcaller: 0
   isPlaced: 0
   moneymissing: 0
   nomoney1: 0
   nomoney2: 0
+  nomoney3: 0
   Placed: 0
 --- !u!4 &1554491000 stripped
 Transform:
@@ -42312,16 +42512,21 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 0}
   Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
   OilboyGhostRed: {fileID: 0}
   BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
+  istruckcaller: 0
   isPlaced: 0
   moneymissing: 0
   nomoney1: 0
   nomoney2: 0
+  nomoney3: 0
   Placed: 0
 --- !u!4 &1576266467 stripped
 Transform:
@@ -42456,16 +42661,21 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 0}
   Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
   OilboyGhostRed: {fileID: 0}
   BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
+  istruckcaller: 0
   isPlaced: 0
   moneymissing: 0
   nomoney1: 0
   nomoney2: 0
+  nomoney3: 0
   Placed: 0
 --- !u!1001 &1591987445
 PrefabInstance:
@@ -43423,16 +43633,21 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 0}
   Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
   OilboyGhostRed: {fileID: 0}
   BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
+  istruckcaller: 0
   isPlaced: 0
   moneymissing: 0
   nomoney1: 0
   nomoney2: 0
+  nomoney3: 0
   Placed: 0
 --- !u!4 &1610519416 stripped
 Transform:
@@ -44734,16 +44949,21 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 0}
   Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
   OilboyGhostRed: {fileID: 0}
   BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
+  istruckcaller: 0
   isPlaced: 0
   moneymissing: 0
   nomoney1: 0
   nomoney2: 0
+  nomoney3: 0
   Placed: 0
 --- !u!4 &1668215553 stripped
 Transform:
@@ -45316,16 +45536,21 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 0}
   Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
   OilboyGhostRed: {fileID: 0}
   BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
+  istruckcaller: 0
   isPlaced: 0
   moneymissing: 0
   nomoney1: 0
   nomoney2: 0
+  nomoney3: 0
   Placed: 0
 --- !u!4 &1694572348 stripped
 Transform:
@@ -45683,16 +45908,21 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 0}
   Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
   OilboyGhostRed: {fileID: 0}
   BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
+  istruckcaller: 0
   isPlaced: 0
   moneymissing: 0
   nomoney1: 0
   nomoney2: 0
+  nomoney3: 0
   Placed: 0
 --- !u!4 &1706954998 stripped
 Transform:
@@ -45720,16 +45950,21 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 0}
   Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
   OilboyGhostRed: {fileID: 0}
   BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
+  istruckcaller: 0
   isPlaced: 0
   moneymissing: 0
   nomoney1: 0
   nomoney2: 0
+  nomoney3: 0
   Placed: 0
 --- !u!4 &1711182511 stripped
 Transform:
@@ -45757,16 +45992,21 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 0}
   Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
   OilboyGhostRed: {fileID: 0}
   BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
+  istruckcaller: 0
   isPlaced: 0
   moneymissing: 0
   nomoney1: 0
   nomoney2: 0
+  nomoney3: 0
   Placed: 0
 --- !u!4 &1713966716 stripped
 Transform:
@@ -45789,16 +46029,21 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 0}
   Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
   OilboyGhostRed: {fileID: 0}
   BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
+  istruckcaller: 0
   isPlaced: 0
   moneymissing: 0
   nomoney1: 0
   nomoney2: 0
+  nomoney3: 0
   Placed: 0
 --- !u!4 &1714631139 stripped
 Transform:
@@ -46232,16 +46477,21 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 0}
   Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
   OilboyGhostRed: {fileID: 0}
   BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
+  istruckcaller: 0
   isPlaced: 0
   moneymissing: 0
   nomoney1: 0
   nomoney2: 0
+  nomoney3: 0
   Placed: 0
 --- !u!1001 &1734629607
 PrefabInstance:
@@ -46366,16 +46616,21 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 0}
   Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
   OilboyGhostRed: {fileID: 0}
   BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
+  istruckcaller: 0
   isPlaced: 0
   moneymissing: 0
   nomoney1: 0
   nomoney2: 0
+  nomoney3: 0
   Placed: 0
 --- !u!4 &1737848797 stripped
 Transform:
@@ -46584,16 +46839,21 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 0}
   Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
   OilboyGhostRed: {fileID: 0}
   BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
+  istruckcaller: 0
   isPlaced: 0
   moneymissing: 0
   nomoney1: 0
   nomoney2: 0
+  nomoney3: 0
   Placed: 0
 --- !u!1001 &1746156008
 PrefabInstance:
@@ -47003,7 +47263,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a4919189b00694c40867eb7b8e5f6cd9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.37
+      value: -69.3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a4919189b00694c40867eb7b8e5f6cd9, type: 3}
       propertyPath: m_LocalPosition.y
@@ -47317,16 +47577,21 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 0}
   Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
   OilboyGhostRed: {fileID: 0}
   BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
+  istruckcaller: 0
   isPlaced: 0
   moneymissing: 0
   nomoney1: 0
   nomoney2: 0
+  nomoney3: 0
   Placed: 0
 --- !u!1001 &1761394126
 PrefabInstance:
@@ -47561,16 +47826,21 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 0}
   Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
   OilboyGhostRed: {fileID: 0}
   BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
+  istruckcaller: 0
   isPlaced: 0
   moneymissing: 0
   nomoney1: 0
   nomoney2: 0
+  nomoney3: 0
   Placed: 0
 --- !u!1001 &1773857709
 PrefabInstance:
@@ -48409,16 +48679,21 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 0}
   Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
   OilboyGhostRed: {fileID: 0}
   BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
+  istruckcaller: 0
   isPlaced: 0
   moneymissing: 0
   nomoney1: 0
   nomoney2: 0
+  nomoney3: 0
   Placed: 0
 --- !u!1001 &1793461686
 PrefabInstance:
@@ -48657,16 +48932,21 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 0}
   Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
   OilboyGhostRed: {fileID: 0}
   BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
+  istruckcaller: 0
   isPlaced: 0
   moneymissing: 0
   nomoney1: 0
   nomoney2: 0
+  nomoney3: 0
   Placed: 0
 --- !u!1001 &1801160765
 PrefabInstance:
@@ -49040,16 +49320,21 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 0}
   Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
   OilboyGhostRed: {fileID: 0}
   BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
+  istruckcaller: 0
   isPlaced: 0
   moneymissing: 0
   nomoney1: 0
   nomoney2: 0
+  nomoney3: 0
   Placed: 0
 --- !u!4 &1820893619 stripped
 Transform:
@@ -49244,16 +49529,21 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 0}
   Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
   OilboyGhostRed: {fileID: 0}
   BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
+  istruckcaller: 0
   isPlaced: 0
   moneymissing: 0
   nomoney1: 0
   nomoney2: 0
+  nomoney3: 0
   Placed: 0
 --- !u!4 &1834453276 stripped
 Transform:
@@ -49830,16 +50120,21 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 0}
   Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
   OilboyGhostRed: {fileID: 0}
   BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
+  istruckcaller: 0
   isPlaced: 0
   moneymissing: 0
   nomoney1: 0
   nomoney2: 0
+  nomoney3: 0
   Placed: 0
 --- !u!4 &1849019237 stripped
 Transform:
@@ -49979,16 +50274,21 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 0}
   Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
   OilboyGhostRed: {fileID: 0}
   BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
+  istruckcaller: 0
   isPlaced: 0
   moneymissing: 0
   nomoney1: 0
   nomoney2: 0
+  nomoney3: 0
   Placed: 0
 --- !u!1001 &1862118023
 PrefabInstance:
@@ -50320,16 +50620,21 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 0}
   Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
   OilboyGhostRed: {fileID: 0}
   BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
+  istruckcaller: 0
   isPlaced: 0
   moneymissing: 0
   nomoney1: 0
   nomoney2: 0
+  nomoney3: 0
   Placed: 0
 --- !u!1001 &1869768012
 PrefabInstance:
@@ -50580,16 +50885,21 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 0}
   Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
   OilboyGhostRed: {fileID: 0}
   BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
+  istruckcaller: 0
   isPlaced: 0
   moneymissing: 0
   nomoney1: 0
   nomoney2: 0
+  nomoney3: 0
   Placed: 0
 --- !u!4 &1880515816 stripped
 Transform:
@@ -51449,16 +51759,21 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 0}
   Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
   OilboyGhostRed: {fileID: 0}
   BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
+  istruckcaller: 0
   isPlaced: 0
   moneymissing: 0
   nomoney1: 0
   nomoney2: 0
+  nomoney3: 0
   Placed: 0
 --- !u!1001 &1904712931
 PrefabInstance:
@@ -51791,16 +52106,21 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 0}
   Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
   OilboyGhostRed: {fileID: 0}
   BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
+  istruckcaller: 0
   isPlaced: 0
   moneymissing: 0
   nomoney1: 0
   nomoney2: 0
+  nomoney3: 0
   Placed: 0
 --- !u!1001 &1910962794
 PrefabInstance:
@@ -51925,16 +52245,21 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 0}
   Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
   OilboyGhostRed: {fileID: 0}
   BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
+  istruckcaller: 0
   isPlaced: 0
   moneymissing: 0
   nomoney1: 0
   nomoney2: 0
+  nomoney3: 0
   Placed: 0
 --- !u!4 &1918820843 stripped
 Transform:
@@ -51962,16 +52287,21 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 0}
   Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
   OilboyGhostRed: {fileID: 0}
   BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
+  istruckcaller: 0
   isPlaced: 0
   moneymissing: 0
   nomoney1: 0
   nomoney2: 0
+  nomoney3: 0
   Placed: 0
 --- !u!1001 &1922161050
 PrefabInstance:
@@ -52162,7 +52492,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1001 &1927307410
 PrefabInstance:
@@ -52651,16 +52981,21 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 0}
   Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
   OilboyGhostRed: {fileID: 0}
   BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
+  istruckcaller: 0
   isPlaced: 0
   moneymissing: 0
   nomoney1: 0
   nomoney2: 0
+  nomoney3: 0
   Placed: 0
 --- !u!1001 &1957023681
 PrefabInstance:
@@ -53437,16 +53772,21 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 0}
   Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
   OilboyGhostRed: {fileID: 0}
   BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
+  istruckcaller: 0
   isPlaced: 0
   moneymissing: 0
   nomoney1: 0
   nomoney2: 0
+  nomoney3: 0
   Placed: 0
 --- !u!4 &1992753658 stripped
 Transform:
@@ -53581,16 +53921,21 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 0}
   Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
   OilboyGhostRed: {fileID: 0}
   BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
+  istruckcaller: 0
   isPlaced: 0
   moneymissing: 0
   nomoney1: 0
   nomoney2: 0
+  nomoney3: 0
   Placed: 0
 --- !u!4 &1994671511 stripped
 Transform:
@@ -54046,16 +54391,21 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 0}
   Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
   OilboyGhostRed: {fileID: 0}
   BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
+  istruckcaller: 0
   isPlaced: 0
   moneymissing: 0
   nomoney1: 0
   nomoney2: 0
+  nomoney3: 0
   Placed: 0
 --- !u!1001 &2029608464
 PrefabInstance:
@@ -54786,16 +55136,21 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 0}
   Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
   OilboyGhostRed: {fileID: 0}
   BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
+  istruckcaller: 0
   isPlaced: 0
   moneymissing: 0
   nomoney1: 0
   nomoney2: 0
+  nomoney3: 0
   Placed: 0
 --- !u!1001 &2051776457
 PrefabInstance:
@@ -55230,16 +55585,21 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 0}
   Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
   OilboyGhostRed: {fileID: 0}
   BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
+  istruckcaller: 0
   isPlaced: 0
   moneymissing: 0
   nomoney1: 0
   nomoney2: 0
+  nomoney3: 0
   Placed: 0
 --- !u!1001 &2066336846
 PrefabInstance:
@@ -55935,16 +56295,21 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 0}
   Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
   OilboyGhostRed: {fileID: 0}
   BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
+  istruckcaller: 0
   isPlaced: 0
   moneymissing: 0
   nomoney1: 0
   nomoney2: 0
+  nomoney3: 0
   Placed: 0
 --- !u!4 &2085027656 stripped
 Transform:
@@ -56084,16 +56449,21 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 0}
   Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
   OilboyGhostRed: {fileID: 0}
   BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
+  istruckcaller: 0
   isPlaced: 0
   moneymissing: 0
   nomoney1: 0
   nomoney2: 0
+  nomoney3: 0
   Placed: 0
 --- !u!4 &2090301857 stripped
 Transform:
@@ -56292,16 +56662,21 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 0}
   Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
   OilboyGhostRed: {fileID: 0}
   BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
+  istruckcaller: 0
   isPlaced: 0
   moneymissing: 0
   nomoney1: 0
   nomoney2: 0
+  nomoney3: 0
   Placed: 0
 --- !u!1001 &2093403234
 PrefabInstance:
@@ -56523,16 +56898,21 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 0}
   Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
   OilboyGhostRed: {fileID: 0}
   BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
+  istruckcaller: 0
   isPlaced: 0
   moneymissing: 0
   nomoney1: 0
   nomoney2: 0
+  nomoney3: 0
   Placed: 0
 --- !u!1001 &2101745252
 PrefabInstance:
@@ -57138,16 +57518,21 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 0}
   Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
   OilboyGhostRed: {fileID: 0}
   BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
+  istruckcaller: 0
   isPlaced: 0
   moneymissing: 0
   nomoney1: 0
   nomoney2: 0
+  nomoney3: 0
   Placed: 0
 --- !u!1001 &2121216687
 PrefabInstance:
@@ -57272,16 +57657,21 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 0}
   Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
   OilboyGhostRed: {fileID: 0}
   BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
+  istruckcaller: 0
   isPlaced: 0
   moneymissing: 0
   nomoney1: 0
   nomoney2: 0
+  nomoney3: 0
   Placed: 0
 --- !u!4 &2124897631 stripped
 Transform:
@@ -57411,16 +57801,21 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 0}
   Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
   OilboyGhostRed: {fileID: 0}
   BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
+  istruckcaller: 0
   isPlaced: 0
   moneymissing: 0
   nomoney1: 0
   nomoney2: 0
+  nomoney3: 0
   Placed: 0
 --- !u!4 &2133563244 stripped
 Transform:
@@ -57555,16 +57950,21 @@ MonoBehaviour:
   isplacable2: 1
   Oilboy: {fileID: 0}
   Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
   OilboyGhost: {fileID: 0}
   BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
   OilboyGhostRed: {fileID: 0}
   BallonistGhostRed: {fileID: 0}
   isballonist: 0
   isoiler: 0
+  istruckcaller: 0
   isPlaced: 0
   moneymissing: 0
   nomoney1: 0
   nomoney2: 0
+  nomoney3: 0
   Placed: 0
 --- !u!1001 &2137543603
 PrefabInstance:
@@ -57819,7 +58219,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1876287677997621496, guid: d9ae4ebed9fee6b45bf88b74f2b01f7b, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1876287677997621496, guid: d9ae4ebed9fee6b45bf88b74f2b01f7b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -57882,9 +58282,33 @@ PrefabInstance:
       propertyPath: m_Name
       value: SoundManager
       objectReference: {fileID: 0}
+    - target: {fileID: 7504093937578117702, guid: 681f6b95eefddea4995be20266d09f19, type: 3}
+      propertyPath: TruckCall
+      value: 
+      objectReference: {fileID: 8300000, guid: be9cee1e2a1b7e94486c9c19da7036ba, type: 3}
+    - target: {fileID: 7504093937578117702, guid: 681f6b95eefddea4995be20266d09f19, type: 3}
+      propertyPath: PakageSound.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7504093937578117702, guid: 681f6b95eefddea4995be20266d09f19, type: 3}
+      propertyPath: PakageSound.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 491efc5fdd2281b40bad908c89e05a88, type: 3}
+    - target: {fileID: 7504093937578117702, guid: 681f6b95eefddea4995be20266d09f19, type: 3}
+      propertyPath: TruckKnucklesSpawnSounds.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7504093937578117702, guid: 681f6b95eefddea4995be20266d09f19, type: 3}
+      propertyPath: TruckKnucklesSpawnSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: a8737b50f68f05543825a30275fb8460, type: 3}
+    - target: {fileID: 7504093937578117702, guid: 681f6b95eefddea4995be20266d09f19, type: 3}
+      propertyPath: TruckKnucklesSpawnSounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 3d65e9584c81d594f9ecfffead070ab4, type: 3}
     - target: {fileID: 7504093937578117703, guid: 681f6b95eefddea4995be20266d09f19, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7504093937578117703, guid: 681f6b95eefddea4995be20266d09f19, type: 3}
       propertyPath: m_LocalPosition.x

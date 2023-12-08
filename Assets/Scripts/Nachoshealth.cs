@@ -34,14 +34,16 @@ public class Nachoshealth : MonoBehaviour
             SmokeSFX.Play();
             damage = batistaDamage;
             CabinShake();
+            cabinHealth = cabinHealth - damage;
         }
         else if(other.gameObject.tag == "Penguin")
         {
             SmokeSFX.Play();
             damage = penguinDamage;
             CabinShake();
+            cabinHealth = cabinHealth - damage;
         }
-        cabinHealth = cabinHealth - damage;
+        
     }
 
     // Update is called once per frame

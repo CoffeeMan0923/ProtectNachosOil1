@@ -11,14 +11,18 @@ public class Waypoint : MonoBehaviour
     public bool isplacable2 = true;
     public Oiler Oilboy;
     public Oiler Ballonist;
+    public Oiler TruckCaller;
+    public Oiler TruckCallerGhost;
     public Oiler OilboyGhost;
     public Oiler BallonistGhost;
+    public Oiler TruckCallerGhostRed;
     public Oiler OilboyGhostRed;
     public Oiler BallonistGhostRed;
     SoundManager soundmanager;
     Waypoint waypoint;
     public bool isballonist;
     public bool isoiler;
+    public bool istruckcaller;
     public bool isPlaced;
     bool hovering;
     bool timer;
@@ -26,6 +30,7 @@ public class Waypoint : MonoBehaviour
     public bool moneymissing;
     public bool nomoney1;
     public bool nomoney2;
+    public bool nomoney3;
     void Start()
     {
         tissyselect = FindObjectOfType<Tissieselect>();
@@ -43,6 +48,7 @@ public class Waypoint : MonoBehaviour
         {
             nomoney1 = true;
             nomoney2 = true;
+            nomoney3 = true;
         }
     }
     public void isPlacable(bool isPlaced)
@@ -57,6 +63,12 @@ public class Waypoint : MonoBehaviour
             isPlaced = Oilboy.CreateOiler(Oilboy, gameObject.transform.position);
             waypoint.isPlacable(isPlaced);
             
+        }
+        if (istruckcaller)
+        {
+            isPlaced = TruckCaller.CreateOiler(TruckCaller, gameObject.transform.position);
+            waypoint.isPlacable(isPlaced);
+
         }
         if (isballonist)
         {
@@ -99,6 +111,16 @@ public class Waypoint : MonoBehaviour
                 OilboyGhostRed.CreateOiler(OilboyGhostRed, gameObject.transform.position);
                 waypoint.isPlacable(isPlaced);
             }
+            if(istruckcaller && !nomoney3 && !isclick)
+            {
+                TruckCallerGhost.CreateOiler(TruckCallerGhost, gameObject.transform.position);
+                waypoint.isPlacable(isPlaced);
+            }
+            else if(istruckcaller)
+            {
+                TruckCallerGhostRed.CreateOiler(TruckCallerGhostRed, gameObject.transform.position);
+                waypoint.isPlacable(isPlaced);
+            }
             if (isballonist && !nomoney2 && !isclick)
             {
                 BallonistGhost.CreateOiler(BallonistGhost, gameObject.transform.position);
@@ -122,6 +144,11 @@ public class Waypoint : MonoBehaviour
                 OilboyGhostRed.CreateOiler(OilboyGhostRed, gameObject.transform.position);
                 waypoint.isPlacable(isPlaced);
 
+            }
+            if(istruckcaller && nomoney3)
+            {
+                TruckCallerGhostRed.CreateOiler(TruckCallerGhostRed, gameObject.transform.position);
+                waypoint.isPlacable(isPlaced);
             }
             if (isballonist && nomoney2)
             {

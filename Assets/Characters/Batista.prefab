@@ -85,6 +85,7 @@ MonoBehaviour:
   ispenguin: 0
   isbatista: 1
   BallonistSlowRate: 0.003
+  DopathReverse: 0
 --- !u!114 &3480166672177894810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104,7 +105,7 @@ MonoBehaviour:
   oildamage: 1
   ispenguin: 0
   isbatista: 1
-  startingHp: 5
+  startingHp: 3
 --- !u!65 &8883098128511818724
 BoxCollider:
   m_ObjectHideFlags: 0

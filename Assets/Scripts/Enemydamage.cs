@@ -9,7 +9,7 @@ public class Enemydamage : MonoBehaviour
     SoundManager soundManager;
     [SerializeField] GameObject particalexplo;
     [SerializeField] GameObject pos;
-    [SerializeField] float currenthp = 0;
+    public float currenthp;
     [SerializeField] float roundHealth;
     [SerializeField] float oildamage = 1;
     [SerializeField] bool ispenguin;
@@ -58,6 +58,17 @@ public class Enemydamage : MonoBehaviour
         {
 
         }
+    }
+    void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Truck")
+        {
+            PlayDamageSound();
+            currenthp = currenthp - 20;
+        }
+
+        
+
     }
 
 
