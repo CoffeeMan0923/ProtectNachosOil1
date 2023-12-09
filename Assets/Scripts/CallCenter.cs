@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CallCenter : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class CallCenter : MonoBehaviour
     public bool timer2 = true;
     public bool timer3;
     public bool timer4;
+    [SerializeField] GameObject button;
     [SerializeField] GameObject TruckKnuckles;
     SoundManager soundManager;
     bool CallEnsure;
@@ -20,6 +22,8 @@ public class CallCenter : MonoBehaviour
     public int Callers;
     public int oldCallersNum;
     public bool firstcall;
+    public bool anotheone;
+    public int KnucklesOnField;
 
     void Start()
     {
@@ -28,11 +32,11 @@ public class CallCenter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Callers > 3)
+        if (Callers == 3)
         {
-            Callers = 3;
+            button.GetComponent<Button>().enabled = false;
         }
-        if (timer1 && StartSpawningTruckKnuckles)
+        if (timer1 && StartSpawningTruckKnuckles && KnucklesOnField <= 0)
         {
             timer1 = false;
             CallDelay();
@@ -44,12 +48,30 @@ public class CallCenter : MonoBehaviour
             oldCallersNum = Callers;
 
         }
+        if(anotheone == true)
+        {
+            if(KnucklesOnField <= 0 && anotheone == true)
+            {
+                anotheone = false;
+                CallDelay();
+            }
+        }
     }
 
     void CallDelay()
     {
-        Invoke("CallTruckKnuckles", time);
-        Invoke("CallSound", time - 5);
+        if(KnucklesOnField <= 0)
+        {
+            timer1 = false;
+            Invoke("CallTruckKnuckles", time);
+            Invoke("CallSound", time - 5);
+        }
+        else
+        {
+            timer1 = false;
+            anotheone = true;
+        }
+
     }
     public void NewCaller()
     {
@@ -66,9 +88,13 @@ public class CallCenter : MonoBehaviour
     }
     void CallTruckKnuckles()
     {
-        timer1 = true;
-        Instantiate(TruckKnuckles);
-        soundManager.TruckKnucklesSpawnLine();
+        
+            anotheone = false;
+            timer1 = true;
+            Instantiate(TruckKnuckles);
+            soundManager.TruckKnucklesSpawnLine();
+        
+
     }
     void CallTruckKnuckles2()
     {

@@ -16,8 +16,10 @@ public class TruckPath : MonoBehaviour
     [SerializeField] bool isbatista;
     [SerializeField] float BallonistSlowRate = 0.005f;
     [SerializeField] float startingTruckHp;
+    CallCenter callCenter;
     [SerializeField] float currentTruckHp;
     [SerializeField] Animator animator;
+    bool one;
     public int DudesinRange;
     public bool isinrange;
     bool StopAuraSFX;
@@ -30,6 +32,8 @@ public class TruckPath : MonoBehaviour
     float movePercent;
     void Start()
     {
+        callCenter = FindObjectOfType<CallCenter>();
+        callCenter.KnucklesOnField++;
         currentTruckHp = startingTruckHp;
         originalPos = transform.position;
         soundManager = FindObjectOfType<SoundManager>();
@@ -88,8 +92,10 @@ public class TruckPath : MonoBehaviour
     }
     void Update()
     {
-        if(currentTruckHp < 1)
+        if(currentTruckHp < 1 && one == false)
         {
+            one = true;
+            callCenter.KnucklesOnField--;
             Destroy(gameObject);
         }
         if (DudesinRange <= 0)
@@ -150,6 +156,7 @@ public class TruckPath : MonoBehaviour
 
 
         }
+        callCenter.KnucklesOnField--;
         Destroy(gameObject);
     }
 

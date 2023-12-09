@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/NachosMenu - Copy.unity
-    guid: 2854e56f1e3e91043942a647a786695e
+    path: Assets/NachosMenu.unity
+    guid: 9303615c07123d044bbcdd3d2d51fd3b
   - enabled: 1
     path: Assets/NachosOil.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
