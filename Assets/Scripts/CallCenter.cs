@@ -113,6 +113,7 @@ public class CallCenter : MonoBehaviour
     void CancelCall()
     {
         CancelInvoke("CallTruckKnuckles");
+        CancelInvoke("CallSound");
     }
 
 }
