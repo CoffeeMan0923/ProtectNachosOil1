@@ -111,6 +111,10 @@ using UnityEngine;
         TruckCallerLoop();
 
     }
+    public void TowerSellerSelected()
+    {
+        SellTowerloop();
+    }
     void Oilboyloop()
     {
         foreach (Transform child in parent.transform)
@@ -121,10 +125,27 @@ using UnityEngine;
                 child.GetComponent<Waypoint>().isoiler = true;
                 child.GetComponent<Waypoint>().isballonist = false;
                 child.GetComponent<Waypoint>().istruckcaller = false;
+                child.GetComponent<Waypoint>().SellSelected = false;
             }
         }
             
        
+    }
+    void SellTowerloop()
+    {
+        foreach (Transform child in parent.transform)
+        {
+            if (child.GetComponent<Waypoint>() != null)
+            {
+                print("Foreach loop: " + child);
+                child.GetComponent<Waypoint>().isoiler = false;
+                child.GetComponent<Waypoint>().isballonist = false;
+                child.GetComponent<Waypoint>().istruckcaller = false;
+                child.GetComponent<Waypoint>().SellSelected = true;
+            }
+        }
+
+
     }
     void TruckCallerLoop()
     {
@@ -136,6 +157,7 @@ using UnityEngine;
                 child.GetComponent<Waypoint>().isoiler = false;
                 child.GetComponent<Waypoint>().isballonist = false;
                 child.GetComponent<Waypoint>().istruckcaller = true;
+                child.GetComponent<Waypoint>().SellSelected = false;
             }
         }
 
@@ -151,6 +173,7 @@ using UnityEngine;
                 child.GetComponent<Waypoint>().isoiler = false;
                 child.GetComponent<Waypoint>().isballonist = true;
                 child.GetComponent<Waypoint>().istruckcaller = false;
+                child.GetComponent<Waypoint>().SellSelected = false;
             }
         }
 

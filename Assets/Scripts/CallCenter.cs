@@ -57,9 +57,9 @@ public class CallCenter : MonoBehaviour
             }
         }
     }
-
     void CallDelay()
     {
+
         if(KnucklesOnField <= 0)
         {
             timer1 = false;

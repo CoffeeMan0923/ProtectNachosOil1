@@ -12,6 +12,7 @@ TagManager:
   - Ballons
   - KnucklePath
   - Truck
+  - Sell
   layers:
   - Default
   - TransparentFX

@@ -9,6 +9,8 @@ public class Waypoint : MonoBehaviour
     Tissieselect tissyselect;
     public bool isplacable = true;
     public bool isplacable2 = true;
+    public Oiler SellTower;
+    public bool SellSelected;
     public Oiler Oilboy;
     public Oiler Ballonist;
     public Oiler TruckCaller;
@@ -164,6 +166,11 @@ public class Waypoint : MonoBehaviour
         if (isPlaced==false)
         {
             summonTissy();
+        }
+        if (SellSelected)
+        {
+            SellTower.CreateOiler(SellTower, gameObject.transform.position);
+
         }
     }
 }

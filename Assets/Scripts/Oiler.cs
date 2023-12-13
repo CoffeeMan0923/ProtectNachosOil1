@@ -51,4 +51,13 @@ public class Oiler : MonoBehaviour
         return false;
 
     }
+    void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "Sell")
+        {
+            Bank bank = FindObjectOfType<Bank>();
+            bank.Deposit(cost/2);
+            Destroy(gameObject);
+        }
+    }
 }

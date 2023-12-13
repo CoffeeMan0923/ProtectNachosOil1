@@ -15,6 +15,8 @@ public class Objectpool : MonoBehaviour
     [SerializeField] GameObject enemyprefab;
     [SerializeField] float sapwntimer = 1f;
     [SerializeField] TextMeshProUGUI TextRound;
+    [SerializeField] TextMeshProUGUI TextNewRound;
+    [SerializeField] FlotingText flotingTextScript;
     Enemydamage enemydamage;
     bool istime;
     int Batistakin = 0;
@@ -50,7 +52,7 @@ public class Objectpool : MonoBehaviour
                 {
 
                     roundTransition = true;
-                    Invoke("Repeat", 5);
+                    Invoke("Repeat", 8);
                 }
 
             }
@@ -61,6 +63,8 @@ public class Objectpool : MonoBehaviour
           
             round++;
             TextRound.text = "Round:" + round;
+            TextNewRound.text = "Round:" + round;
+            flotingTextScript.Flash();
             roundTransition = false;
             enemystospawwn = roundenemies;
             roundenemies++;
