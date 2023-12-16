@@ -50,6 +50,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ae78d999e804a14fbf6ca864c356967, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPenguin: 1
   Aura: {fileID: 907268329840326990}
   particalexplo: {fileID: 8460064027121919758, guid: a84130babb62f1a4c946e8aad4adde29, type: 3}
   pos: {fileID: 5167521276191046328}
@@ -62,6 +63,8 @@ MonoBehaviour:
   ispenguin: 1
   isbatista: 0
   BallonistSlowRate: 0.015
+  DopathReverse: 0
+  NewSpawn: 0
 --- !u!114 &1038920774037958188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,6 +84,7 @@ MonoBehaviour:
   oildamage: 1
   ispenguin: 1
   isbatista: 0
+  freshSpawn: 0
   startingHp: 3
 --- !u!65 &1038920774037958186
 BoxCollider:

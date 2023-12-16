@@ -122,11 +122,4 @@ public class Lookatenemy : MonoBehaviour
         emissionModule.enabled = isActive;
         
     }
-    void OnCollisionEnter(Collision other)
-    {
-        if(other.gameObject.tag == "Sell")
-        {
-            Destroy(gameObject);
-        }
-    }
 }

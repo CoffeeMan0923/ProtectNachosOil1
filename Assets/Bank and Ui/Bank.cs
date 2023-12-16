@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Rendering;
 
 public class Bank : MonoBehaviour
 {
@@ -10,15 +11,19 @@ public class Bank : MonoBehaviour
     [SerializeField] int oilreward = 25;
     [SerializeField] int oilpenalty = 25;
     [SerializeField] int startingBalance = 150;
-    [SerializeField]int currentBalance;
+    [SerializeField] public int currentBalance;
     SoundManager soundManager;
     public int CurrenBalance {get {return currentBalance;} }
 
     // Start is called before the first frame update
+    public GameObject Minus25;
     public GameObject Minus75;
     public GameObject Minus150;
     public GameObject Minus500;
     public GameObject Plus25;
+    public GameObject Plus50;
+    public GameObject Plus75;
+    public GameObject Plus250;
     void Start()
     {
         soundManager = FindObjectOfType<SoundManager>();
@@ -28,7 +33,22 @@ public class Bank : MonoBehaviour
     public void Deposit(int amount)
     {
         soundManager.PlayMoneyGetSound();
-        Instantiate(Plus25);
+        if(amount == 25)
+        {
+            Instantiate(Plus25);
+        }
+        if (amount == 50)
+        {
+            Instantiate(Plus50);
+        }
+        if (amount == 75)
+        {
+            Instantiate(Plus75);
+        }
+        if(amount == 250)
+        {
+            Instantiate(Plus250);
+        }
         UpdateOil();
         currentBalance += Mathf.Abs(amount);
     }
@@ -37,7 +57,11 @@ public class Bank : MonoBehaviour
     {
         if (currentBalance > 0)
         {
-            if(amount == 75)
+            if (amount == 25)
+            {
+                Instantiate(Minus25);
+            }
+            if (amount == 75)
             {
                 Instantiate(Minus75);
             }

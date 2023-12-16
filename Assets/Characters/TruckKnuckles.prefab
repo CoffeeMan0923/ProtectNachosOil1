@@ -56,7 +56,7 @@ MonoBehaviour:
   ispenguin: 0
   isbatista: 0
   BallonistSlowRate: 0
-  startingTruckHp: 15
+  startingTruckHp: 5
   currentTruckHp: 0
   animator: {fileID: 3023134493537767675}
   DudesinRange: 0

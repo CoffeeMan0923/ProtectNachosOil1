@@ -8,6 +8,7 @@ using Random = UnityEngine.Random;
 
 public class EnemyMove : MonoBehaviour
 {
+    [SerializeField] bool isPenguin;
     SoundManager soundManager;
     [SerializeField] ParticleSystem Aura;
     [SerializeField] GameObject particalexplo;
@@ -22,15 +23,24 @@ public class EnemyMove : MonoBehaviour
     [SerializeField] bool isbatista;
     [SerializeField] float BallonistSlowRate = 0.005f;
     [SerializeField] bool DopathReverse;
+    [SerializeField] bool isBully;
+    [SerializeField] Animator animator;
+    Objectpool objectpool;
+    bool TakeCashLoop;
+    bool AnimPlay;
+    Bank bank;
     bool StopAuraSFX;
     float originalspeed;
     float ranspeed;
     int isballoned;
+    public bool NewSpawn;
     Enemy enemy;
     Vector3 originalPos;
     float movePercent;
     void Start()
     {
+        objectpool = FindObjectOfType<Objectpool>();
+        bank = FindObjectOfType<Bank>();
         originalPos = transform.position;
         soundManager = FindObjectOfType<SoundManager>();
         if (moveRandom)
@@ -87,15 +97,31 @@ public class EnemyMove : MonoBehaviour
             speed = originalspeed;
         }
     }
-
+    public void AddBallonResistance(float extraresistance)
+    {
+        if (!isPenguin)
+        {
+            BallonistSlowRate = BallonistSlowRate + extraresistance;
+        }
+    }
     void Update()
     {
+        if (AnimPlay)
+        {
+            animator.Play("Take");
+        }
+        if (TakeCashLoop)
+        {
+            TakeCashLoop = false;
+            Invoke("TakeCash", 1);
+        }
         if (StopAuraSFX)
         {
             Aura.loop = false;
         }
         if (speed <= 0)
         {
+            objectpool.EnemyAmount--;
             Instantiate(particalexplo, pos.transform.position, Quaternion.identity);
             enemy.OilReward();
             Destroy(gameObject);
@@ -137,27 +163,67 @@ public class EnemyMove : MonoBehaviour
         }
         soundManager.CabinDamaged();
     }
+    void TakeCash()
+    {
+        TakeCashLoop = true;
+        bank.Whithdraw(25);
+        soundManager.PlayMoneySpendSound();
+    }
     IEnumerator printwatpoint()
     {
-        foreach (Waypoint waypoint in path)
+        if (!isBully)
         {
-            Debug.Log(gameObject.name + " pos: " + waypoint.gameObject.name);
-            Vector3 startposition = transform.position;
-            Vector3 endposition = waypoint.transform.position;
-            float movepercent = 0f;
-            transform.LookAt(endposition);
-             while(movepercent < 1f)
+            foreach (Waypoint waypoint in path)
             {
-                movepercent += Time.deltaTime * speed;
-                transform.position=Vector3.Lerp(startposition, endposition, movepercent);
-                yield return new WaitForEndOfFrame();
+                Debug.Log(gameObject.name + " pos: " + waypoint.gameObject.name);
+                Vector3 startposition = transform.position;
+                Vector3 endposition = waypoint.transform.position;
+                float movepercent = 0f;
+                transform.LookAt(endposition);
+                while (movepercent < 1f)
+                {
+                    movepercent += Time.deltaTime * speed;
+                    transform.position = Vector3.Lerp(startposition, endposition, movepercent);
+                    yield return new WaitForEndOfFrame();
+                }
+
+
             }
-             
-                    
+        }
+        else if (isBully)
+        {
+            foreach (Waypoint waypoint in path)
+            {
+                if(waypoint.gameObject.GetComponent<Waypoint>().bullylimiter != true)
+                {
+                    Debug.Log(gameObject.name + " pos: " + waypoint.gameObject.name);
+                    Vector3 startposition = transform.position;
+                    Vector3 endposition = waypoint.transform.position;
+                    float movepercent = 0f;
+                    transform.LookAt(endposition);
+                    while (movepercent < 1f)
+                    {
+                        movepercent += Time.deltaTime * speed;
+                        transform.position = Vector3.Lerp(startposition, endposition, movepercent);
+                        yield return new WaitForEndOfFrame();
+                    }
+                }
+            }
         }
         CabinEntersounds();
         enemy.StealOil();
-        Destroy(gameObject);
+        if (isBully != true)
+        {
+            objectpool.EnemyAmount--;
+            Destroy(gameObject);
+        }
+        else
+        {
+            AnimPlay = true;
+            animator.Play("Take");
+            TakeCash();
+        }
+        
     }
 
 }

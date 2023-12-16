@@ -20,6 +20,7 @@ public class CallCenter : MonoBehaviour
     public int time = 50;
     public int minustime = 10;
     public int Callers;
+    public int oldCallersNum2;
     public int oldCallersNum;
     public bool firstcall;
     public bool anotheone;
@@ -28,6 +29,7 @@ public class CallCenter : MonoBehaviour
     void Start()
     {
         soundManager = FindObjectOfType<SoundManager>();
+        oldCallersNum2 = Callers;
     }
     // Update is called once per frame
     void Update()
@@ -40,6 +42,14 @@ public class CallCenter : MonoBehaviour
         {
             timer1 = false;
             CallDelay();
+        }
+        if(oldCallersNum2 != Callers)
+        {
+            oldCallersNum = Callers;
+            if(Callers == 0)
+            {
+                CancelCall();
+            }
         }
         if (oldCallersNum < Callers)
         {

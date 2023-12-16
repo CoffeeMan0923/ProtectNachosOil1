@@ -7,7 +7,9 @@ public class Oiler : MonoBehaviour
     [SerializeField] int cost = 75;
     [SerializeField] bool isBallonist;
     [SerializeField] bool isOilboy;
+    [SerializeField] bool isTruckCaller;
     [SerializeField] bool MakeSpawnSounds = true;
+    CallCenter callCenter;
     SoundManager soundManager;
     void Start()
     {
@@ -17,6 +19,7 @@ public class Oiler : MonoBehaviour
             Invoke("Spawnsounds", 0.7f);
             moneyspenssound();
         }
+        callCenter = FindObjectOfType<CallCenter>();
     }
     void Spawnsounds()
     {
@@ -56,7 +59,19 @@ public class Oiler : MonoBehaviour
         if (other.gameObject.tag == "Sell")
         {
             Bank bank = FindObjectOfType<Bank>();
-            bank.Deposit(cost/2);
+            if (isOilboy && !isTruckCaller)
+            {
+                bank.Deposit(50);
+            }
+            if (isBallonist)
+            {
+                bank.Deposit(75);
+            }
+            if (isTruckCaller)
+            {
+                callCenter.Callers--;
+                bank.Deposit(250);
+            }
             Destroy(gameObject);
         }
     }

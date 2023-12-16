@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: -6384959758946458101}
   - component: {fileID: 7902577307684327583}
   - component: {fileID: 8533039389165704967}
+  - component: {fileID: 5503545067282640350}
   m_Layer: 0
   m_Name: Oilboy
   m_TagString: Untagged
@@ -70,6 +71,7 @@ MonoBehaviour:
   cost: 75
   isBallonist: 0
   isOilboy: 1
+  MakeSpawnSounds: 1
 --- !u!82 &8533039389165704967
 AudioSource:
   m_ObjectHideFlags: 0
@@ -166,6 +168,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &5503545067282640350
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1129831694947003359}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.641323, y: 7.178673, z: 2.4980993}
+  m_Center: {x: 0.24971199, y: 10.437162, z: -0.07713348}
 --- !u!1 &8473253030833918853
 GameObject:
   m_ObjectHideFlags: 0

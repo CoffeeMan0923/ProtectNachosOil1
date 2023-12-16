@@ -14,14 +14,22 @@ public class Enemydamage : MonoBehaviour
     [SerializeField] float oildamage = 1;
     [SerializeField] bool ispenguin;
     [SerializeField] bool isbatista;
+    Objectpool objectpool;
+    public bool freshSpawn;
     public float startingHp = 5;
     void Start()
     {
+        objectpool = FindObjectOfType<Objectpool>();
+        freshSpawn = true;
         soundManager = FindObjectOfType<SoundManager>();
         enemy = GetComponent<Enemy>();
         currenthp = currenthp + startingHp;
         Spawnsounds();
 
+    }
+    public void AddHp(int extrahp)
+    {
+        currenthp = currenthp + extrahp;
     }
     void Spawnsounds()
     {
@@ -87,6 +95,7 @@ public class Enemydamage : MonoBehaviour
         if (currenthp <= 0)
         {
             Instantiate(particalexplo, pos.transform.position,Quaternion.identity);
+            objectpool.EnemyAmount--;
             Destroy(gameObject);
             enemy.OilReward();
         }

@@ -240,6 +240,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isplacable: 1
   isplacable2: 1
+  SellTower: {fileID: 63913440147704470, guid: 1a9ca14ca5b7f844f8c88fe2882a37bf, type: 3}
+  SellSelected: 0
   Oilboy: {fileID: 7902577307684327583, guid: ed7cb7b35eb278a41904a9ae43482fd3, type: 3}
   Ballonist: {fileID: 5366430260883143149, guid: 0bffdc3874f6e124eb1a8ca3ecc3a069, type: 3}
   TruckCaller: {fileID: -728323295693650122, guid: e8e150ba4edd57c4ea3c6ec68c306409, type: 3}

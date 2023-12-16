@@ -7,10 +7,13 @@ using UnityEngine;
 public class Objectpool : MonoBehaviour
 {
 
-    int round = 1;
-    int roundenemies = 1;
+    int round = 0;
+    int roundenemies = 0;
     bool roundTransition = false;
-    [SerializeField] int enemystospawwn = 2;
+    int hpboost;
+    float BallonResistance;
+    // enemystospawn was 2 incase of error
+    [SerializeField] int enemystospawwn = 0;
     [SerializeField] GameObject[] enemys;
     [SerializeField] GameObject enemyprefab;
     [SerializeField] float sapwntimer = 1f;
@@ -18,20 +21,24 @@ public class Objectpool : MonoBehaviour
     [SerializeField] TextMeshProUGUI TextNewRound;
     [SerializeField] FlotingText flotingTextScript;
     Enemydamage enemydamage;
+    [SerializeField] GameObject parent;
+    public int EnemyAmount;
+    bool som;
+    int morehp;
+    int roundUpTo2 = 1;
     bool istime;
-    int Batistakin = 0;
-    // Start is called before the first frame update
+    int RoundSpawnNum = 0;
 
     void Start()
     {
         StartCoroutine(spwanenemy());
-        
+        RoundSpawnNum = 1;
     }
     IEnumerator spwanenemy()
     {
         while (enemystospawwn >= 0)
         {
-            int e = Random.Range(0, enemys.Length-1+Batistakin);
+            int e = Random.Range(0, enemys.Length-20+RoundSpawnNum);
             enemystospawwn--;
             Instantiate(enemys[e], transform);
             yield return new WaitForSeconds(sapwntimer);
@@ -40,29 +47,45 @@ public class Objectpool : MonoBehaviour
     }
         void Update()
         {
-
-        if (!istime && round == 6)
+        if(round == roundUpTo2)
         {
-            istime = true;
-            Batistakin = 1;
+            roundUpTo2 = roundUpTo2 + 2;
+            morehp++;
+            
         }
-        if (enemystospawwn <= -1)
+        foreach (Transform child in parent.transform)
+        {
+            if (child.GetComponent<Enemydamage>() != null && child.GetComponent<Enemydamage>().freshSpawn == true)
             {
-                if (roundTransition == false)
-                {
-
-                    roundTransition = true;
-                    Invoke("Repeat", 8);
-                }
-
+                child.GetComponent<Enemydamage>().freshSpawn = false;
+                child.GetComponent<Enemydamage>().AddHp(morehp - 1);
+                child.GetComponent<EnemyMove>().AddBallonResistance(BallonResistance);
             }
+        }
+
+         if (!istime)
+         {
+             istime = true;
+             RoundSpawnNum = 1;
+         }
+         if (enemystospawwn <= -1 && roundTransition == false && EnemyAmount == 0)
+         {
+            roundTransition = true;
+                    Invoke("Repeat", 5);
+         }
+
         }
         
         void Repeat()
         {
           
             round++;
+            if(RoundSpawnNum != 20)
+            {
+                RoundSpawnNum++;
+            }
             TextRound.text = "Round:" + round;
+            BallonResistance = BallonResistance - 0.0001f;
             TextNewRound.text = "Round:" + round;
             flotingTextScript.Flash();
             roundTransition = false;

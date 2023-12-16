@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3025754658517262324}
   - component: {fileID: -728323295693650122}
   - component: {fileID: 1456822300570353975}
+  - component: {fileID: 5616780094622348166}
   m_Layer: 0
   m_Name: TruckCaller
   m_TagString: Untagged
@@ -49,6 +50,7 @@ MonoBehaviour:
   cost: 500
   isBallonist: 0
   isOilboy: 1
+  isTruckCaller: 1
   MakeSpawnSounds: 1
 --- !u!114 &1456822300570353975
 MonoBehaviour:
@@ -62,6 +64,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2a3d65deca036241b1b78e7c8573508, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &5616780094622348166
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4542689952882803112}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.60905266, y: 2.7899454, z: 0.5676136}
+  m_Center: {x: 0.02338028, y: 0.894972, z: 0.06880411}
 --- !u!1001 &1456822299919859972
 PrefabInstance:
   m_ObjectHideFlags: 0

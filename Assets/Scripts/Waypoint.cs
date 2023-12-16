@@ -20,6 +20,7 @@ public class Waypoint : MonoBehaviour
     public Oiler TruckCallerGhostRed;
     public Oiler OilboyGhostRed;
     public Oiler BallonistGhostRed;
+    public bool bullylimiter;
     SoundManager soundmanager;
     Waypoint waypoint;
     public bool isballonist;
@@ -169,6 +170,7 @@ public class Waypoint : MonoBehaviour
         }
         if (SellSelected)
         {
+            isPlaced = false;
             SellTower.CreateOiler(SellTower, gameObject.transform.position);
 
         }

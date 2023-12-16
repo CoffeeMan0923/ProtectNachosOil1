@@ -113,6 +113,10 @@ using UnityEngine;
     }
     public void TowerSellerSelected()
     {
+        if (soundManager != null)
+        {
+            soundManager.PlayCharacterButtonPresedSound();
+        }
         SellTowerloop();
     }
     void Oilboyloop()
