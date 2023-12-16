@@ -77,7 +77,7 @@ public class Objectpool : MonoBehaviour
          if (enemystospawwn <= -1 && roundTransition == false && EnemyAmount == 0)
          {
             roundTransition = true;
-                    Invoke("Repeat", 5);
+                    Invoke("Repeat", 6);
          }
 
         }
@@ -85,11 +85,12 @@ public class Objectpool : MonoBehaviour
         void NewRoundSounds()
         {
             source.PlayOneShot(RoundWord);
-            Invoke("NumSounds",0.6f);
+            Invoke("NumSounds",0.8f);
         }
         void NumSounds()
         {
            Sound = roundNumSounds[round];
+           source.PlayOneShot(Sound);
         }
         void Repeat()
         {
