@@ -12,7 +12,6 @@ public class Objectpool : MonoBehaviour
     bool roundTransition = false;
     int hpboost;
     float BallonResistance;
-    // enemystospawn was 2 incase of error
     [SerializeField] int enemystospawwn = 0;
     [SerializeField] GameObject[] enemys;
     [SerializeField] GameObject enemyprefab;
@@ -20,6 +19,11 @@ public class Objectpool : MonoBehaviour
     [SerializeField] TextMeshProUGUI TextRound;
     [SerializeField] TextMeshProUGUI TextNewRound;
     [SerializeField] FlotingText flotingTextScript;
+    [SerializeField] AudioClip[] roundNumSounds;
+    [SerializeField] AudioClip RoundWord;
+    [SerializeField] AudioSource source;
+    private AudioClip Sound;
+    SoundManager soundManager;
     Enemydamage enemydamage;
     [SerializeField] GameObject parent;
     public int EnemyAmount;
@@ -31,6 +35,8 @@ public class Objectpool : MonoBehaviour
 
     void Start()
     {
+        NewRoundSounds();
+        soundManager = FindObjectOfType<SoundManager>();
         StartCoroutine(spwanenemy());
         RoundSpawnNum = 1;
     }
@@ -76,6 +82,15 @@ public class Objectpool : MonoBehaviour
 
         }
         
+        void NewRoundSounds()
+        {
+            source.PlayOneShot(RoundWord);
+            Invoke("NumSounds",0.6f);
+        }
+        void NumSounds()
+        {
+           Sound = roundNumSounds[round];
+        }
         void Repeat()
         {
           
@@ -84,6 +99,7 @@ public class Objectpool : MonoBehaviour
             {
                 RoundSpawnNum++;
             }
+            NewRoundSounds();
             TextRound.text = "Round:" + round;
             BallonResistance = BallonResistance - 0.0001f;
             TextNewRound.text = "Round:" + round;

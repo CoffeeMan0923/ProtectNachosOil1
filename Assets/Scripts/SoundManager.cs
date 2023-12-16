@@ -18,6 +18,8 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private AudioClip[] moneyGetSound;
     [SerializeField] private AudioClip[] TruckKnucklesSpawnSounds;
     [SerializeField] private AudioClip[] PakageSound;
+    [SerializeField] private AudioClip[] RoundNumbers;
+    [SerializeField] private AudioClip RoundSound;
     [SerializeField] private AudioClip TruckCall;
     [SerializeField] private AudioClip penguinSpawnSound;
     [SerializeField] private AudioClip CabinExplode;
@@ -168,6 +170,16 @@ public class SoundManager : MonoBehaviour
         Sound = TruckKnucklesSpawnSounds[Random.Range(0, TruckKnucklesSpawnSounds.Length)];
         source.PlayOneShot(Sound);
     }
+    public void PlayNewRoundSound()
+    {
+        source.PlayOneShot(Sound);
+    }
+    public void RoundNum(int rounds)
+    {
+        Sound = RoundNumbers[rounds];
+        source.PlayOneShot(Sound);
+    }
+
 
 }
 

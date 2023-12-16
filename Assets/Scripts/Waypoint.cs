@@ -20,6 +20,7 @@ public class Waypoint : MonoBehaviour
     public Oiler TruckCallerGhostRed;
     public Oiler OilboyGhostRed;
     public Oiler BallonistGhostRed;
+    public Oiler XGhost;
     public bool bullylimiter;
     SoundManager soundmanager;
     Waypoint waypoint;
@@ -132,6 +133,11 @@ public class Waypoint : MonoBehaviour
             else if (isballonist)
             {
                 BallonistGhostRed.CreateOiler(BallonistGhostRed, gameObject.transform.position);
+                waypoint.isPlacable(isPlaced);
+            }
+            if (SellSelected)
+            {
+                XGhost.CreateOiler(XGhost, gameObject.transform.position);
                 waypoint.isPlacable(isPlaced);
             }
         }

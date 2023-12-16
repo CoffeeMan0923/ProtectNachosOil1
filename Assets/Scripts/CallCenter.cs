@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class CallCenter : MonoBehaviour
@@ -36,7 +37,7 @@ public class CallCenter : MonoBehaviour
     {
         if (Callers == 3)
         {
-            button.GetComponent<Button>().enabled = false;
+            button.GetComponent<EventTrigger>().enabled = false;
         }
         if (timer1 && StartSpawningTruckKnuckles && KnucklesOnField <= 0)
         {
@@ -70,7 +71,7 @@ public class CallCenter : MonoBehaviour
     void CallDelay()
     {
 
-        if(KnucklesOnField <= 0)
+        if(KnucklesOnField <= 0 && Callers !=0)
         {
             timer1 = false;
             Invoke("CallTruckKnuckles", time);

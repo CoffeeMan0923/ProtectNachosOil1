@@ -165,9 +165,16 @@ public class EnemyMove : MonoBehaviour
     }
     void TakeCash()
     {
-        TakeCashLoop = true;
-        bank.Whithdraw(25);
-        soundManager.PlayMoneySpendSound();
+        if (bank.currentBalance == 0)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            TakeCashLoop = true;
+            bank.Whithdraw(25);
+            soundManager.PlayMoneySpendSound();
+        }
     }
     IEnumerator printwatpoint()
     {
@@ -221,6 +228,10 @@ public class EnemyMove : MonoBehaviour
         {
             AnimPlay = true;
             animator.Play("Take");
+            if(bank.currentBalance == 0)
+            {
+                Destroy(gameObject);
+            }
             TakeCash();
         }
         

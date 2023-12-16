@@ -88,7 +88,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2290226804824211158}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
   m_Name: 
@@ -251,6 +251,8 @@ MonoBehaviour:
   TruckCallerGhostRed: {fileID: -728323295693650122, guid: 4c8eb3dbf1f7f2f4cad2a9ac6f29b0d8, type: 3}
   OilboyGhostRed: {fileID: 7902577307684327583, guid: 31cd8457550003344baef2973aa5cc1a, type: 3}
   BallonistGhostRed: {fileID: 5366430260883143149, guid: ad7dcdf79dc21f340bf31578a18b90f1, type: 3}
+  XGhost: {fileID: 3856686119261402052, guid: 83edf1a7fae759948aebafab836ca7d7, type: 3}
+  bullylimiter: 0
   isballonist: 0
   isoiler: 0
   istruckcaller: 0
