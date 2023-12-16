@@ -167,6 +167,7 @@ public class EnemyMove : MonoBehaviour
     {
         if (bank.currentBalance == 0)
         {
+            objectpool.EnemyAmount--;
             Destroy(gameObject);
         }
         else
@@ -230,6 +231,7 @@ public class EnemyMove : MonoBehaviour
             animator.Play("Take");
             if(bank.currentBalance == 0)
             {
+                objectpool.EnemyAmount--;
                 Destroy(gameObject);
             }
             TakeCash();
