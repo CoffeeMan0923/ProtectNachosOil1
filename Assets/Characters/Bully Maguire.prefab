@@ -53,7 +53,7 @@ MonoBehaviour:
   particalexplo: {fileID: 8460064027121919758, guid: a84130babb62f1a4c946e8aad4adde29, type: 3}
   pos: {fileID: 1147754061535850133}
   path: []
-  speed: 1.5
+  speed: 3
   reward: 50
   minSpeedRan: 0.5
   moveRandom: 0
@@ -64,6 +64,7 @@ MonoBehaviour:
   DopathReverse: 0
   isBully: 1
   animator: {fileID: 4024518046571644605}
+  BullysTimeOnBlock: 1
   NewSpawn: 1
 --- !u!114 &65483203366161329
 MonoBehaviour:
@@ -85,7 +86,7 @@ MonoBehaviour:
   ispenguin: 0
   isbatista: 0
   freshSpawn: 1
-  startingHp: 3
+  startingHp: 6
 --- !u!114 &-5498115740380596140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,7 +212,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 256
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500

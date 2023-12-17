@@ -101,7 +101,7 @@ public class Objectpool : MonoBehaviour
                 RoundSpawnNum++;
             }
             NewRoundSounds();
-            TextRound.text = "Round:" + round;
+            TextRound.text = "" + round;
             BallonResistance = BallonResistance - 0.0001f;
             TextNewRound.text = "Round:" + round;
             flotingTextScript.Flash();

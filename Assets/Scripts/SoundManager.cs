@@ -30,6 +30,8 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private AudioClip bloodImpactSound;
     [SerializeField] private AudioClip moneySpendSound;
     [SerializeField] private AudioClip Rickroll;
+    [SerializeField] private AudioClip DirtinyourEye;
+    [SerializeField] private AudioClip SeeYaChump;
     private int currentSongIndex = 0;
     private AudioClip Sound;
     public static SoundManager Instance;
@@ -178,6 +180,14 @@ public class SoundManager : MonoBehaviour
     {
         Sound = RoundNumbers[rounds];
         source.PlayOneShot(Sound);
+    }
+    public void PlayDirtInYourEye()
+    {
+        source.PlayOneShot(DirtinyourEye);
+    }
+    public void PlaySeeYa()
+    {
+        source.PlayOneShot(SeeYaChump);
     }
 
 

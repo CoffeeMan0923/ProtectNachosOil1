@@ -79,7 +79,7 @@ public class Bank : MonoBehaviour
     }
     void UpdateOil()
     {
-        oildisplay.text = "Oil:" + currentBalance;
+        oildisplay.text = "" + currentBalance;
     }
 
 

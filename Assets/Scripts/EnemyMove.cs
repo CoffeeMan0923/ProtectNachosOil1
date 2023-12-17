@@ -25,6 +25,8 @@ public class EnemyMove : MonoBehaviour
     [SerializeField] bool DopathReverse;
     [SerializeField] bool isBully;
     [SerializeField] Animator animator;
+    [SerializeField] float BullysTimeOnBlock;
+    bool Timer1;
     Objectpool objectpool;
     bool TakeCashLoop;
     bool AnimPlay;
@@ -39,10 +41,15 @@ public class EnemyMove : MonoBehaviour
     float movePercent;
     void Start()
     {
+        if (isBully)
+        {
+            soundManager = FindObjectOfType<SoundManager>();
+            soundManager.PlayDirtInYourEye();
+        }
+        soundManager = FindObjectOfType<SoundManager>();
         objectpool = FindObjectOfType<Objectpool>();
         bank = FindObjectOfType<Bank>();
         originalPos = transform.position;
-        soundManager = FindObjectOfType<SoundManager>();
         if (moveRandom)
         {
             originalspeed = Random.Range(minSpeedRan, speed);
@@ -167,6 +174,7 @@ public class EnemyMove : MonoBehaviour
     {
         if (bank.currentBalance == 0)
         {
+            soundManager.PlaySeeYa();
             objectpool.EnemyAmount--;
             Destroy(gameObject);
         }
@@ -204,6 +212,9 @@ public class EnemyMove : MonoBehaviour
             {
                 if(waypoint.gameObject.GetComponent<Waypoint>().bullylimiter != true)
                 {
+                    animator.Play("Dance");
+                    yield return new WaitForSeconds(BullysTimeOnBlock);
+                    animator.Play("Slide");
                     Debug.Log(gameObject.name + " pos: " + waypoint.gameObject.name);
                     Vector3 startposition = transform.position;
                     Vector3 endposition = waypoint.transform.position;
@@ -214,6 +225,7 @@ public class EnemyMove : MonoBehaviour
                         movepercent += Time.deltaTime * speed;
                         transform.position = Vector3.Lerp(startposition, endposition, movepercent);
                         yield return new WaitForEndOfFrame();
+
                     }
                 }
             }
@@ -231,12 +243,21 @@ public class EnemyMove : MonoBehaviour
             animator.Play("Take");
             if(bank.currentBalance == 0)
             {
+                soundManager.PlaySeeYa();
                 objectpool.EnemyAmount--;
-                Destroy(gameObject);
+                Invoke("SelfDestroy", 0.2f);
             }
             TakeCash();
         }
-        
+
+    }
+    //void time()
+    //{
+   //     Timer1 = true;
+   // }
+    void SelfDestroy()
+    {
+        Destroy(gameObject);
     }
 
 }

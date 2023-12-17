@@ -49,7 +49,7 @@ public class Nachoshealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        HealthDisplay.text = "Health" + cabinHealth;
+        HealthDisplay.text = "" + cabinHealth;
         if (cabinHealth <= 0)
         {
             Director.GetComponent<PlayableDirector>().enabled = true;
