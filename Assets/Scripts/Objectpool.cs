@@ -19,6 +19,7 @@ public class Objectpool : MonoBehaviour
     [SerializeField] TextMeshProUGUI TextRound;
     [SerializeField] TextMeshProUGUI TextNewRound;
     [SerializeField] FlotingText flotingTextScript;
+    [SerializeField] FlotingText flotingTextScript2;
     [SerializeField] AudioClip[] roundNumSounds;
     [SerializeField] AudioClip RoundWord;
     [SerializeField] AudioSource source;
@@ -103,8 +104,9 @@ public class Objectpool : MonoBehaviour
             NewRoundSounds();
             TextRound.text = "" + round;
             BallonResistance = BallonResistance - 0.0001f;
-            TextNewRound.text = "Round:" + round;
+            TextNewRound.text = "" + round;
             flotingTextScript.Flash();
+            flotingTextScript2.Flash();
             roundTransition = false;
             enemystospawwn = roundenemies;
             roundenemies++;
