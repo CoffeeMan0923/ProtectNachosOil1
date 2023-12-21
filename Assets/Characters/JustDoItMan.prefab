@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GordomRamsy: {fileID: 6380279880806057504, guid: 9c86119c455c6f14e871e18117f9be1c, type: 3}
-  HellStormdelay: 4
+  HellStormdelay: 6
 --- !u!1001 &5495465397954120268
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -199,7 +199,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 651cb7abc6cbc1d42974eb56b1cf3a4c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.04
+      value: 4.68
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 651cb7abc6cbc1d42974eb56b1cf3a4c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -254,7 +254,7 @@ Animator:
   m_GameObject: {fileID: 4648481691194406685}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: afaf82499a8c5a34a9402d763d13ea4e, type: 2}
+  m_Controller: {fileID: 9100000, guid: 5f4c6738b3b9e3c4d8043073906332f9, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

@@ -80,6 +80,20 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 49d000834ae4867438e403a68383ad9d, type: 3}
   moneyGetSound:
   - {fileID: 8300000, guid: 32c2191f6bf9d4b4887573e9451c14dc, type: 3}
+  TruckKnucklesSpawnSounds:
+  - {fileID: 8300000, guid: 3d65e9584c81d594f9ecfffead070ab4, type: 3}
+  - {fileID: 8300000, guid: a8737b50f68f05543825a30275fb8460, type: 3}
+  PakageSound:
+  - {fileID: 8300000, guid: 491efc5fdd2281b40bad908c89e05a88, type: 3}
+  RoundNumbers: []
+  DoItManSpawnSounds:
+  - {fileID: 8300000, guid: a0a6fc07e694f414ea651b5688f97170, type: 3}
+  - {fileID: 8300000, guid: f19039a0ea65c52478828f834e9dbce2, type: 3}
+  JustDoItSFX:
+  - {fileID: 8300000, guid: 6ffb02f7d60d86f42a2dfe34ce0ccd22, type: 3}
+  - {fileID: 8300000, guid: cc1e2d418779c514193e0e3ebcfefc31, type: 3}
+  RoundSound: {fileID: 8300000, guid: 5004c6a639e26204c95b49779736d096, type: 3}
+  TruckCall: {fileID: 8300000, guid: be9cee1e2a1b7e94486c9c19da7036ba, type: 3}
   penguinSpawnSound: {fileID: 8300000, guid: 2c2b523ee111d914981f0db4da82b0bc, type: 3}
   CabinExplode: {fileID: 8300000, guid: 0f2a395e9e7d9bd418ea3cbc5e4a5f98, type: 3}
   CabinTissysDestroyed: {fileID: 8300000, guid: 521708685d6ef7d4d935ed2cd63b7b0e, type: 3}
@@ -89,6 +103,8 @@ MonoBehaviour:
   bloodImpactSound: {fileID: 8300000, guid: 63bf105be1bdaad44a0b92c3efd1e3ca, type: 3}
   moneySpendSound: {fileID: 8300000, guid: e8cefe958137f2645bb399ec39ef66f8, type: 3}
   Rickroll: {fileID: 8300000, guid: a8337927a64821846a89f2c18b16ac47, type: 3}
+  DirtinyourEye: {fileID: 8300000, guid: 2b538662767c46648b91094d67fe42c9, type: 3}
+  SeeYaChump: {fileID: 8300000, guid: dd32e8a7cba406b4e954134ab8ead07a, type: 3}
 --- !u!82 &7504093937578117701
 AudioSource:
   m_ObjectHideFlags: 0

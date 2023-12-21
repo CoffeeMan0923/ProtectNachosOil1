@@ -68,10 +68,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d967aecfdf43d3d4b834e1ff26de3ba6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp: 2
   cost: 75
   isBallonist: 0
   isOilboy: 1
+  isTruckCaller: 0
   MakeSpawnSounds: 1
+  OilExplosion: {fileID: 0}
 --- !u!82 &8533039389165704967
 AudioSource:
   m_ObjectHideFlags: 0

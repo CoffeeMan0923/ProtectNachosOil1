@@ -16,7 +16,8 @@ public class Nachoshealth : MonoBehaviour
     [SerializeField] GameObject Cabin;
     [SerializeField] GameObject Director;
     [SerializeField] float penguinDamage = 1;
-    [SerializeField] float batistaDamage = 20;
+    [SerializeField] float batistaDamage = 2;
+    [SerializeField] float ramsyDamage = 3;
     [SerializeField] float cabinHealth = 20;
     bool TissyClack;
     SoundManager soundManager;
@@ -40,6 +41,13 @@ public class Nachoshealth : MonoBehaviour
         {
             SmokeSFX.Play();
             damage = penguinDamage;
+            CabinShake();
+            cabinHealth = cabinHealth - damage;
+        }
+        if(other.gameObject.tag == "Ramsy")
+        {
+            SmokeSFX.Play();
+            damage = ramsyDamage;
             CabinShake();
             cabinHealth = cabinHealth - damage;
         }

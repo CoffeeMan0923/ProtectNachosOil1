@@ -9,7 +9,7 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private AudioClip[] ballonistSpawnSounds;
     [SerializeField] private AudioClip[] penguinDamageSounds;
     [SerializeField] private AudioClip[] batistaDamageSounds;
-    [SerializeField] private AudioClip[] oilboySpawnSounds;    
+    [SerializeField] private AudioClip[] oilboySpawnSounds;
     [SerializeField] private AudioClip[] oilboyAttackSounds;
     [SerializeField] private AudioClip[] ballonistAttackSounds;
     [SerializeField] private AudioClip[] cabinDamaged;
@@ -20,7 +20,7 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private AudioClip[] PakageSound;
     [SerializeField] private AudioClip[] RoundNumbers;
     [SerializeField] private AudioClip[] DoItManSpawnSounds;
-    [SerializeField] private AudioClip JustDoItSFX;
+    [SerializeField] private AudioClip[] JustDoItSFX;
     [SerializeField] private AudioClip RoundSound;
     [SerializeField] private AudioClip TruckCall;
     [SerializeField] private AudioClip penguinSpawnSound;
@@ -198,7 +198,8 @@ public class SoundManager : MonoBehaviour
     }
     public void PlayJustDoIt()
     {
-        source.PlayOneShot(JustDoItSFX);
+        Sound = JustDoItSFX[Random.Range(0, JustDoItSFX.Length)];
+        source.PlayOneShot(Sound);
     }
 
 

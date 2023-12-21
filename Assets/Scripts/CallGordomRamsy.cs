@@ -18,7 +18,10 @@ public class CallGordomRamsy : MonoBehaviour
     void callHellsStorm()
     {
         oiler = FindObjectOfType<Oiler>();
-        Instantiate(GordomRamsy.gameObject,oiler.transform.position, Quaternion.identity);
+        if(oiler != null)
+        {
+            Instantiate(GordomRamsy.gameObject, oiler.transform.position, Quaternion.identity);
+        }
         Delay1 = false;
     }
     void sounddelay()
