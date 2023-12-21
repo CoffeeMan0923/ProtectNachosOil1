@@ -21,6 +21,8 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private AudioClip[] RoundNumbers;
     [SerializeField] private AudioClip[] DoItManSpawnSounds;
     [SerializeField] private AudioClip[] JustDoItSFX;
+    [SerializeField] private AudioClip[] MoneyStealSFX;
+    [SerializeField] private AudioClip TrucKKnucklesChinStolen;
     [SerializeField] private AudioClip RoundSound;
     [SerializeField] private AudioClip TruckCall;
     [SerializeField] private AudioClip penguinSpawnSound;
@@ -200,6 +202,15 @@ public class SoundManager : MonoBehaviour
     {
         Sound = JustDoItSFX[Random.Range(0, JustDoItSFX.Length)];
         source.PlayOneShot(Sound);
+    }
+    public void PlayStealMoneySound()
+    {
+        Sound = MoneyStealSFX[Random.Range(0, MoneyStealSFX.Length)];
+        source.PlayOneShot(Sound);
+    }
+    public void PlayChinStolenSound()
+    {
+        source.PlayOneShot(TrucKKnucklesChinStolen);
     }
 
 

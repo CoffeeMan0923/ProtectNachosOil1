@@ -180,6 +180,7 @@ public class EnemyMove : MonoBehaviour
         }
         else
         {
+            soundManager.PlayStealMoneySound();
             TakeCashLoop = true;
             bank.Whithdraw(25);
             soundManager.PlayMoneySpendSound();

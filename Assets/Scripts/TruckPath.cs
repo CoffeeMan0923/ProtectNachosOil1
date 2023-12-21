@@ -53,6 +53,7 @@ public class TruckPath : MonoBehaviour
         }
         else if(collision.gameObject.GetComponent<Enemydamage>() != null)
         {
+            soundManager.PlayChinStolenSound();
             currentTruckHp = currentTruckHp - currentTruckHp + 1;
         }
 
