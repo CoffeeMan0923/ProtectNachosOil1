@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class Oiler : MonoBehaviour
 {
+    [SerializeField] int hp = 3;
     [SerializeField] int cost = 75;
     [SerializeField] bool isBallonist;
     [SerializeField] bool isOilboy;
     [SerializeField] bool isTruckCaller;
     [SerializeField] bool MakeSpawnSounds = true;
+    [SerializeField] ParticleSystem OilExplosion;
     CallCenter callCenter;
     SoundManager soundManager;
     void Start()
@@ -73,6 +75,18 @@ public class Oiler : MonoBehaviour
                 bank.Deposit(250);
             }
             Destroy(gameObject);
+        }
+        if(other.gameObject.tag == "Ramsy")
+        {
+            hp--;
+            if(hp <= 0)
+            {
+                if(OilExplosion != null)
+                {
+                    OilExplosion.Play();
+                }
+                Destroy(gameObject);
+            }
         }
     }
 }

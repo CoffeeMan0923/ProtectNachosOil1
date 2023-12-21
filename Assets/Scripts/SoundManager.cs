@@ -19,6 +19,8 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private AudioClip[] TruckKnucklesSpawnSounds;
     [SerializeField] private AudioClip[] PakageSound;
     [SerializeField] private AudioClip[] RoundNumbers;
+    [SerializeField] private AudioClip[] DoItManSpawnSounds;
+    [SerializeField] private AudioClip JustDoItSFX;
     [SerializeField] private AudioClip RoundSound;
     [SerializeField] private AudioClip TruckCall;
     [SerializeField] private AudioClip penguinSpawnSound;
@@ -172,6 +174,11 @@ public class SoundManager : MonoBehaviour
         Sound = TruckKnucklesSpawnSounds[Random.Range(0, TruckKnucklesSpawnSounds.Length)];
         source.PlayOneShot(Sound);
     }
+    public void PlayJustDoItManSapwanSounds()
+    {
+        Sound = DoItManSpawnSounds[Random.Range(0, DoItManSpawnSounds.Length)];
+        source.PlayOneShot(Sound);
+    }
     public void PlayNewRoundSound()
     {
         source.PlayOneShot(Sound);
@@ -188,6 +195,10 @@ public class SoundManager : MonoBehaviour
     public void PlaySeeYa()
     {
         source.PlayOneShot(SeeYaChump);
+    }
+    public void PlayJustDoIt()
+    {
+        source.PlayOneShot(JustDoItSFX);
     }
 
 

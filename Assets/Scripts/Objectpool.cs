@@ -45,7 +45,7 @@ public class Objectpool : MonoBehaviour
     {
         while (enemystospawwn >= 0)
         {
-            int e = Random.Range(0, enemys.Length-20+RoundSpawnNum);
+            int e = Random.Range(0, enemys.Length-23+RoundSpawnNum);
             enemystospawwn--;
             Instantiate(enemys[e], transform);
             yield return new WaitForSeconds(sapwntimer);
@@ -97,7 +97,7 @@ public class Objectpool : MonoBehaviour
         {
           
             round++;
-            if(RoundSpawnNum != 20)
+            if(RoundSpawnNum != 23)
             {
                 RoundSpawnNum++;
             }
