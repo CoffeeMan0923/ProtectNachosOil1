@@ -21,6 +21,9 @@ public class Waypoint : MonoBehaviour
     public Oiler OilboyGhostRed;
     public Oiler BallonistGhostRed;
     public Oiler XGhost;
+    public GameObject GroundCrack;
+    public int Hp;
+    public int OldHp;
     public bool bullylimiter;
     SoundManager soundmanager;
     Waypoint waypoint;
@@ -54,6 +57,18 @@ public class Waypoint : MonoBehaviour
             nomoney2 = true;
             nomoney3 = true;
         }
+    }
+    void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Ramsy")
+        {
+            Hp--;
+            if(Hp <= 0)
+            {
+                GroundCrack.gameObject.SetActive(true);
+            }
+        }
+        
     }
     public void isPlacable(bool isPlaced)
     {
@@ -104,7 +119,7 @@ public class Waypoint : MonoBehaviour
         if (hovering)
         {
             timer = false;
-            if (isoiler && !nomoney1 && !isclick)
+            if (isoiler && !nomoney1 && !isclick && Hp > 0)
             {
                 OilboyGhost.CreateOiler(OilboyGhost, gameObject.transform.position);
                 waypoint.isPlacable(isPlaced);
@@ -115,7 +130,7 @@ public class Waypoint : MonoBehaviour
                 OilboyGhostRed.CreateOiler(OilboyGhostRed, gameObject.transform.position);
                 waypoint.isPlacable(isPlaced);
             }
-            if(istruckcaller && !nomoney3 && !isclick)
+            if(istruckcaller && !nomoney3 && !isclick && Hp > 0)
             {
                 TruckCallerGhost.CreateOiler(TruckCallerGhost, gameObject.transform.position);
                 waypoint.isPlacable(isPlaced);
@@ -125,7 +140,7 @@ public class Waypoint : MonoBehaviour
                 TruckCallerGhostRed.CreateOiler(TruckCallerGhostRed, gameObject.transform.position);
                 waypoint.isPlacable(isPlaced);
             }
-            if (isballonist && !nomoney2 && !isclick)
+            if (isballonist && !nomoney2 && !isclick && Hp > 0)
             {
                 BallonistGhost.CreateOiler(BallonistGhost, gameObject.transform.position);
                 waypoint.isPlacable(isPlaced);
@@ -170,7 +185,7 @@ public class Waypoint : MonoBehaviour
     void OnMouseDown()
     {
         isclick = isPlaced;
-        if (isPlaced==false)
+        if (isPlaced == false && Hp >= 1)
         {
             summonTissy();
         }
