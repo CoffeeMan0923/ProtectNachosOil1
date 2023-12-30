@@ -27,13 +27,28 @@ public class Objectpool : MonoBehaviour
     SoundManager soundManager;
     Enemydamage enemydamage;
     [SerializeField] GameObject parent;
+    [SerializeField] GameObject GameUi;
+    [SerializeField] GameObject MenuUi;
     public int EnemyAmount;
     bool som;
+    bool time1;
+    bool UnPauseNow;
+    bool GamePaused;
     int morehp;
     int roundUpTo2 = 1;
     bool istime;
     int RoundSpawnNum = 0;
 
+    public void PauseGame()
+    {
+        GamePaused = true;
+        time1 = false;
+    }
+
+    public void UnPauseGame()
+    {
+        UnPauseNow = true;
+    }
     void Start()
     {
         NewRoundSounds();
@@ -80,7 +95,7 @@ public class Objectpool : MonoBehaviour
             roundTransition = true;
                     Invoke("Repeat", 6);
          }
-
+         SlowTime();
         }
         
         void NewRoundSounds()
@@ -88,10 +103,38 @@ public class Objectpool : MonoBehaviour
             source.PlayOneShot(RoundWord);
             Invoke("NumSounds",0.8f);
         }
+        
         void NumSounds()
         {
            Sound = roundNumSounds[round];
            source.PlayOneShot(Sound);
+        }
+        void SlowTime()
+        {
+        if (Input.GetKey(KeyCode.F) && GamePaused != true)
+        {
+            Time.timeScale = 7;
+        }
+        else if(GamePaused != true)
+        {
+            Time.timeScale = 1;
+        }  
+        else if (GamePaused == true && time1 !=true)
+        {
+            time1 = true;
+            GameUi.GetComponent<Canvas>().enabled = false;
+            MenuUi.SetActive(true);
+            Time.timeScale = 0f;
+        }
+        if (GamePaused && UnPauseNow)
+        {
+            GamePaused = false;
+            MenuUi.SetActive(false);
+            GameUi.GetComponent<Canvas>().enabled = true;
+            UnPauseNow = false;
+            Time.timeScale = 1;
+        }
+        
         }
         void Repeat()
         {

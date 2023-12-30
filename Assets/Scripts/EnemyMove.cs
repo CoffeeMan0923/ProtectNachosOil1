@@ -14,11 +14,11 @@ public class EnemyMove : MonoBehaviour
     [SerializeField] GameObject particalexplo;
     [SerializeField] GameObject pos;
     [SerializeField] List<Waypoint> path = new List<Waypoint>();
-    [SerializeField] [Range(0,7)] float  speed = 1f;
+    [SerializeField] [Range(0,7)] public float  speed = 1f;
     [SerializeField] int reward = 25;
     [SerializeField] float minSpeedRan = 0.5f;
     [SerializeField] bool moveRandom;
-    [SerializeField] bool inballonable;
+    [SerializeField] public bool inballonable;
     [SerializeField] bool ispenguin;
     [SerializeField] bool isbatista;
     [SerializeField] float BallonistSlowRate = 0.005f;
@@ -26,10 +26,12 @@ public class EnemyMove : MonoBehaviour
     [SerializeField] bool isBully;
     [SerializeField] Animator animator;
     [SerializeField] float BullysTimeOnBlock;
+    [SerializeField] GameObject bullyparticles;
     bool Timer1;
     Objectpool objectpool;
     bool TakeCashLoop;
     bool AnimPlay;
+    int a;
     Bank bank;
     bool StopAuraSFX;
     float originalspeed;
@@ -214,8 +216,10 @@ public class EnemyMove : MonoBehaviour
                 if(waypoint.gameObject.GetComponent<Waypoint>().bullylimiter != true)
                 {
                     animator.Play("Dance");
+                    bullyparticles.SetActive(false);
                     yield return new WaitForSeconds(BullysTimeOnBlock);
                     animator.Play("Slide");
+                    bullyparticles.SetActive(true);
                     Debug.Log(gameObject.name + " pos: " + waypoint.gameObject.name);
                     Vector3 startposition = transform.position;
                     Vector3 endposition = waypoint.transform.position;
@@ -223,6 +227,7 @@ public class EnemyMove : MonoBehaviour
                     transform.LookAt(endposition);
                     while (movepercent < 1f)
                     {
+                        animator.Play("Slide");
                         movepercent += Time.deltaTime * speed;
                         transform.position = Vector3.Lerp(startposition, endposition, movepercent);
                         yield return new WaitForEndOfFrame();
@@ -241,6 +246,7 @@ public class EnemyMove : MonoBehaviour
         else
         {
             AnimPlay = true;
+            bullyparticles.SetActive(false);
             animator.Play("Take");
             if(bank.currentBalance == 0)
             {

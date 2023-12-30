@@ -60,10 +60,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d967aecfdf43d3d4b834e1ff26de3ba6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp: 3
   cost: 0
   isBallonist: 0
   isOilboy: 0
+  isTruckCaller: 0
   MakeSpawnSounds: 0
+  OilExplosion: {fileID: 0}
 --- !u!114 &3765186573841303176
 MonoBehaviour:
   m_ObjectHideFlags: 0

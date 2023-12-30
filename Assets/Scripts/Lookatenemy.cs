@@ -21,7 +21,14 @@ public class Lookatenemy : MonoBehaviour
     {
         soundManager = FindObjectOfType<SoundManager>();
     }
-
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Destroy")
+        {
+            soundManager.PlayMoneySpendSound();
+            Destroy(gameObject);
+        }
+    }
     void Update()
     {
         FindClosestTarget();

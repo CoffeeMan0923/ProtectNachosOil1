@@ -14,6 +14,7 @@ public class CallCenter : MonoBehaviour
     public bool timer3;
     public bool timer4;
     [SerializeField] GameObject button;
+    [SerializeField] GameObject LockIcon;
     [SerializeField] GameObject TruckKnuckles;
     SoundManager soundManager;
     bool CallEnsure;
@@ -38,6 +39,12 @@ public class CallCenter : MonoBehaviour
         if (Callers == 3)
         {
             button.GetComponent<EventTrigger>().enabled = false;
+            LockIcon.gameObject.SetActive(true);
+        }
+        else if (Callers < 3 && button.GetComponent<EventTrigger>().enabled == false)
+        {
+            button.GetComponent<EventTrigger>().enabled = true;
+            LockIcon.gameObject.SetActive(false);
         }
         if (timer1 && StartSpawningTruckKnuckles && KnucklesOnField <= 0)
         {

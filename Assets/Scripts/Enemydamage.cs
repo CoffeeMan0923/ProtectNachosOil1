@@ -72,7 +72,7 @@ public class Enemydamage : MonoBehaviour
         if(collision.gameObject.tag == "Truck")
         {
             PlayDamageSound();
-            currenthp = currenthp - 20;
+            currenthp = currenthp - 1000;
         }
 
         

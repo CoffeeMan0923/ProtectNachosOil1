@@ -4862,6 +4862,7 @@ GameObject:
   m_Component:
   - component: {fileID: 982376012186975395}
   - component: {fileID: -4818537109846462246}
+  - component: {fileID: 318475209341702037}
   m_Layer: 11
   m_Name: Gordon Ramsy
   m_TagString: Ramsy
@@ -4899,6 +4900,52 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Timebeforedestroyed: 10
+--- !u!114 &318475209341702037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6380279880806057504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe7d9a8a797f08946872cae6f91caf42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isplacable: 0
+  isplacable2: 0
+  SellTower: {fileID: 0}
+  SellSelected: 0
+  Oilboy: {fileID: 0}
+  Ballonist: {fileID: 0}
+  TruckCaller: {fileID: 0}
+  TruckCallerGhost: {fileID: 0}
+  OilboyGhost: {fileID: 0}
+  BallonistGhost: {fileID: 0}
+  TruckCallerGhostRed: {fileID: 0}
+  OilboyGhostRed: {fileID: 0}
+  BallonistGhostRed: {fileID: 0}
+  XGhost: {fileID: 0}
+  FixBlock: {fileID: 0}
+  FixBlockGhost: {fileID: 0}
+  FixBlockGhostRed: {fileID: 0}
+  GroundCrack: {fileID: 0}
+  GroundCrackBad: {fileID: 0}
+  GroundCrackFine: {fileID: 0}
+  Hp: 0
+  OldHp: 0
+  bullylimiter: 0
+  isballonist: 0
+  isoiler: 0
+  isBlockFixer: 0
+  istruckcaller: 0
+  isPlaced: 0
+  moneymissing: 0
+  nomoney4: 0
+  nomoney1: 0
+  nomoney2: 0
+  nomoney3: 0
+  Placed: 0
 --- !u!1001 &145869671729290170
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6108,6 +6155,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Explosionparticles: {fileID: 8460064027121919758, guid: 79b7d9859c30e834a88dc6e5693bc840, type: 3}
   ExplosionLocation: {fileID: 7281254898047050190}
+  speed: 1
+  path:
+  - {fileID: 318475209341702037}
   HellStormSpeed: 5
 --- !u!1001 &8255723318360385465
 PrefabInstance:

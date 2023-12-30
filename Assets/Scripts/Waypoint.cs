@@ -21,7 +21,13 @@ public class Waypoint : MonoBehaviour
     public Oiler OilboyGhostRed;
     public Oiler BallonistGhostRed;
     public Oiler XGhost;
+    public Oiler FixBlock;
+    public Oiler FixBlockGhost;
+    public Oiler FixBlockGhostRed;
     public GameObject GroundCrack;
+    public GameObject GroundCrackBad;
+    public GameObject GroundCrackFine;
+    CallCenter callCenter;
     public int Hp;
     public int OldHp;
     public bool bullylimiter;
@@ -29,17 +35,20 @@ public class Waypoint : MonoBehaviour
     Waypoint waypoint;
     public bool isballonist;
     public bool isoiler;
+    public bool isBlockFixer;
     public bool istruckcaller;
     public bool isPlaced;
     bool hovering;
     bool timer;
     bool isclick;
     public bool moneymissing;
+    public bool nomoney4;
     public bool nomoney1;
     public bool nomoney2;
     public bool nomoney3;
     void Start()
     {
+        callCenter = FindObjectOfType<CallCenter>();
         tissyselect = FindObjectOfType<Tissieselect>();
         soundmanager = FindObjectOfType<SoundManager>();
     }
@@ -66,7 +75,23 @@ public class Waypoint : MonoBehaviour
             if(Hp <= 0)
             {
                 GroundCrack.gameObject.SetActive(true);
+                isPlaced = false;
             }
+            if(Hp == 1)
+            {
+                GroundCrackBad.gameObject.SetActive(true);
+            }
+            if(Hp == 2)
+            {
+                GroundCrackFine.gameObject.SetActive(true);
+            }
+        }
+        if (collision.gameObject.tag == "FixFloor")
+        {
+            Hp = OldHp;
+            GroundCrack.gameObject.SetActive(false);
+            GroundCrackBad.gameObject.SetActive(false);
+            GroundCrackFine.gameObject.SetActive(false);
         }
         
     }
@@ -83,7 +108,7 @@ public class Waypoint : MonoBehaviour
             waypoint.isPlacable(isPlaced);
             
         }
-        if (istruckcaller)
+        if (istruckcaller && callCenter.Callers !=3)
         {
             isPlaced = TruckCaller.CreateOiler(TruckCaller, gameObject.transform.position);
             waypoint.isPlacable(isPlaced);
@@ -130,7 +155,7 @@ public class Waypoint : MonoBehaviour
                 OilboyGhostRed.CreateOiler(OilboyGhostRed, gameObject.transform.position);
                 waypoint.isPlacable(isPlaced);
             }
-            if(istruckcaller && !nomoney3 && !isclick && Hp > 0)
+            if(istruckcaller && !nomoney3 && !isclick && Hp > 0 && callCenter.Callers != 3)
             {
                 TruckCallerGhost.CreateOiler(TruckCallerGhost, gameObject.transform.position);
                 waypoint.isPlacable(isPlaced);
@@ -148,6 +173,16 @@ public class Waypoint : MonoBehaviour
             else if (isballonist)
             {
                 BallonistGhostRed.CreateOiler(BallonistGhostRed, gameObject.transform.position);
+                waypoint.isPlacable(isPlaced);
+            }
+            if (isBlockFixer && !nomoney4 && Hp <= 2)
+            {
+                FixBlockGhost.CreateOiler(FixBlockGhost, gameObject.transform.position);
+                waypoint.isPlacable(isPlaced);
+            }
+            else if(isBlockFixer)
+            {
+                FixBlockGhostRed.CreateOiler(FixBlockGhostRed, gameObject.transform.position);
                 waypoint.isPlacable(isPlaced);
             }
             if (SellSelected)
@@ -179,6 +214,11 @@ public class Waypoint : MonoBehaviour
                 BallonistGhostRed.CreateOiler(BallonistGhostRed, gameObject.transform.position);
                 waypoint.isPlacable(isPlaced);
             }
+            if (isBlockFixer && nomoney4)
+            {
+                FixBlockGhostRed.CreateOiler(FixBlockGhostRed, gameObject.transform.position);
+                waypoint.isPlacable(isPlaced);
+            }
         }
 
     }
@@ -194,6 +234,11 @@ public class Waypoint : MonoBehaviour
             isPlaced = false;
             SellTower.CreateOiler(SellTower, gameObject.transform.position);
 
+        }
+        if (isBlockFixer && !nomoney4 && Hp < 3)
+        {
+            soundmanager.PlayMoneySpendSound();
+            FixBlock.CreateOiler(FixBlock, gameObject.transform.position);
         }
     }
 }

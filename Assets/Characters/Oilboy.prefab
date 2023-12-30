@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7902577307684327583}
   - component: {fileID: 8533039389165704967}
   - component: {fileID: 5503545067282640350}
+  - component: {fileID: -4470099521828371451}
   m_Layer: 0
   m_Name: Oilboy
   m_TagString: Untagged
@@ -68,7 +69,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d967aecfdf43d3d4b834e1ff26de3ba6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 2
+  hp: 3
   cost: 75
   isBallonist: 0
   isOilboy: 1
@@ -184,6 +185,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.641323, y: 7.178673, z: 2.4980993}
   m_Center: {x: 0.24971199, y: 10.437162, z: -0.07713348}
+--- !u!114 &-4470099521828371451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1129831694947003359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a739ecb944acf246a0b3af2fc377328, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8473253030833918853
 GameObject:
   m_ObjectHideFlags: 0

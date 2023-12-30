@@ -5,9 +5,10 @@ using UnityEngine;
 
 public class CallGordomRamsy : MonoBehaviour
 {
-    Oiler oiler;
+    TowerLoc oiler;
     [SerializeField] GameObject GordomRamsy;
     [SerializeField] float HellStormdelay;
+    [SerializeField] Animator animator;
     SoundManager soundManager;
     bool Delay1;
     void Start()
@@ -17,7 +18,7 @@ public class CallGordomRamsy : MonoBehaviour
     }
     void callHellsStorm()
     {
-        oiler = FindObjectOfType<Oiler>();
+        oiler = FindObjectOfType<TowerLoc>();
         if(oiler != null)
         {
             Instantiate(GordomRamsy.gameObject, oiler.transform.position, Quaternion.identity);
@@ -26,7 +27,16 @@ public class CallGordomRamsy : MonoBehaviour
     }
     void sounddelay()
     {
+        animator.Play("JustDoIt");
+        Invoke("startMoving", 3);
+        gameObject.GetComponent<EnemyMove>().speed = 0.001f;
+        gameObject.GetComponent<EnemyMove>().inballonable = true;
         soundManager.PlayJustDoIt();
+    }
+    void startMoving()
+    {
+        gameObject.GetComponent<EnemyMove>().inballonable = false;
+        gameObject.GetComponent<EnemyMove>().speed = 1f;
     }
     void Update()
     {

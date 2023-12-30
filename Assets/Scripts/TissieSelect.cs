@@ -37,7 +37,29 @@ using UnityEngine;
                 }
             }
         }
-        if(money < 150)
+        if (money < 100)
+        {
+            foreach (Transform child in parent.transform)
+            {
+                if (child.GetComponent<Waypoint>() != null && child.GetComponent<Waypoint>().isPlaced == false)
+                {
+                    child.GetComponent<Waypoint>().nomoney4 = true;
+
+                }
+            }
+        }
+        else
+        {
+            foreach (Transform child in parent.transform)
+            {
+                if (child.GetComponent<Waypoint>() != null && child.GetComponent<Waypoint>().isPlaced == false)
+                {
+                    child.GetComponent<Waypoint>().nomoney4 = false;
+
+                }
+            }
+        }
+        if (money < 150)
         {
             foreach (Transform child in parent.transform)
             {
@@ -119,6 +141,14 @@ using UnityEngine;
         }
         SellTowerloop();
     }
+    public void BlockFixerSelected()
+    {
+        if (soundManager != null)
+        {
+            soundManager.PlayCharacterButtonPresedSound();
+        }
+        BlockFixerLoop();
+    }
     void Oilboyloop()
     {
         foreach (Transform child in parent.transform)
@@ -127,6 +157,7 @@ using UnityEngine;
             {
                 print("Foreach loop: " + child);
                 child.GetComponent<Waypoint>().isoiler = true;
+                child.GetComponent<Waypoint>().isBlockFixer = false;
                 child.GetComponent<Waypoint>().isballonist = false;
                 child.GetComponent<Waypoint>().istruckcaller = false;
                 child.GetComponent<Waypoint>().SellSelected = false;
@@ -146,6 +177,7 @@ using UnityEngine;
                 child.GetComponent<Waypoint>().isballonist = false;
                 child.GetComponent<Waypoint>().istruckcaller = false;
                 child.GetComponent<Waypoint>().SellSelected = true;
+                child.GetComponent<Waypoint>().isBlockFixer = false;
             }
         }
 
@@ -162,6 +194,7 @@ using UnityEngine;
                 child.GetComponent<Waypoint>().isballonist = false;
                 child.GetComponent<Waypoint>().istruckcaller = true;
                 child.GetComponent<Waypoint>().SellSelected = false;
+                child.GetComponent<Waypoint>().isBlockFixer = false;
             }
         }
 
@@ -178,6 +211,24 @@ using UnityEngine;
                 child.GetComponent<Waypoint>().isballonist = true;
                 child.GetComponent<Waypoint>().istruckcaller = false;
                 child.GetComponent<Waypoint>().SellSelected = false;
+                child.GetComponent<Waypoint>().isBlockFixer = false;
+            }
+        }
+
+
+    }
+    void BlockFixerLoop()
+    {
+        foreach (Transform child in parent.transform)
+        {
+            if (child.GetComponent<Waypoint>() != null)
+            {
+                print("Foreach loop: " + child);
+                child.GetComponent<Waypoint>().isoiler = false;
+                child.GetComponent<Waypoint>().isballonist = false;
+                child.GetComponent<Waypoint>().istruckcaller = false;
+                child.GetComponent<Waypoint>().SellSelected = false;
+                child.GetComponent<Waypoint>().isBlockFixer = true;
             }
         }
 
