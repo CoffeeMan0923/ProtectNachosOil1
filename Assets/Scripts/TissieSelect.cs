@@ -114,6 +114,10 @@ using UnityEngine;
         }
         Oilboyloop();
     }
+    public void NothingSelected()
+    {
+        NothingSelectedloop();
+    }
 
     public void BallonistSelected()
     {
@@ -148,6 +152,23 @@ using UnityEngine;
             soundManager.PlayCharacterButtonPresedSound();
         }
         BlockFixerLoop();
+    }
+    void NothingSelectedloop()
+    {
+        foreach (Transform child in parent.transform)
+        {
+            if (child.GetComponent<Waypoint>() != null)
+            {
+                print("Foreach loop: " + child);
+                child.GetComponent<Waypoint>().isoiler = false;
+                child.GetComponent<Waypoint>().isBlockFixer = false;
+                child.GetComponent<Waypoint>().isballonist = false;
+                child.GetComponent<Waypoint>().istruckcaller = false;
+                child.GetComponent<Waypoint>().SellSelected = false;
+            }
+        }
+
+
     }
     void Oilboyloop()
     {

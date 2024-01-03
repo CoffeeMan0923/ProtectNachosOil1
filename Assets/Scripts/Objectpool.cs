@@ -24,6 +24,7 @@ public class Objectpool : MonoBehaviour
     [SerializeField] AudioClip RoundWord;
     [SerializeField] AudioSource source;
     private AudioClip Sound;
+    Tissieselect tissieselect;
     SoundManager soundManager;
     Enemydamage enemydamage;
     [SerializeField] GameObject parent;
@@ -41,6 +42,7 @@ public class Objectpool : MonoBehaviour
 
     public void PauseGame()
     {
+        tissieselect.NothingSelected();
         GamePaused = true;
         time1 = false;
     }
@@ -51,6 +53,7 @@ public class Objectpool : MonoBehaviour
     }
     void Start()
     {
+        tissieselect = FindObjectOfType<Tissieselect>();
         NewRoundSounds();
         soundManager = FindObjectOfType<SoundManager>();
         StartCoroutine(spwanenemy());
@@ -134,7 +137,18 @@ public class Objectpool : MonoBehaviour
             UnPauseNow = false;
             Time.timeScale = 1;
         }
-        
+        if (Input.GetKeyDown(KeyCode.Escape) && GamePaused !=true)
+        {
+            GamePaused = true;
+            time1 = false;
+            tissieselect.NothingSelected();
+        }
+        else if (Input.GetKeyDown(KeyCode.Escape) && GamePaused != false)
+        {
+            UnPauseNow = true;
+        }
+
+
         }
         void Repeat()
         {

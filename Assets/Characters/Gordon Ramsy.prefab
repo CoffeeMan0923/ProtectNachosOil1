@@ -66,7 +66,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5164292188755573556}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.04, y: -1.39, z: -0.05}
+  m_LocalPosition: {x: -0.1, y: -1.39, z: -0.05}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5605,7 +5605,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1410fe0d086518d4d8be56f81bb2886b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 132.9
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1410fe0d086518d4d8be56f81bb2886b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5613,7 +5613,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1410fe0d086518d4d8be56f81bb2886b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 118.9
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1410fe0d086518d4d8be56f81bb2886b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6023,8 +6023,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.2947726, y: 1, z: 3.3938801}
-  m_Center: {x: 0.19211075, y: 0.6832183, z: 0.081665315}
+  m_Size: {x: 2.346719, y: 1, z: 2.4844244}
+  m_Center: {x: -0.28191677, y: 0.6832183, z: -0.37306392}
 --- !u!82 &5777423775320404234
 AudioSource:
   m_ObjectHideFlags: 0
@@ -6153,12 +6153,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13ff5338f73a52747bde5acf2950ff9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Explosionparticles: {fileID: 8460064027121919758, guid: 79b7d9859c30e834a88dc6e5693bc840, type: 3}
+  Explosionparticles: {fileID: 9072987510655582671, guid: 59f96514e48bb3a4d9be773b0cfb63f5, type: 3}
   ExplosionLocation: {fileID: 7281254898047050190}
-  speed: 1
+  speed: 0.55
   path:
   - {fileID: 318475209341702037}
-  HellStormSpeed: 5
+  HellStormSpeed: 0
 --- !u!1001 &8255723318360385465
 PrefabInstance:
   m_ObjectHideFlags: 0

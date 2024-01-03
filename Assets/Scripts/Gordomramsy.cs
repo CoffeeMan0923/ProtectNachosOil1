@@ -33,9 +33,13 @@ public class Gordomramsy : MonoBehaviour
     }
     void Collided()
     {
+        Invoke("ExploParticles", 0.2f);
+        Invoke("SelfDestruct", 0.7f);
+    }
+    void ExploParticles()
+    {
         soundManager.cabinExplode();
         Instantiate(Explosionparticles, ExplosionLocation.transform.position, Quaternion.identity);
-        Invoke("SelfDestruct", 0.7f);
     }
     void SelfDestruct()
     {

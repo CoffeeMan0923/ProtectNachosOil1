@@ -60,7 +60,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d967aecfdf43d3d4b834e1ff26de3ba6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 3
   cost: 0
   isBallonist: 0
   isOilboy: 0
@@ -80,6 +79,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Timebeforedestroyed: 1
+  Particle: {fileID: 3669330517751136113, guid: 2a0cf56bb28708b49a4b2fb477bf60f4, type: 3}
+  activateParticles: 0
 --- !u!54 &1599884077454038396
 Rigidbody:
   m_ObjectHideFlags: 0

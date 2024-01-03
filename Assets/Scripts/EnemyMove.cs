@@ -254,7 +254,10 @@ public class EnemyMove : MonoBehaviour
                 objectpool.EnemyAmount--;
                 Invoke("SelfDestroy", 0.2f);
             }
-            TakeCash();
+            else
+            {
+                TakeCash();
+            }
         }
 
     }
