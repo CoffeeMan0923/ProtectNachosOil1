@@ -19,6 +19,10 @@ public class TruckPath : MonoBehaviour
     CallCenter callCenter;
     [SerializeField] float currentTruckHp;
     [SerializeField] Animator animator;
+    [SerializeField] GameObject Abouttogetademo;
+    [SerializeField] GameObject OrderADemopakege;
+    [SerializeField] GameObject ChinStolen;
+    [SerializeField] Transform position;
     bool one;
     public int DudesinRange;
     public bool isinrange;
@@ -30,13 +34,25 @@ public class TruckPath : MonoBehaviour
     Vector3 originalPos;
     public bool timer;
     float movePercent;
+    int random1;
+    int random2;
     void Start()
     {
+        soundManager = FindObjectOfType<SoundManager>();
+        random1 = Random.Range(0,2);
+        soundManager.TruckKnucklesSpawnLine(random1);
+        if (random1 == 1)
+        {
+            OrderADemopakege.GetComponent<GroudText>().FlashG();
+        }
+        if (random1 == 0)
+        {
+            Abouttogetademo.GetComponent<GroudText>().FlashG();
+        }
         callCenter = FindObjectOfType<CallCenter>();
         callCenter.KnucklesOnField++;
         currentTruckHp = startingTruckHp;
         originalPos = transform.position;
-        soundManager = FindObjectOfType<SoundManager>();
         originalspeed = speed;
         
         FindPath();
@@ -53,6 +69,8 @@ public class TruckPath : MonoBehaviour
         }
         else if(collision.gameObject.GetComponent<Enemydamage>() != null)
         {
+            Instantiate(ChinStolen, position.transform.position, Quaternion.identity);
+            //ChinStolen.GetComponent<GroudText>().FlashG();
             soundManager.PlayChinStolenSound();
             currentTruckHp = currentTruckHp - currentTruckHp + 1;
         }
@@ -137,7 +155,6 @@ public class TruckPath : MonoBehaviour
         {
             soundManager.BatistaCabinEnter();
         }
-        soundManager.CabinDamaged();
     }
     IEnumerator printwatpoint()
     {

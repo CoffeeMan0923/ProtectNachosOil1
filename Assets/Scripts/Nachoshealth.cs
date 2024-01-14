@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Nachoshealth : MonoBehaviour
 {
@@ -15,14 +16,25 @@ public class Nachoshealth : MonoBehaviour
     [SerializeField] GameObject YouLost;
     [SerializeField] GameObject Cabin;
     [SerializeField] GameObject Director;
+    [SerializeField] GameObject Wordsfordificulty;
+    [SerializeField] GameObject Backround;
+    [SerializeField] GameObject Slider;
+    [SerializeField] GameObject MyChin;
+    [SerializeField] GameObject TheyTookMyChin;
+    [SerializeField] public GameObject Nomyoil;
+    [SerializeField] public GameObject TheyAreTakingOil;
+    [SerializeField] public GameObject Moreoilline;
+    [SerializeField] public GameObject Pos;
     [SerializeField] float penguinDamage = 1;
     [SerializeField] float batistaDamage = 2;
     [SerializeField] float ramsyDamage = 3;
     [SerializeField] float cabinHealth = 20;
+    int random;
     bool TissyClack;
     SoundManager soundManager;
     bool hasExploded = false;
     bool Shake = true;
+    bool insettings;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +48,16 @@ public class Nachoshealth : MonoBehaviour
             damage = batistaDamage;
             CabinShake();
             cabinHealth = cabinHealth - damage;
+            random = Random.Range(0,4);
+            if(random == 0)
+            {
+                Instantiate(MyChin,Pos.gameObject.transform.position,Quaternion.identity);
+            }
+            if(random == 3)
+            {
+                Instantiate(TheyTookMyChin, Pos.gameObject.transform.position, Quaternion.identity);
+            }
+            soundManager.CabinDamaged(random);
         }
         else if(other.gameObject.tag == "Penguin")
         {
@@ -43,6 +65,20 @@ public class Nachoshealth : MonoBehaviour
             damage = penguinDamage;
             CabinShake();
             cabinHealth = cabinHealth - damage;
+            random = Random.Range(0, 4);
+            soundManager.CabinDamaged(random);
+            if(random == 0)
+            {
+                Instantiate(Nomyoil, Pos.gameObject.transform.position,Quaternion.identity);
+            }
+            if (random == 1)
+            {
+                Instantiate(Nomyoil, Pos.gameObject.transform.position, Quaternion.identity);
+            }
+            if (random == 2)
+            {
+                Instantiate(Nomyoil, Pos.gameObject.transform.position, Quaternion.identity);
+            }
         }
         if(other.gameObject.tag == "Ramsy")
         {
@@ -50,10 +86,24 @@ public class Nachoshealth : MonoBehaviour
             damage = ramsyDamage;
             CabinShake();
             cabinHealth = cabinHealth - damage;
+            random = Random.Range(0, 4);
+            soundManager.CabinDamaged(random);
         }
         
     }
+    public void GetIntoSettings()
+    {
+        Wordsfordificulty.SetActive(true);
+        Backround.SetActive(true);
+        Slider.SetActive(true);
 
+    }
+    public void ExitSettings()
+    {
+        Wordsfordificulty.SetActive(false);
+        Backround.SetActive(false);
+        Slider.SetActive(false);
+    }
     // Update is called once per frame
     void Update()
     {

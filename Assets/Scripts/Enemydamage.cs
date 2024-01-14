@@ -14,11 +14,14 @@ public class Enemydamage : MonoBehaviour
     [SerializeField] float oildamage = 1;
     [SerializeField] bool ispenguin;
     [SerializeField] bool isbatista;
+    [SerializeField] bool isbully;
+    Musiclocation music;
     Objectpool objectpool;
     public bool freshSpawn;
     public float startingHp = 5;
     void Start()
     {
+        music = FindObjectOfType<Musiclocation>();
         objectpool = FindObjectOfType<Objectpool>();
         freshSpawn = true;
         soundManager = FindObjectOfType<SoundManager>();
@@ -94,6 +97,10 @@ public class Enemydamage : MonoBehaviour
     {
         if (currenthp <= 0)
         {
+            if (isbully)
+            {
+                music.GetComponent<AudioSource>().volume = 1;
+            }
             Instantiate(particalexplo, pos.transform.position,Quaternion.identity);
             objectpool.EnemyAmount--;
             Destroy(gameObject);

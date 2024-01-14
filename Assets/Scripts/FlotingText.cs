@@ -15,6 +15,7 @@ public class FlotingText : MonoBehaviour
     bool something;
     bool something2;
 
+
     void Start()
     {
         canvasLoc = FindObjectOfType<CanvasLoc>();

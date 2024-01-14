@@ -36,6 +36,7 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private AudioClip Rickroll;
     [SerializeField] private AudioClip DirtinyourEye;
     [SerializeField] private AudioClip SeeYaChump;
+    [SerializeField] public AudioSource MusicManager;
     private int currentSongIndex = 0;
     private AudioClip Sound;
     public static SoundManager Instance;
@@ -99,9 +100,9 @@ public class SoundManager : MonoBehaviour
         Sound = moneyGetSound[Random.Range(0, moneyGetSound .Length)];
         source.PlayOneShot(Sound);
     }
-    public void CabinDamaged()
+    public void CabinDamaged(int num)
     {
-        Sound = cabinDamaged[Random.Range(0, cabinDamaged.Length)];
+        Sound = cabinDamaged[num];
         source.PlayOneShot(Sound);
     }
     public void PlayCharacterButtonPresedSound()
@@ -152,9 +153,9 @@ public class SoundManager : MonoBehaviour
 
         if (currentSongIndex < songs.Length)
         {
-            source.clip = songs[currentSongIndex];
+           // MusicManager.clip = songs[currentSongIndex];
             currentSongIndex++;
-            source.Play();
+           // MusicManager.Play();
 
         }
         else
@@ -171,14 +172,14 @@ public class SoundManager : MonoBehaviour
         Sound = PakageSound[Random.Range(0, PakageSound.Length)];
         source.PlayOneShot(Sound);
     }
-    public void TruckKnucklesSpawnLine()
+    public void TruckKnucklesSpawnLine(int Ramdonnumber)
     {
-        Sound = TruckKnucklesSpawnSounds[Random.Range(0, TruckKnucklesSpawnSounds.Length)];
+        Sound = TruckKnucklesSpawnSounds[Ramdonnumber];
         source.PlayOneShot(Sound);
     }
-    public void PlayJustDoItManSapwanSounds()
+    public void PlayJustDoItManSapwanSounds(int num)
     {
-        Sound = DoItManSpawnSounds[Random.Range(0, DoItManSpawnSounds.Length)];
+        Sound = DoItManSpawnSounds[num];
         source.PlayOneShot(Sound);
     }
     public void PlayNewRoundSound()
@@ -198,14 +199,14 @@ public class SoundManager : MonoBehaviour
     {
         source.PlayOneShot(SeeYaChump);
     }
-    public void PlayJustDoIt()
+    public void PlayJustDoIt(int Randomnumber)
     {
-        Sound = JustDoItSFX[Random.Range(0, JustDoItSFX.Length)];
+        Sound = JustDoItSFX[Randomnumber];
         source.PlayOneShot(Sound);
     }
-    public void PlayStealMoneySound()
+    public void PlayStealMoneySound(int num)
     {
-        Sound = MoneyStealSFX[Random.Range(0, MoneyStealSFX.Length)];
+        Sound = MoneyStealSFX[num];
         source.PlayOneShot(Sound);
     }
     public void PlayChinStolenSound()

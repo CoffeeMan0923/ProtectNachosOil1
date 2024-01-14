@@ -110,14 +110,12 @@ public class CallCenter : MonoBehaviour
             anotheone = false;
             timer1 = true;
             Instantiate(TruckKnuckles);
-            soundManager.TruckKnucklesSpawnLine();
         
 
     }
     void CallTruckKnuckles2()
     {
         Instantiate(TruckKnuckles);
-        soundManager.TruckKnucklesSpawnLine();
     }
 
     void CallSound()

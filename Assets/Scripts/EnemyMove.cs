@@ -27,8 +27,13 @@ public class EnemyMove : MonoBehaviour
     [SerializeField] Animator animator;
     [SerializeField] float BullysTimeOnBlock;
     [SerializeField] GameObject bullyparticles;
+    [SerializeField] GameObject bullyChumpsubtitles;
+    [SerializeField] GameObject bullySuptitlesPos;
+    int Randomnumber;
+    Musiclocation music;
     bool Timer1;
     Objectpool objectpool;
+    Nachoshealth nachoshealth;
     bool TakeCashLoop;
     bool AnimPlay;
     int a;
@@ -43,10 +48,13 @@ public class EnemyMove : MonoBehaviour
     float movePercent;
     void Start()
     {
+        nachoshealth = FindObjectOfType<Nachoshealth>();
+        music = FindObjectOfType<Musiclocation>();
         if (isBully)
         {
             soundManager = FindObjectOfType<SoundManager>();
             soundManager.PlayDirtInYourEye();
+            music.GetComponent<AudioSource>().volume = 0;
         }
         soundManager = FindObjectOfType<SoundManager>();
         objectpool = FindObjectOfType<Objectpool>();
@@ -170,19 +178,33 @@ public class EnemyMove : MonoBehaviour
         {
             soundManager.BatistaCabinEnter();
         }
-        soundManager.CabinDamaged();
     }
     void TakeCash()
     {
         if (bank.currentBalance == 0)
         {
+            Instantiate(bullyChumpsubtitles, bullySuptitlesPos.transform.position, Quaternion.identity);
             soundManager.PlaySeeYa();
+            music.GetComponent<AudioSource>().volume = 1;
             objectpool.EnemyAmount--;
             Destroy(gameObject);
         }
         else
         {
-            soundManager.PlayStealMoneySound();
+            Randomnumber = Random.Range(0,7);
+            soundManager.PlayStealMoneySound(Randomnumber);
+            if(Randomnumber == 0)
+            {
+                Instantiate(nachoshealth.Moreoilline,nachoshealth.Pos.gameObject.transform.position,Quaternion.identity);
+            }
+            if (Randomnumber == 1)
+            {
+                Instantiate(nachoshealth.TheyAreTakingOil, nachoshealth.Pos.gameObject.transform.position, Quaternion.identity);
+            }
+            if (Randomnumber == 2)
+            {
+                Instantiate(nachoshealth.Nomyoil, nachoshealth.Pos.gameObject.transform.position, Quaternion.identity);
+            }
             TakeCashLoop = true;
             bank.Whithdraw(25);
             soundManager.PlayMoneySpendSound();
@@ -250,6 +272,8 @@ public class EnemyMove : MonoBehaviour
             animator.Play("Take");
             if(bank.currentBalance == 0)
             {
+                Instantiate(bullyChumpsubtitles,bullySuptitlesPos.transform.position,Quaternion.identity);
+                music.GetComponent<AudioSource>().volume = 1;
                 soundManager.PlaySeeYa();
                 objectpool.EnemyAmount--;
                 Invoke("SelfDestroy", 0.2f);

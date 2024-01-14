@@ -39,6 +39,7 @@ public class Objectpool : MonoBehaviour
     int roundUpTo2 = 1;
     bool istime;
     int RoundSpawnNum = 0;
+    public int dificulty = 24;
 
     public void PauseGame()
     {
@@ -57,13 +58,16 @@ public class Objectpool : MonoBehaviour
         NewRoundSounds();
         soundManager = FindObjectOfType<SoundManager>();
         StartCoroutine(spwanenemy());
-        RoundSpawnNum = 1;
+        if (dificulty != 0)
+        {
+            RoundSpawnNum = 1;
+        } 
     }
     IEnumerator spwanenemy()
     {
         while (enemystospawwn >= 0)
         {
-            int e = Random.Range(0, enemys.Length-24+RoundSpawnNum);
+            int e = Random.Range(0, enemys.Length-dificulty+RoundSpawnNum);
             enemystospawwn--;
             Instantiate(enemys[e], transform);
             yield return new WaitForSeconds(sapwntimer);
@@ -154,7 +158,7 @@ public class Objectpool : MonoBehaviour
         {
           
             round++;
-            if(RoundSpawnNum != 24)
+            if(RoundSpawnNum != dificulty)
             {
                 RoundSpawnNum++;
             }
